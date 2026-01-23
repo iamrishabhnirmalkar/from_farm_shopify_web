@@ -1,0 +1,80 @@
+/**
+ * Rish Custom Sections Stylesheet
+ * Consolidated CSS for all custom Rish/Rishu sections
+ * Author: Rishabh Nirmalkar
+ */
+
+/* ============================================
+   Announcement Bar Section
+   ============================================ */
+
+.rish-announcement-bar {
+  width: 100%;
+  overflow: hidden;
+  padding: 12px 0;
+  position: relative;
+}
+
+.rish-marquee-wrapper {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.rish-marquee-track {
+  display: flex;
+  animation: rish-marquee 30s linear infinite;
+  white-space: nowrap;
+}
+
+.rish-marquee-item {
+  padding: 0 40px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.rish-marquee-item a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.rish-marquee-item a:hover {
+  opacity: 0.8;
+}
+
+@keyframes rish-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Pause animation on hover */
+.rish-announcement-bar:hover .rish-marquee-track {
+  animation-play-state: paused;
+}
+
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+@media (max-width: 768px) {
+  .rish-marquee-item {
+    padding: 0 20px;
+  }
+  
+  .rish-marquee-item a {
+    font-size: 13px;
+  }
+}
+
+/* ============================================
+   Product Section Styles
+   (Add product-specific styles here)
+   ============================================ */
+
+/* Placeholder for future product section styles */
