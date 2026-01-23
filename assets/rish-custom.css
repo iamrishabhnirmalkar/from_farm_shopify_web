@@ -359,3 +359,221 @@
    ============================================ */
 
 /* Placeholder for future product section styles */
+/* ============================================
+   Footer Section
+   ============================================ */
+
+.rishu-footer {
+  width: 100%;
+  padding: 60px 0 0;
+}
+
+.rishu-footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.rishu-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Logo & Branding */
+.rishu-footer-logo {
+  max-width: 180px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.rishu-footer-logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Subscription Form */
+.rishu-footer-subscription {
+  margin-top: 24px;
+}
+
+.rishu-footer-sub-heading {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.rishu-footer-sub-text {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.rishu-footer-form-group {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.rishu-footer-input {
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.rishu-footer-input:focus {
+  outline: none;
+  border-color: #377753;
+}
+
+.rishu-footer-submit {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  font-size: 14px;
+}
+
+.rishu-footer-submit:hover {
+  opacity: 0.9;
+}
+
+/* Link Columns */
+.rishu-footer-heading {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rishu-footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rishu-footer-menu li {
+  margin-bottom: 12px;
+}
+
+.rishu-footer-menu a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.rishu-footer-menu a:hover {
+  opacity: 1;
+}
+
+/* Social Media */
+.rishu-footer-social {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.rishu-footer-social a {
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+.rishu-footer-social a:hover {
+  opacity: 0.7;
+}
+
+/* Contact Info */
+.rishu-footer-info {
+  margin-top: 20px;
+}
+
+.rishu-footer-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.rishu-footer-info-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: 0.6;
+}
+
+.rishu-footer-info-item a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.rishu-footer-info-item a:hover {
+  opacity: 1;
+}
+
+/* Bottom Farm Illustration */
+.rishu-footer-bottom-image {
+  width: 100%;
+  margin-top: 40px;
+  overflow: hidden;
+}
+
+.rishu-footer-bottom-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Tablet & Desktop Layout */
+@media (min-width: 768px) {
+  .rishu-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .rishu-footer-form-group {
+    flex-direction: row;
+  }
+
+  .rishu-footer-input {
+    flex: 1;
+  }
+
+  .rishu-footer-submit {
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rishu-footer {
+    padding: 80px 0 0;
+  }
+
+  .rishu-footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 60px;
+  }
+
+  .rishu-footer-brand {
+    grid-column: 1;
+  }
+
+  .rishu-footer-contact {
+    grid-column: 4;
+  }
+}
