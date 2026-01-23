@@ -48,6 +48,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -66,7 +67,244 @@
   .rish-marquee-item {
     padding: 0 20px;
   }
-  
+
+  .rish-marquee-item a {
+    font-size: 13px;
+  }
+}
+
+/* ============================================
+   Hero Banner Section
+   ============================================ */
+
+.rishu-hero-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.rishu-hero-slider {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  /* Mobile default */
+}
+
+.rishu-hero-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.rishu-hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+}
+
+.rishu-hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+/* Slide link overlay */
+.rishu-hero-slide-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Image styling */
+.rishu-hero-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.rishu-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.rishu-hero-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+}
+
+/* Navigation Arrows */
+.rishu-hero-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.rishu-hero-arrow {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.rishu-hero-arrow:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.rishu-hero-arrow svg {
+  width: 24px;
+  height: 24px;
+  color: #333;
+}
+
+/* Pagination Dots */
+.rishu-hero-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.rishu-hero-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.rishu-hero-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.rishu-hero-dot.active {
+  background: rgba(255, 255, 255, 1);
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* Animation Types */
+
+/* Fade Animation (default) */
+.rishu-hero-banner[data-animation="fade"] .rishu-hero-slide {
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+/* Slide Animation */
+.rishu-hero-banner[data-animation="slide"] .rishu-hero-slide {
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+  transform: translateX(100%);
+}
+
+.rishu-hero-banner[data-animation="slide"] .rishu-hero-slide.active {
+  transform: translateX(0);
+}
+
+/* Zoom Animation */
+.rishu-hero-banner[data-animation="zoom"] .rishu-hero-slide {
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+.rishu-hero-banner[data-animation="zoom"] .rishu-hero-slide .rishu-hero-image {
+  transition: transform 0.8s ease-in-out;
+  transform: scale(1.1);
+}
+
+.rishu-hero-banner[data-animation="zoom"] .rishu-hero-slide.active .rishu-hero-image {
+  transform: scale(1);
+}
+
+/* Responsive Heights */
+@media (min-width: 750px) {
+  .rishu-hero-slider {
+    height: 70vh;
+    /* Tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .rishu-hero-slider {
+    height: var(--rishu-hero-desktop-height, 80vh);
+    /* Desktop */
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 749px) {
+  .rishu-hero-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .rishu-hero-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .rishu-hero-arrows {
+    padding: 0 12px;
+  }
+
+  .rishu-hero-dots {
+    bottom: 16px;
+    gap: 8px;
+  }
+
+  .rishu-hero-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .rishu-hero-dot.active {
+    width: 24px;
+  }
+}
+
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+@media (max-width: 768px) {
+  .rish-marquee-item {
+    padding: 0 20px;
+  }
+
   .rish-marquee-item a {
     font-size: 13px;
   }
