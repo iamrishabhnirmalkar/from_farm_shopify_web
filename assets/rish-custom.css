@@ -324,6 +324,19 @@
   .rishu-hero-dot.active {
     width: 24px;
   }
+
+  /* Fix white space in auto height mode on mobile */
+  .rishu-hero-banner[style*="--rishu-hero-desktop-height: auto"] .rishu-hero-slider {
+    min-height: auto;
+    height: auto;
+  }
+
+  .rishu-hero-banner[style*="--rishu-hero-desktop-height: auto"] .rishu-hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
 }
 
 /* ============================================
