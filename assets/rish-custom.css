@@ -90,6 +90,26 @@
   /* Mobile default */
 }
 
+/* Auto height mode - shows full image */
+.rishu-hero-banner[style*="--rishu-hero-desktop-height: auto"] .rishu-hero-slider {
+  height: auto;
+  min-height: 300px;
+  /* Minimum height for very small images */
+}
+
+.rishu-hero-banner[style*="--rishu-hero-desktop-height: auto"] .rishu-hero-slide {
+  position: relative;
+  height: auto;
+}
+
+.rishu-hero-banner[style*="--rishu-hero-desktop-height: auto"] .rishu-hero-image {
+  position: relative;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  /* Default aspect ratio */
+}
+
 .rishu-hero-slides {
   position: relative;
   width: 100%;
@@ -256,12 +276,22 @@
     height: 70vh;
     /* Tablet */
   }
+
+  /* Keep auto height on tablet */
+  .rishu-hero-banner[style*="--rishu-hero-desktop-height: auto"] .rishu-hero-slider {
+    height: auto;
+  }
 }
 
 @media (min-width: 1024px) {
   .rishu-hero-slider {
     height: var(--rishu-hero-desktop-height, 80vh);
     /* Desktop */
+  }
+
+  /* Keep auto height on desktop */
+  .rishu-hero-banner[style*="--rishu-hero-desktop-height: auto"] .rishu-hero-slider {
+    height: auto;
   }
 }
 
