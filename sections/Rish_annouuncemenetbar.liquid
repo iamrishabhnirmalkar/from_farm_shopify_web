@@ -1,0 +1,87 @@
+{{ 'rish-custom.css' | asset_url | stylesheet_tag }}
+
+<div class="rish-announcement-bar" style="background-color: {{ section.settings.bg_color }};">
+  <div class="rish-marquee-wrapper">
+    {%- for i in (1..3) -%}
+      <div class="rish-marquee-track">
+        {%- for block in section.blocks -%}
+          <div class="rish-marquee-item">
+            <a href="{{ block.settings.link }}" style="color: {{ block.settings.text_color }};">
+              {{ block.settings.text }}
+            </a>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Rishu Announcement Bar",
+  "tag": "section",
+  "class": "rish-full-width-section",
+  "enabled_on": {
+    "groups": ["header", "footer"],
+    "templates": ["*"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#377753"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Welcome to our store"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#FFFFFF"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rishu Announcement Bar",
+      "blocks": [
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Free shipping on orders over $100"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "New collection available now"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
