@@ -12,31 +12,16 @@
     "rishu_hero_banner_gDGdWX": {
       "type": "rishu-hero-banner",
       "blocks": {
-        "slide_bWD8TR": {
-          "type": "slide",
-          "settings": {
-            "alt_text": "",
-            "link": ""
-          }
-        },
-        "slide_GjR86k": {
-          "type": "slide",
-          "settings": {
-            "alt_text": "",
-            "link": ""
-          }
-        },
         "slide_F9LiG9": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/India_S_First_Organic_Brand.webp",
             "alt_text": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "slide_bWD8TR",
-        "slide_GjR86k",
         "slide_F9LiG9"
       ],
       "name": "Rishu Hero Banner",
