@@ -12,16 +12,41 @@
 
 ### Image Size Recommendations
 
-#### Desktop Images
-- **Recommended Size**: `1920 x 1080px` (16:9 ratio)
-- **Minimum Size**: `1600 x 900px`
-- **Maximum Size**: `3840 x 2160px` (4K)
+#### **For Home Page Banner (Recommended)**
+
+Use the **Auto (Full Image)** height setting with these sizes:
+
+**Desktop/Tablet Image:**
+- **Size**: `1920 x 1080px` (16:9 ratio) ✅ **RECOMMENDED**
+- **Format**: JPG
+- **Max File Size**: 400-500 KB
+- **Why**: Shows complete banner without cropping on all devices
+
+**Mobile Image (Optional):**
+- **Size**: `1080 x 1080px` (1:1 square) ✅ **RECOMMENDED FOR MOBILE**
+- **Alternative**: `800 x 1200px` (2:3 portrait)
+- **Format**: JPG
+- **Max File Size**: 250-300 KB
+- **Why**: Better composition for mobile screens
+
+> **💡 Pro Tip**: Create ONE banner at 1920x1080px for desktop. The auto height mode will show the complete image without any cropping. Optionally add a square (1080x1080) version for mobile if you want different composition.
+
+---
+
+#### Alternative Sizes (For Fixed Height Mode)
+
+If using fixed viewport heights (60vh, 80vh, etc.):
+
+**Desktop Images:**
+- **Standard**: `1920 x 1080px` (16:9 ratio)
+- **Minimum**: `1600 x 900px`
+- **Maximum**: `3840 x 2160px` (4K)
 - **Aspect Ratio**: 16:9 (landscape)
 
-#### Mobile Images (Optional)
-- **Recommended Size**: `800 x 1200px` (2:3 ratio)
-- **Minimum Size**: `600 x 900px`
-- **Maximum Size**: `1200 x 1800px`
+**Mobile Images (Optional):**
+- **Recommended**: `800 x 1200px` (2:3 ratio)
+- **Minimum**: `600 x 900px`
+- **Maximum**: `1200 x 1800px`
 - **Aspect Ratio**: 2:3 (portrait) or 1:1 (square)
 
 > **Note**: The section only supports **2 image uploads**:
@@ -40,13 +65,18 @@
 
 ### Height Settings
 
-The hero banner uses viewport height (vh) for responsive sizing:
+The hero banner uses different height modes:
 
-| Device | Default Height | Customizable |
-|--------|----------------|--------------|
-| **Mobile** | 60vh (60% of screen) | Fixed |
-| **Tablet** | 70vh (70% of screen) | Fixed |
-| **Desktop** | 80vh (80% of screen) | Yes (60vh - 100vh) |
+| Mode | Mobile | Tablet | Desktop | Best For |
+|------|--------|--------|---------|----------|
+| **Auto (Default)** ✅ | Full image | Full image | Full image | **Home page banners - shows complete 1920x1080 image** |
+| 60vh | 60% screen | 60% screen | 60% screen | Small hero sections |
+| 70vh | 60% screen | 70% screen | 70% screen | Medium sections |
+| 80vh | 60% screen | 70% screen | 80% screen | Large hero sections |
+| 90vh | 60% screen | 70% screen | 90% screen | Extra large sections |
+| 100vh | 60% screen | 70% screen | 100% screen | Full screen takeover |
+
+> **Recommended**: Use **Auto** mode for home page banners to show the complete image without cropping!
 
 ---
 
