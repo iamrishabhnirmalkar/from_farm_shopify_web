@@ -16,6 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/India_S_First_Organic_Brand.webp",
+            "mobile_image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp",
             "alt_text": "",
             "link": ""
           }
