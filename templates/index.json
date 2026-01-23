@@ -16,13 +16,44 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/India_S_First_Organic_Brand.webp",
+            "mobile_image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp",
+            "alt_text": "",
+            "link": ""
+          }
+        },
+        "slide_VTerGM": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/India_S_First_Organic_Brand.webp",
+            "mobile_image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp",
+            "alt_text": "",
+            "link": ""
+          }
+        },
+        "slide_kTii4N": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/India_S_First_Organic_Brand.webp",
+            "mobile_image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp",
+            "alt_text": "",
+            "link": ""
+          }
+        },
+        "slide_mE9dgk": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/India_S_First_Organic_Brand.webp",
+            "mobile_image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp",
             "alt_text": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "slide_F9LiG9"
+        "slide_F9LiG9",
+        "slide_VTerGM",
+        "slide_kTii4N",
+        "slide_mE9dgk"
       ],
       "name": "Rishu Hero Banner",
       "settings": {
