@@ -24,9 +24,11 @@
 - **Maximum Size**: `1200 x 1800px`
 - **Aspect Ratio**: 2:3 (portrait) or 1:1 (square)
 
-#### Tablet Images
-- Uses desktop image automatically
-- Shopify serves optimized version at `1100-1500px` width
+> **Note**: The section only supports **2 image uploads**:
+> 1. **Desktop Image** (required) - Used for desktop AND tablet
+> 2. **Mobile Image** (optional) - Used only for mobile devices
+> 
+> Tablets automatically use the desktop image at an optimized size.
 
 ### File Format Guidelines
 
