@@ -419,51 +419,102 @@
         "reel_UpFXx6": {
           "type": "reel",
           "settings": {
-            "caption": ""
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
           }
         },
-        "reel_NG9NND": {
+        "reel_ywHJff": {
           "type": "reel",
           "settings": {
-            "caption": ""
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
           }
         },
-        "reel_e7Qajr": {
+        "reel_xfCmjW": {
           "type": "reel",
           "settings": {
-            "caption": ""
+            "product": "banana-powder-100gm",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 0,
+            "custom_rating_count": 10
           }
         },
-        "reel_hPm7Wc": {
+        "reel_V6Xd7x": {
           "type": "reel",
           "settings": {
-            "caption": ""
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
           }
         },
-        "reel_Ptjd68": {
+        "reel_9yEiH4": {
           "type": "reel",
           "settings": {
-            "caption": ""
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
           }
         },
-        "reel_rHkTWY": {
+        "reel_LxNHWW": {
           "type": "reel",
           "settings": {
-            "caption": ""
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
+          }
+        },
+        "reel_7QzAda": {
+          "type": "reel",
+          "settings": {
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
+          }
+        },
+        "reel_fUJmK4": {
+          "type": "reel",
+          "settings": {
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
           }
         }
       },
       "block_order": [
         "reel_UpFXx6",
-        "reel_NG9NND",
-        "reel_e7Qajr",
-        "reel_hPm7Wc",
-        "reel_Ptjd68",
-        "reel_rHkTWY"
+        "reel_ywHJff",
+        "reel_xfCmjW",
+        "reel_V6Xd7x",
+        "reel_9yEiH4",
+        "reel_LxNHWW",
+        "reel_7QzAda",
+        "reel_fUJmK4"
       ],
       "name": "Rishu Reels",
       "settings": {
-        "heading": "Watch our Reels",
+        "heading": "How To Use",
+        "autoplay": true,
+        "show_price": true,
+        "show_add_to_cart": true,
+        "show_rating": true,
+        "add_to_cart_color": "#008000",
         "text_color": "#000000",
         "bg_color": ""
       }
