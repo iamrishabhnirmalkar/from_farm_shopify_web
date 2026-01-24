@@ -466,7 +466,7 @@
             "custom_rating_count": 10
           }
         },
-        "reel_WhefhK": {
+        "reel_LxNHWW": {
           "type": "reel",
           "settings": {
             "product": "",
@@ -476,51 +476,21 @@
             "custom_rating_count": 10
           }
         },
-        "reel_NG9NND": {
+        "reel_7QzAda": {
           "type": "reel",
           "settings": {
             "product": "",
-            "video_url": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
             "caption": "",
             "custom_rating": 4.5,
             "custom_rating_count": 10
           }
         },
-        "reel_e7Qajr": {
+        "reel_fUJmK4": {
           "type": "reel",
           "settings": {
             "product": "",
-            "video_url": "",
-            "caption": "",
-            "custom_rating": 4.5,
-            "custom_rating_count": 10
-          }
-        },
-        "reel_hPm7Wc": {
-          "type": "reel",
-          "settings": {
-            "product": "",
-            "video_url": "",
-            "caption": "",
-            "custom_rating": 4.5,
-            "custom_rating_count": 10
-          }
-        },
-        "reel_Ptjd68": {
-          "type": "reel",
-          "settings": {
-            "product": "",
-            "video_url": "",
-            "caption": "",
-            "custom_rating": 4.5,
-            "custom_rating_count": 10
-          }
-        },
-        "reel_rHkTWY": {
-          "type": "reel",
-          "settings": {
-            "product": "",
-            "video_url": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
             "caption": "",
             "custom_rating": 4.5,
             "custom_rating_count": 10
@@ -533,16 +503,13 @@
         "reel_xfCmjW",
         "reel_V6Xd7x",
         "reel_9yEiH4",
-        "reel_WhefhK",
-        "reel_NG9NND",
-        "reel_e7Qajr",
-        "reel_hPm7Wc",
-        "reel_Ptjd68",
-        "reel_rHkTWY"
+        "reel_LxNHWW",
+        "reel_7QzAda",
+        "reel_fUJmK4"
       ],
       "name": "Rishu Reels",
       "settings": {
-        "heading": "Watch our Reels",
+        "heading": "How To Use",
         "autoplay": true,
         "show_price": true,
         "show_add_to_cart": true,
