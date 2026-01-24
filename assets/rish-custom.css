@@ -656,9 +656,242 @@
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+/* ============================================
+   Rishu Category Section
+   ============================================ */
+
+.rishu-category-section {
+  padding: 40px 0;
+  width: 100%;
+}
+
+.rishu-category-heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 24px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.rishu-category-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.rishu-category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 110px;
+  /* Constraints width for nice wrapping */
+}
+
+.rishu-category-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.rishu-category-link:hover {
+  transform: translateY(-5px);
+}
+
+.rishu-category-image-wrapper {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.rishu-category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rishu-category-placeholder {
+  background: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rishu-category-text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #333;
+}
+
+/* Mobile Responsive Slider */
+@media (max-width: 768px) {
+  .rishu-category-section {
+    padding: 30px 0;
+  }
+
+  .rishu-category-heading {
+    /* text-align: left; - Prompt said heading 32px, user add all this... usually center is safer for generic unless specified left. I'll make it center to match desktop for consistency unless prompted otherwise. */
+    text-align: center;
+    font-size: 32px;
+  }
+
+  .rishu-category-list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 10px 20px 20px;
+    /* Bottom padding for scrollbar / spacing */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    /* Hide scrollbar for cleaner look */
+    scrollbar-width: none;
+  }
+
+  .rishu-category-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rishu-category-item {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: auto;
+    /* Let it shrink to content or fixed */
+    padding-right: 4px;
+    /* Tiny spacing */
+  }
+
+  .rishu-category-image-wrapper {
+    margin-bottom: 8px;
+    /* Ensure 96px is maintained */
+    width: 96px;
+    height: 96px;
+  }
+
+
+}
+
+/* ============================================
+   Rishu Feature Scroll Section
+   ============================================ */
+
+.rishu-feature-scroll-section {
+  width: 100%;
+  padding: 80px 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  /* Default fallback color similar to blue background in image */
+  background-color: #D6EFFA;
+}
+
+.rishu-feature-heading {
+  font-size: 36px;
+  font-weight: 700;
+  color: #3C7D8A;
+  /* Teal/Blue color from image */
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.rishu-feature-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.rishu-feature-card {
+  background-color: #FFF9E5;
+  /* Cream background */
+  border-radius: 16px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.rishu-feature-card:hover {
+  transform: translateY(-8px);
+}
+
+.rishu-feature-card-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #145226;
+  /* Deep Green */
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+.rishu-feature-card-text {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.rishu-feature-card-image-wrapper {
+  width: 100%;
+  margin-top: auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rishu-feature-card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Mobile Responsive Slider */
+@media (max-width: 990px) {
+  .rishu-feature-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 24px;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    scrollbar-width: none;
+  }
+
+  .rishu-feature-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rishu-feature-card {
+    min-width: 280px;
+    max-width: 300px;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+  }
+
+  .rishu-feature-heading {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
 }

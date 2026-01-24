@@ -1,0 +1,79 @@
+{{ 'rish-custom.css' | asset_url | stylesheet_tag }}
+
+<div class="rishu-category-section section-{{ section.id }}-padding">
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="rishu-category-heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="rishu-category-list">
+      {%- for block in section.blocks -%}
+        <div class="rishu-category-item" {{ block.shopify_attributes }}>
+          <a href="{{ block.settings.link }}" class="rishu-category-link">
+            <div class="rishu-category-image-wrapper">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 200 | image_tag: class: 'rishu-category-image', loading: 'lazy' }}
+              {%- else -%}
+                {{ 'image' | placeholder_svg_tag: 'rishu-category-image rishu-category-placeholder' }}
+              {%- endif -%}
+            </div>
+            <span class="rishu-category-text">{{ block.settings.text }}</span>
+          </a>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Rishu Category",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by Category"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Category Name"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rishu Category",
+      "blocks": [
+        { "type": "category" },
+        { "type": "category" },
+        { "type": "category" },
+        { "type": "category" },
+        { "type": "category" },
+        { "type": "category" }
+      ]
+    }
+  ]
+}
+{% endschema %}
