@@ -18,6 +18,8 @@
   style="
     {% render 'spacing-style', settings: section.settings %}
     {% render 'gap-style', value: section.settings.gap %}
+    --rishu-sale-color: {{ section.settings.sale_price_color | default: '#ff0000' }};
+    --rishu-discount-color: {{ section.settings.discount_badge_color | default: '#ff0000' }};
   "
 >
   <div class="section-resource-list__header">
@@ -316,6 +318,18 @@
       "id": "color_scheme",
       "label": "t:settings.color_scheme",
       "default": "scheme-1"
+    },
+    {
+      "type": "color",
+      "id": "sale_price_color",
+      "label": "Sale Price Color",
+      "default": "#ff0000"
+    },
+    {
+       "type": "color",
+       "id": "discount_badge_color",
+       "label": "Discount Badge Color",
+       "default": "#ff0000"
     },
     {
       "type": "header",

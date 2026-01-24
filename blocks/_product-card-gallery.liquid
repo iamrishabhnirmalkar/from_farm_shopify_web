@@ -25,6 +25,13 @@
           {%- endif -%}
         </div>
       {%- endif -%}
+
+      {%- if product.compare_at_price > product.price -%}
+        {%- assign discount_percent = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
+        <div class="product-badges__badge product-badges__badge--rectangle" style="background-color: var(--rishu-discount-color); color: #fff;">
+           -{{ discount_percent }}%
+        </div>
+      {%- endif -%}
     </div>
     {%  if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add', product: product, section_id: section.id %}
