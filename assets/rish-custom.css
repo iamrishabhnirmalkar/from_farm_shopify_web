@@ -1516,12 +1516,7 @@
    ============================================ */
 .rishu-testimonial-section {
   padding: 60px 0;
-  width: 100vw;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
 }
 
 .rishu-testimonial-wrapper {
