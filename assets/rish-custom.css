@@ -11,7 +11,10 @@
 .rish-announcement-bar {
   width: 100%;
   overflow: hidden;
-  padding: 12px 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0;
   position: relative;
 }
 
