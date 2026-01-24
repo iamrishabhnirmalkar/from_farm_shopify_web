@@ -1,6 +1,7 @@
 
 
 {% assign product = closest.product %}
+{%- assign badge_mode = section.settings.badge_mode | default: 'both' -%}
 
 {% capture children %}
   {% unless product == blank %}
@@ -38,7 +39,7 @@
          }
       </style>
 
-      {%- if product.compare_at_price > product.price -%}
+      {%- if product.compare_at_price > product.price and (badge_mode == 'percentage' or badge_mode == 'both') -%}
         {%- assign discount_percent = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
         <!-- Custom Discount Badge: Absolute Top Right, Independent of Theme Classes -->
         <div style="position: absolute; top: 10px; right: 10px; z-index: 5; pointer-events: none;">
