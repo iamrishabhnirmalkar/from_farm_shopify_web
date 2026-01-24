@@ -793,6 +793,27 @@
   }
 
 
+
+}
+
+/* Bottom Category Illustration */
+.rishu-category-bottom-image {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 40px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.rishu-category-bottom-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
 }
 
 /* ============================================
