@@ -1,0 +1,363 @@
+{{ 'rish-custom.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign bg_color = section.settings.bg_color
+  assign bg_image = section.settings.bg_image
+  assign heading_color = section.settings.heading_color
+  assign text_color = section.settings.text_color
+-%}
+
+<div class="rishu-best-seller-section" 
+     style="{% if bg_color != blank %}background-color: {{ bg_color }};{% endif %}{% if bg_image != blank %}background-image: url('{{ bg_image | image_url: width: 2000 }}');{% endif %}">
+  
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="rishu-section-heading" style="color: {{ heading_color | default: '#000' }};">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="rishu-best-seller-wrapper">
+      <button class="rishu-slider-arrow prev-arrow" onclick="scrollRishuSlider(-1)">❮</button>
+      <div class="rishu-best-seller-slider" id="rishu-best-seller-slider-{{ section.id }}">
+      {%- comment -%} 1. Manual Blocks Priority {%- endcomment -%}
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          {%- assign product = all_products[block.settings.product] -%}
+          {%- if product != blank -%}
+             <div class="rishu-product-card">
+               <div class="rishu-card-image-wrapper">
+                 <a href="{{ product.url }}" class="rishu-card-link">
+                   <div class="rishu-card-img-container">
+                     {{ product.featured_image | image_url: width: 600 | image_tag: class: 'rishu-card-img primary-img', loading: 'lazy' }}
+                     {%- if product.images[1] != blank -%}
+                       {{ product.images[1] | image_url: width: 600 | image_tag: class: 'rishu-card-img hover-img', loading: 'lazy' }}
+                     {%- endif -%}
+                   </div>
+                 </a>
+                 
+                 {%- comment -%} Badges Container (Top Left) {%- endcomment -%}
+                 <div class="rishu-card-badges">
+                   {%- if product.compare_at_price > product.price -%}
+                     {%- assign discount = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
+                     <span class="rishu-badge discount-badge">-{{ discount }}%</span>
+                   {%- endif -%}
+                   
+                   {%- if product.tags.size > 0 -%}
+                      <span class="rishu-badge tag-badge">{{ product.tags.first }}</span>
+                   {%- endif -%}
+                 </div>
+               </div>
+
+               <div class="rishu-card-info">
+                 <h3 class="rishu-card-title"><a href="{{ product.url }}">{{ product.title | truncate: 50 }}</a></h3>
+                 <div class="rishu-card-price">
+                   {%- if product.compare_at_price > product.price -%}
+                     <span class="price-sale">{{ product.price | money }}</span>
+                     <span class="price-compare">{{ product.compare_at_price | money }}</span>
+                   {%- else -%}
+                     <span class="price-regular">{{ product.price | money }}</span>
+                   {%- endif -%}
+                 </div>
+                 
+                 <form method="post" action="/cart/add" class="rishu-quick-add-form" onsubmit="event.preventDefault(); rishuBestSellerAddToCart(this);">
+                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                   <button type="submit" class="rishu-btn-add" style="background-color: {{ section.settings.add_to_cart_color | default: '#000' }};">
+                     <span class="rishu-btn-text">Add to Cart</span>
+                     <span class="add-to-cart__added">
+                       <svg aria-hidden="true" class="checkmark-burst" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g class="check">
+                            <circle class="ring" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path class="tick" d="M9 12.75L11.25 15L15 9.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <g class="burst">
+                            <g style="--index: 0;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                            <g style="--index: 1;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                            <g style="--index: 2;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                            <g style="--index: 3;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                            <g style="--index: 4;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                            <g style="--index: 5;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                            <g style="--index: 6;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                            <g style="--index: 7;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                          </g>
+                        </svg>
+                     </span>
+                   </button>
+                 </form>
+               </div>
+             </div>
+          {%- endif -%}
+        {%- endfor -%}
+      
+      {%- comment -%} 2. Collection Fallback {%- endcomment -%}
+      {%- elsif section.settings.collection != blank -%}
+        {%- for product in collections[section.settings.collection].products limit: 12 -%}
+           <div class="rishu-product-card">
+               <div class="rishu-card-image-wrapper">
+                 <a href="{{ product.url }}" class="rishu-card-link">
+                   <div class="rishu-card-img-container">
+                     {{ product.featured_image | image_url: width: 600 | image_tag: class: 'rishu-card-img primary-img', loading: 'lazy' }}
+                     {%- if product.images[1] != blank -%}
+                       {{ product.images[1] | image_url: width: 600 | image_tag: class: 'rishu-card-img hover-img', loading: 'lazy' }}
+                     {%- endif -%}
+                   </div>
+                 </a>
+                 
+                 <div class="rishu-card-badges">
+                   {%- if product.compare_at_price > product.price -%}
+                     {%- assign discount = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
+                     <span class="rishu-badge discount-badge">-{{ discount }}%</span>
+                   {%- endif -%}
+                   
+                   {%- if product.tags.size > 0 -%}
+                      <span class="rishu-badge tag-badge">{{ product.tags.first }}</span>
+                   {%- endif -%}
+                 </div>
+               </div>
+
+               <div class="rishu-card-info">
+                 <h3 class="rishu-card-title"><a href="{{ product.url }}">{{ product.title | truncate: 50 }}</a></h3>
+                 <div class="rishu-card-price">
+                   {%- if product.compare_at_price > product.price -%}
+                     <span class="price-sale">{{ product.price | money }}</span>
+                     <span class="price-compare">{{ product.compare_at_price | money }}</span>
+                   {%- else -%}
+                     <span class="price-regular">{{ product.price | money }}</span>
+                   {%- endif -%}
+                 </div>
+                 
+                 <form method="post" action="/cart/add" class="rishu-quick-add-form" onsubmit="event.preventDefault(); rishuBestSellerAddToCart(this);">
+                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                   <button type="submit" class="rishu-btn-add" style="background-color: {{ section.settings.add_to_cart_color | default: '#000' }};">
+                     <span class="rishu-btn-text">Add to Cart</span>
+                     <span class="add-to-cart__added">
+                       <svg aria-hidden="true" class="checkmark-burst" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g class="check">
+                            <circle class="ring" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path class="tick" d="M9 12.75L11.25 15L15 9.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <g class="burst">
+                            <g style="--index: 0;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                            <g style="--index: 1;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                            <g style="--index: 2;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                            <g style="--index: 3;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                            <g style="--index: 4;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                            <g style="--index: 5;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                            <g style="--index: 6;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                            <g style="--index: 7;"><line class="line" stroke-linecap="round" pathLength="1" x1="12" y1="8.5" x2="12" y2="15.5" stroke="currentColor"/></g>
+                          </g>
+                        </svg>
+                     </span>
+                   </button>
+                 </form>
+               </div>
+             </div>
+        {%- endfor -%}
+      
+      {%- comment -%} 3. Onboarding (Empty State) {%- endcomment -%}
+      {%- else -%}
+        {%- for i in (1..6) -%}
+          <div class="rishu-product-card">
+             <div class="rishu-card-image-wrapper">
+               {{ 'product-' | append: i | placeholder_svg_tag: 'rishu-placeholder-img' }}
+             </div>
+             <div class="rishu-card-info">
+               <h3>Example Product</h3>
+               <p>$19.99</p>
+             </div>
+          </div>
+        {%- endfor -%}
+      </div>
+      <button class="rishu-slider-arrow next-arrow" onclick="scrollRishuSlider(1)">❯</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function scrollRishuSlider(direction) {
+    const slider = document.querySelector('.rishu-best-seller-slider');
+    const scrollAmount = slider.clientWidth / 2; // Scroll half view
+    slider.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+  }
+
+  function rishuBestSellerAddToCart(form) {
+    const formData = new FormData(form);
+    const btn = form.querySelector('button');
+    
+    // Set loading state
+    btn.setAttribute('data-loading', 'true');
+    btn.disabled = true;
+
+    // Optimistic Cart Count Update (Instant Feedback)
+    const bubbles = document.querySelectorAll('.cart-count-bubble span, .cart-count, .header__cart-count');
+    bubbles.forEach(el => {
+        const currentCount = parseInt(el.innerText.replace(/\D/g, '')) || 0;
+        el.innerText = currentCount + 1;
+        el.classList.remove('hidden'); // Ensure visible if it was hidden
+        el.closest('.cart-count-bubble')?.classList.remove('hidden');
+    });
+
+    // 1. Gather Section IDs for single-request update (Faster!)
+    const cartItemsComponents = document.querySelectorAll('cart-items-component');
+    let sectionIds = [];
+    cartItemsComponents.forEach((item) => {
+      if (item.dataset.sectionId) sectionIds.push(item.dataset.sectionId);
+    });
+    // Also include 'cart-icon-bubble' or similar common section if possible, 
+    // but typically themes use the specific section ID of the drawer/header.
+    // Try to find the header section ID specifically if needed, but often 'cart-drawer'
+    // is sufficient if it's a section. 
+    // Let's grab all cart-related sections we can find to be safe.
+    const cartrelated = document.querySelectorAll('[id^="shopify-section-"]');
+    cartrelated.forEach(sec => {
+        if(sec.innerHTML.includes('cart-count') || sec.innerHTML.includes('cart-drawer')) {
+            const sid = sec.id.replace('shopify-section-', '');
+            if(!sectionIds.includes(sid)) sectionIds.push(sid);
+        }
+    });
+
+    if(sectionIds.length > 0) {
+        formData.append('sections', sectionIds.join(','));
+        formData.append('sections_url', window.location.pathname); 
+    }
+
+    const config = {
+      method: 'POST',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        'Accept': 'application/javascript' 
+      },
+      body: formData
+    };
+
+    fetch(window.Shopify.routes.root + 'cart/add.js', config)
+    .then(response => response.json())
+    .then(data => {
+      if (data.status) {
+         // Error handling
+         console.error('Error adding to cart:', data.description);
+         btn.removeAttribute('data-loading');
+         return;
+      }
+
+      // 2. Direct DOM Update from 'sections' response (No second fetch!)
+      if (data.sections) {
+          for (const [sectionId, html] of Object.entries(data.sections)) {
+              const selector = `#shopify-section-${sectionId}`;
+              const element = document.querySelector(selector);
+              if (element) {
+                  element.innerHTML = html; // Direct Replace
+              }
+          }
+      }
+
+      // 3. Update Cart Bubble (Fallback if not in sections)
+       fetch(window.Shopify.routes.root + 'cart.js')
+      .then(res => res.json())
+      .then(cart => {
+          // Update generic count elements immediately
+          const bubbles = document.querySelectorAll('.cart-count-bubble span, .cart-count, .header__cart-count');
+          bubbles.forEach(el => {
+             if(el) el.innerText = cart.item_count;
+          });
+
+           // 4. Dispatch standard theme events
+          document.documentElement.dispatchEvent(new CustomEvent('cart:update', { 
+            bubbles: true, 
+            detail: { cart: cart, resource: cart } 
+          }));
+          
+           // 5. Open Drawer
+            const drawer = document.querySelector('cart-drawer-component');
+            if (drawer && typeof drawer.open === 'function') {
+                drawer.open();
+            } else {
+                document.documentElement.dispatchEvent(new CustomEvent('cart:open', { bubbles: true }));
+            }
+      });
+
+      // Success State
+      btn.removeAttribute('data-loading');
+      btn.setAttribute('data-added', 'true');
+      
+      setTimeout(() => {
+          btn.removeAttribute('data-added');
+          btn.disabled = false;
+      }, 2000);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      btn.removeAttribute('data-loading');
+      btn.disabled = false;
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Rishu Featured Collection",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Used if no individual products are added below"
+    },
+    {
+       "type": "color",
+       "id": "bg_color",
+       "label": "Background Color",
+       "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#000000"
+    },
+     {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "add_to_cart_color",
+      "label": "Add to Cart Button Color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rishu Featured Collection",
+      "settings": {
+        "heading": "Our Best Sellers"
+      }
+    }
+  ]
+}
+{% endschema %}
