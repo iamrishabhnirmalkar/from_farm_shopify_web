@@ -487,7 +487,7 @@
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
-                "type_preset": "h4",
+                "type_preset": "h5",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -552,7 +552,7 @@
                   "type": "add-to-cart",
                   "static": true,
                   "settings": {
-                    "style_class": "button-secondary"
+                    "style_class": "button"
                   },
                   "blocks": {}
                 },
@@ -597,6 +597,7 @@
     },
     "rishu_best_seller_tNUW83": {
       "type": "rishu-best-seller",
+      "disabled": true,
       "name": "Rishu Best Seller",
       "settings": {
         "heading": "Our Best Sellers",
