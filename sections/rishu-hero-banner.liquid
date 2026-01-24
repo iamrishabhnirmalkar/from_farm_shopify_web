@@ -5,7 +5,7 @@
   data-autoplay="{{ section.settings.autoplay }}"
   data-speed="{{ section.settings.autoplay_speed }}"
   data-animation="{{ section.settings.animation_type }}"
-  style="--rishu-hero-desktop-height: {{ section.settings.desktop_height }};"
+  style="--rishu-hero-desktop-height: {{ section.settings.desktop_height }}; {% if section.settings.bg_color != blank %}background-color: {{ section.settings.bg_color }};{% endif %}"
 >
   <div class="rishu-hero-slider">
     <div class="rishu-hero-slides">
@@ -226,6 +226,12 @@
     {
       "type": "header",
       "content": "Layout Settings"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#000000"
     },
     {
       "type": "select",
