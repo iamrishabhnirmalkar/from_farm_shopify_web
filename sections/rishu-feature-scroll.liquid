@@ -2,29 +2,31 @@
 
 <div class="rishu-feature-scroll-section" style="{% if section.settings.bg_image %}background-image: url('{{ section.settings.bg_image | image_url: width: 2000 }}');{% endif %}">
 
-    {%- if section.settings.heading != blank -%}
-      <h2 class="rishu-feature-heading">{{ section.settings.heading }}</h2>
-    {%- endif -%}
+    <div class="page-width">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="rishu-feature-heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
 
-    <div class="rishu-feature-container">
-      {%- for block in section.blocks -%}
-        <div class="rishu-feature-card" {{ block.shopify_attributes }}>
-          {%- if block.settings.image != blank -%}
-             {{ block.settings.image | image_url: width: 600 | image_tag: class: 'rishu-feature-card-image', loading: 'lazy' }}
-          {%- endif -%}
+      <div class="rishu-feature-container">
+        {%- for block in section.blocks -%}
+          <div class="rishu-feature-card" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+               {{ block.settings.image | image_url: width: 600 | image_tag: class: 'rishu-feature-card-image', loading: 'lazy' }}
+            {%- endif -%}
 
-          {%- if block.settings.heading != blank or block.settings.text != blank -%}
-             <div class="rishu-feature-card-content">
-               {%- if block.settings.heading != blank -%}
-                 <h3 class="rishu-feature-card-heading">{{ block.settings.heading }}</h3>
-               {%- endif -%}
-               {%- if block.settings.text != blank -%}
-                 <div class="rishu-feature-card-text">{{ block.settings.text }}</div>
-               {%- endif -%}
-             </div>
-          {%- endif -%}
-        </div>
-      {%- endfor -%}
+            {%- if block.settings.heading != blank or block.settings.text != blank -%}
+               <div class="rishu-feature-card-content">
+                 {%- if block.settings.heading != blank -%}
+                   <h3 class="rishu-feature-card-heading">{{ block.settings.heading }}</h3>
+                 {%- endif -%}
+                 {%- if block.settings.text != blank -%}
+                   <div class="rishu-feature-card-text">{{ block.settings.text }}</div>
+                 {%- endif -%}
+               </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
     </div>
   </div>
 </div>
@@ -33,7 +35,6 @@
 {
   "name": "Rishu Feature Scroll",
   "tag": "section",
-  "class": "section",
   "settings": [
     {
       "type": "text",
