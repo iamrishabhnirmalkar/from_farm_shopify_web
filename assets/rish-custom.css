@@ -819,7 +819,9 @@
 .rishu-feature-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 30px;
+  /* Increased gap */
+  width: 100%;
 }
 
 .rishu-feature-card {
@@ -893,6 +895,9 @@
     scroll-snap-type: x mandatory;
     gap: 16px;
     padding-bottom: 24px;
+    padding-left: 20px;
+    /* Mobile edge spacing */
+    padding-right: 20px;
     -webkit-overflow-scrolling: touch;
     width: 100%;
     scrollbar-width: none;
@@ -946,9 +951,12 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 20px;
-  padding-bottom: 30px;
+  padding: 0 40px 30px;
+  /* Left/Right padding for edge spacing */
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  justify-content: flex-start;
+  /* Ensure start alignment for scrolling */
 }
 
 .rishu-reels-container::-webkit-scrollbar {

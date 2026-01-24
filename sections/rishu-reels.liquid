@@ -10,28 +10,30 @@
     <div class="rishu-reels-container">
       {%- for block in section.blocks -%}
         <div class="rishu-reel-card" {{ block.shopify_attributes }}>
+          <a href="{{ block.settings.link | default: '#' }}" class="rishu-reel-link" {% if block.settings.link == blank %}style="pointer-events: none;"{% endif %}>
           
-          {%- comment -%} Top Bar with Logo {%- endcomment -%}
-          {%- if section.settings.logo != blank -%}
-            <div class="rishu-reel-top-bar">
-               {{ section.settings.logo | image_url: width: 100 | image_tag: class: 'rishu-reel-logo', loading: 'lazy' }}
-            </div>
-          {%- endif -%}
-
-          {%- comment -%} Reel Content (Image) {%- endcomment -%}
-          <div class="rishu-reel-media">
-            {%- if block.settings.image != blank -%}
-              {{ block.settings.image | image_url: width: 600 | image_tag: class: 'rishu-reel-image', loading: 'lazy' }}
-            {%- else -%}
-              {{ 'image' | placeholder_svg_tag: 'rishu-reel-image rishu-reel-placeholder' }}
+            {%- comment -%} Top Bar with Logo {%- endcomment -%}
+            {%- if section.settings.logo != blank -%}
+              <div class="rishu-reel-top-bar">
+                 {{ section.settings.logo | image_url: width: 100 | image_tag: class: 'rishu-reel-logo', loading: 'lazy' }}
+              </div>
             {%- endif -%}
-          </div>
 
-          {%- if block.settings.caption != blank -%}
-            <div class="rishu-reel-caption" style="{% if section.settings.text_color != blank %}color: {{ section.settings.text_color }};{% endif %}">
-              {{ block.settings.caption }}
+            {%- comment -%} Reel Content (Image) {%- endcomment -%}
+            <div class="rishu-reel-media">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 600 | image_tag: class: 'rishu-reel-image', loading: 'lazy' }}
+              {%- else -%}
+                {{ 'image' | placeholder_svg_tag: 'rishu-reel-image rishu-reel-placeholder' }}
+              {%- endif -%}
             </div>
-          {%- endif -%}
+
+            {%- if block.settings.caption != blank -%}
+              <div class="rishu-reel-caption" style="{% if section.settings.text_color != blank %}color: {{ section.settings.text_color }};{% endif %}">
+                {{ block.settings.caption }}
+              </div>
+            {%- endif -%}
+          </a>
         </div>
       {%- endfor -%}
     </div>
@@ -81,6 +83,11 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image (9:16)"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Video Link"
         },
         {
           "type": "text",
