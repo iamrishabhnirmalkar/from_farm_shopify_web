@@ -1166,3 +1166,158 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+/* ============================================
+   Rishu Best Seller Section
+   ============================================ */
+.rishu-best-seller-section {
+  padding: 60px 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rishu-section-heading {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.rishu-best-seller-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.rishu-best-seller-slider::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari */
+}
+
+/* Card Sizing */
+.rishu-product-card {
+  flex: 0 0 calc((100% - (5 * 20px)) / 6);
+  /* Show 6 on Desktop */
+  scroll-snap-align: start;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  min-width: 180px;
+  /* Prevent being too squished */
+}
+
+.rishu-product-card:hover {
+  transform: translateY(-5px);
+}
+
+.rishu-card-image-wrapper {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.rishu-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Badges */
+.rishu-card-badges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.rishu-badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.discount-badge {
+  background-color: #ff0000;
+  /* Red for discount */
+}
+
+.tag-badge {
+  background-color: #008000;
+  /* Green for tag (Best Seller etc) */
+}
+
+/* Card Info */
+.rishu-card-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.rishu-card-title a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.rishu-card-price {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.price-regular,
+.price-sale {
+  font-weight: 700;
+  color: #000;
+}
+
+.price-compare {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+/* Add to Cart Button Reuse */
+/* Using .rishu-btn-add defined earlier, ensuring consistent look */
+
+
+/* Mobile Responsive */
+@media screen and (max-width: 990px) {
+  .rishu-product-card {
+    flex: 0 0 75%;
+    /* Show 1 and a half on Mobile */
+    min-width: 75%;
+  }
+
+  .rishu-best-seller-slider {
+    padding-left: 20px;
+    /* Peek effect starter padding */
+    padding-right: 20px;
+  }
+}
