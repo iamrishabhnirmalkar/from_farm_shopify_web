@@ -43,7 +43,7 @@
               <video
                 class="rishu-reel-video"
                 {% if block.settings.image != blank %}poster="{{ block.settings.image | image_url: width: 600 }}"{% endif %}
-                muted loop playsinline preload="none"
+                muted loop playsinline preload="metadata"
                 data-video-url="{{ video_url }}"
               >
                 <source src="{{ video_url }}" type="video/mp4">
