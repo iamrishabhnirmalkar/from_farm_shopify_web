@@ -51,9 +51,9 @@
                    {%- endif -%}
                  </div>
                  
-                 <form method="post" action="/cart/add" class="rishu-quick-add-form">
+                 <form method="post" action="/cart/add" class="rishu-quick-add-form" onsubmit="event.preventDefault(); rishuBestSellerAddToCart(this);">
                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                   <button type="submit" class="rishu-btn-add">Add to Cart</button>
+                   <button type="submit" class="rishu-btn-add" style="background-color: {{ section.settings.add_to_cart_color | default: '#000' }};">Add to Cart</button>
                  </form>
                </div>
              </div>
@@ -92,9 +92,9 @@
                    {%- endif -%}
                  </div>
                  
-                 <form method="post" action="/cart/add" class="rishu-quick-add-form">
+                 <form method="post" action="/cart/add" class="rishu-quick-add-form" onsubmit="event.preventDefault(); rishuBestSellerAddToCart(this);">
                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                   <button type="submit" class="rishu-btn-add">Add to Cart</button>
+                   <button type="submit" class="rishu-btn-add" style="background-color: {{ section.settings.add_to_cart_color | default: '#000' }};">Add to Cart</button>
                  </form>
                </div>
              </div>
@@ -117,6 +117,54 @@
     </div>
   </div>
 </div>
+
+<script>
+  function rishuBestSellerAddToCart(form) {
+    const formData = new FormData(form);
+    const btn = form.querySelector('button');
+    const originalText = btn.innerText;
+    
+    btn.innerText = 'Adding...';
+    btn.disabled = true;
+
+    fetch(window.Shopify.routes.root + 'cart/add.js', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Update Cart Bubble
+      fetch(window.Shopify.routes.root + 'cart.js')
+      .then(res => res.json())
+      .then(cart => {
+         // Try to find common cart count elements
+         const bubbles = document.querySelectorAll('.cart-count-bubble span, .cart-count, .header__cart-count');
+         bubbles.forEach(el => {
+            if(el) el.innerText = cart.item_count;
+         });
+         
+         // Dispatch events for themes that listen
+         document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true, detail: cart }));
+         document.documentElement.dispatchEvent(new CustomEvent('cart:update', { bubbles: true, detail: cart }));
+         
+         // Reset Button
+         btn.innerText = 'Added';
+         setTimeout(() => {
+             btn.innerText = originalText;
+             btn.disabled = false;
+         }, 2000);
+      });
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      btn.innerText = 'Error';
+      setTimeout(() => {
+           btn.innerText = originalText;
+           btn.disabled = false;
+       }, 2000);
+    });
+  }
+</script>
 
 {% schema %}
 {
@@ -156,6 +204,12 @@
       "type": "color",
       "id": "text_color",
       "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "add_to_cart_color",
+      "label": "Add to Cart Button Color",
       "default": "#000000"
     }
   ],

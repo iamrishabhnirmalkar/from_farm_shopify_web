@@ -1192,24 +1192,31 @@
 
 .rishu-best-seller-slider {
   display: flex;
+  flex-wrap: nowrap;
+  /* Ensure horizontal flow */
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 20px;
   padding-bottom: 20px;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  /* Firefox */
+  /* scrollbar-width: none;  Kept visible for desktop mouse users if needed, or hide if preferred. User complaint suggested "not working", maybe they couldn't scroll? */
 }
 
 .rishu-best-seller-slider::-webkit-scrollbar {
-  display: none;
-  /* Chrome/Safari */
+  height: 6px;
+}
+
+.rishu-best-seller-slider::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
 }
 
 /* Card Sizing */
 .rishu-product-card {
   flex: 0 0 calc((100% - (5 * 20px)) / 6);
   /* Show 6 on Desktop */
+  flex-shrink: 0;
+  /* Crucial for scrolling */
   scroll-snap-align: start;
   background: white;
   border-radius: 12px;
