@@ -1,0 +1,282 @@
+<!-- Media Coverage Section -->
+<section
+  class="media-coverage"
+  style="padding: {{ section.settings.section_padding_top }}px 0 {{ section.settings.section_padding_bottom }}px 0; background-color: {{ section.settings.background_color }};"
+>
+  <div class="media-coverage__container">
+    <h2 class="media-coverage__title" style="color: {{ section.settings.title_color }};">
+      {{ section.settings.title }}
+    </h2>
+    <div class="media-coverage__wrapper">
+      <div class="media-coverage__logos" id="logoContainer-{{ section.id }}">
+        {% for block in section.blocks %}
+          <div class="media-coverage__logo" {{ block.shopify_attributes }}>
+            <div class="logo-container">
+              <div class="logo-text">
+                {% if block.settings.logo_image %}
+                  {{
+                    block.settings.logo_image
+                    | image_url: width: 200
+                    | image_tag: alt: block.settings.logo_alt, class: 'logo-image'
+                  }}
+                {% else %}
+                  <span class="logo-brand">{{ block.settings.logo_text }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .media-coverage {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  .media-coverage__container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .media-coverage__title {
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 60px 0;
+    letter-spacing: 2px;
+  }
+
+  .media-coverage__wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .media-coverage__logos {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    transition: transform 0.8s ease;
+    width: fit-content;
+  }
+
+  .media-coverage__logos.sliding {
+    animation: autoSlide 20s linear infinite;
+  }
+
+  .media-coverage__logo {
+    flex: 0 0 auto;
+    width: 200px; /* Fixed width container */
+    height: 100px; /* Fixed height container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures any logo size fits within the box */
+    display: block;
+  }
+
+  .logo-brand {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  @keyframes autoSlide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50%)); /* Move half way assuming duplicate content */
+    }
+  }
+
+  /* Tablet Styles */
+  @media (max-width: 1024px) {
+    .media-coverage__title {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    .media-coverage__logo {
+        width: 160px;
+        height: 80px;
+    }
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .media-coverage {
+      padding: 30px 0 !important;
+    }
+
+    .media-coverage__title {
+      font-size: 24px !important;
+      margin-bottom: 30px;
+    }
+
+    .media-coverage__logos {
+      gap: 15px;
+    }
+
+    .media-coverage__logo {
+        width: 120px;
+        height: 60px;
+    }
+  }
+
+  /* Small Mobile Styles */
+  @media (max-width: 480px) {
+    .media-coverage__title {
+      font-size: 20px !important;
+      letter-spacing: 1px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const logoContainer = document.getElementById('logoContainer-{{ section.id }}');
+    const logos = logoContainer.querySelectorAll('.media-coverage__logo');
+
+    // Always duplicate for safe infinite scroll if enough items exist or force it
+    if (logos.length > 0) {
+      // Duplicate x2 to ensure smooth infinite loop
+      const originalLogos = Array.from(logos);
+      originalLogos.forEach((logo) => {
+        const clone = logo.cloneNode(true);
+        logoContainer.appendChild(clone);
+      });
+      // And maybe one more time if few items
+       if(logos.length < 5) {
+          originalLogos.forEach((logo) => {
+            const clone = logo.cloneNode(true);
+            logoContainer.appendChild(clone);
+          });
+       }
+
+      // Add sliding class to start animation
+      logoContainer.classList.add('sliding');
+
+      // Pause animation on hover
+      logoContainer.addEventListener('mouseenter', function () {
+        this.style.animationPlayState = 'paused';
+      });
+
+      // Resume animation when not hovering
+      logoContainer.addEventListener('mouseleave', function () {
+        this.style.animationPlayState = 'running';
+      });
+    }
+  });
+</script>
+
+{%- schema -%}
+{
+  "name": "Orgalife Media Coverage",
+  "tag": "section",
+  "class": "media-coverage-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "MEDIA COVERAGE"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f8f9fa"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#0E7541"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Media Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo Image"
+        },
+        {
+          "type": "text",
+          "id": "logo_text",
+          "label": "Logo Text (fallback)",
+          "default": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "logo_alt",
+          "label": "Logo Alt Text",
+          "default": "Media Logo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Orgalife Media Coverage",
+      "category": "Rishu",
+      "blocks": [
+        { "type": "logo", "settings": { "logo_text": "Media 1" } },
+        { "type": "logo", "settings": { "logo_text": "Media 2" } },
+        { "type": "logo", "settings": { "logo_text": "Media 3" } },
+        { "type": "logo", "settings": { "logo_text": "Media 4" } },
+        { "type": "logo", "settings": { "logo_text": "Media 5" } }
+      ]
+    }
+  ]
+}
+{%- endschema -%}
