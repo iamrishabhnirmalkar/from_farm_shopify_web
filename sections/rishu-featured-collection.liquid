@@ -16,7 +16,7 @@
     {%- endif -%}
 
     <div class="rishu-best-seller-wrapper">
-      <button class="rishu-slider-arrow prev-arrow" onclick="scrollRishuSlider(-1)">❮</button>
+      <button class="rishu-slider-arrow prev-arrow" onclick="scrollRishuFeaturedSlider(-1)">❮</button>
       <div class="rishu-best-seller-slider" id="rishu-best-seller-slider-{{ section.id }}">
       {%- comment -%} 1. Manual Blocks Priority {%- endcomment -%}
       {%- if section.blocks.size > 0 -%}
@@ -58,7 +58,7 @@
                    {%- endif -%}
                  </div>
                  
-                 <form method="post" action="/cart/add" class="rishu-quick-add-form" onsubmit="event.preventDefault(); rishuBestSellerAddToCart(this);">
+                 <form method="post" action="/cart/add" class="rishu-quick-add-form" onsubmit="event.preventDefault(); rishuFeaturedCollectionAddToCart(this);">
                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                    <button type="submit" class="rishu-btn-add" style="background-color: {{ section.settings.add_to_cart_color | default: '#000' }};">
                      <span class="rishu-btn-text">Add to Cart</span>
@@ -124,7 +124,7 @@
                    {%- endif -%}
                  </div>
                  
-                 <form method="post" action="/cart/add" class="rishu-quick-add-form" onsubmit="event.preventDefault(); rishuBestSellerAddToCart(this);">
+                 <form method="post" action="/cart/add" class="rishu-quick-add-form" onsubmit="event.preventDefault(); rishuFeaturedCollectionAddToCart(this);">
                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                    <button type="submit" class="rishu-btn-add" style="background-color: {{ section.settings.add_to_cart_color | default: '#000' }};">
                      <span class="rishu-btn-text">Add to Cart</span>
@@ -166,19 +166,19 @@
           </div>
         {%- endfor -%}
       </div>
-      <button class="rishu-slider-arrow next-arrow" onclick="scrollRishuSlider(1)">❯</button>
+      <button class="rishu-slider-arrow next-arrow" onclick="scrollRishuFeaturedSlider(1)">❯</button>
     </div>
   </div>
 </div>
 
 <script>
-  function scrollRishuSlider(direction) {
+  function scrollRishuFeaturedSlider(direction) {
     const slider = document.querySelector('.rishu-best-seller-slider');
     const scrollAmount = slider.clientWidth / 2; // Scroll half view
     slider.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
   }
 
-  function rishuBestSellerAddToCart(form) {
+  function rishuFeaturedCollectionAddToCart(form) {
     const formData = new FormData(form);
     const btn = form.querySelector('button');
     
