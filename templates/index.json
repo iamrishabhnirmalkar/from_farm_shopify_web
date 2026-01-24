@@ -177,7 +177,7 @@
       "settings": {
         "heading": "From Farm To Your Kitchen",
         "text_color": "#000000",
-        "bg_color": ""
+        "bg_color": "#ffffff"
       }
     },
     "product_list_amdKtT": {
@@ -489,6 +489,7 @@
         "product_fgqE7P",
         "product_xyMHpg"
       ],
+      "disabled": true,
       "name": "Rishu Best Seller",
       "settings": {
         "heading": "Our Best Sellers",
@@ -513,6 +514,26 @@
           }
         },
         "reel_ywHJff": {
+          "type": "reel",
+          "settings": {
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
+          }
+        },
+        "reel_Qdr4zn": {
+          "type": "reel",
+          "settings": {
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
+          }
+        },
+        "reel_ffDqRH": {
           "type": "reel",
           "settings": {
             "product": "",
@@ -576,6 +597,8 @@
       "block_order": [
         "reel_UpFXx6",
         "reel_ywHJff",
+        "reel_Qdr4zn",
+        "reel_ffDqRH",
         "reel_V6Xd7x",
         "reel_9yEiH4",
         "reel_LxNHWW",
@@ -593,7 +616,7 @@
         "show_rating": true,
         "add_to_cart_color": "#008000",
         "text_color": "#000000",
-        "bg_color": ""
+        "bg_color": "#ffffff"
       }
     },
     "rishu_best_seller_tNUW83": {
