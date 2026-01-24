@@ -419,42 +419,121 @@
         "reel_UpFXx6": {
           "type": "reel",
           "settings": {
-            "caption": ""
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
+          }
+        },
+        "reel_ywHJff": {
+          "type": "reel",
+          "settings": {
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
+          }
+        },
+        "reel_xfCmjW": {
+          "type": "reel",
+          "settings": {
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
+          }
+        },
+        "reel_V6Xd7x": {
+          "type": "reel",
+          "settings": {
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
+          }
+        },
+        "reel_9yEiH4": {
+          "type": "reel",
+          "settings": {
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
+          }
+        },
+        "reel_WhefhK": {
+          "type": "reel",
+          "settings": {
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
           }
         },
         "reel_NG9NND": {
           "type": "reel",
           "settings": {
-            "caption": ""
+            "product": "",
+            "video_url": "",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
           }
         },
         "reel_e7Qajr": {
           "type": "reel",
           "settings": {
-            "caption": ""
+            "product": "",
+            "video_url": "",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
           }
         },
         "reel_hPm7Wc": {
           "type": "reel",
           "settings": {
-            "caption": ""
+            "product": "",
+            "video_url": "",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
           }
         },
         "reel_Ptjd68": {
           "type": "reel",
           "settings": {
-            "caption": ""
+            "product": "",
+            "video_url": "",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
           }
         },
         "reel_rHkTWY": {
           "type": "reel",
           "settings": {
-            "caption": ""
+            "product": "",
+            "video_url": "",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
           }
         }
       },
       "block_order": [
         "reel_UpFXx6",
+        "reel_ywHJff",
+        "reel_xfCmjW",
+        "reel_V6Xd7x",
+        "reel_9yEiH4",
+        "reel_WhefhK",
         "reel_NG9NND",
         "reel_e7Qajr",
         "reel_hPm7Wc",
@@ -464,6 +543,11 @@
       "name": "Rishu Reels",
       "settings": {
         "heading": "Watch our Reels",
+        "autoplay": true,
+        "show_price": true,
+        "show_add_to_cart": true,
+        "show_rating": true,
+        "add_to_cart_color": "#008000",
         "text_color": "#000000",
         "bg_color": ""
       }
