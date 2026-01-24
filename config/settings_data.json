@@ -287,7 +287,7 @@
           "background": "rgba(0,0,0,0)",
           "foreground_heading": "#000000",
           "foreground": "#0b6a26",
-          "primary": "#ffffff",
+          "primary": "#0b6a26",
           "primary_hover": "#ffffffb0",
           "border": "#e6e6e6",
           "shadow": "#000000",
