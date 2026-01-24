@@ -439,10 +439,10 @@
         "reel_xfCmjW": {
           "type": "reel",
           "settings": {
-            "product": "",
+            "product": "banana-powder-100gm",
             "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
             "caption": "",
-            "custom_rating": 4.5,
+            "custom_rating": 0,
             "custom_rating_count": 10
           }
         },
