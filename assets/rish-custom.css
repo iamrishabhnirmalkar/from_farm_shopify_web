@@ -1106,11 +1106,22 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 400px;
-  height: 80vh;
+  max-width: 450px;
+  /* Slightly wider for desktop */
+  height: 90vh;
+  /* Taller for desktop */
   background: #000;
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .modal-content {
+    max-width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+  }
 }
 
 .modal-close {
