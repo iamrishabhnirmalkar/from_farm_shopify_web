@@ -35,12 +35,15 @@
           {%- endif -%}
 
           {%- comment -%} Reel Content (Video/Image) {%- endcomment -%}
-          <div class="rishu-reel-media" onclick="openReelModal('{{ block.id }}', '{{ video_url }}', '{{ product.handle }}', {{ custom_rating | default: 0 }}, {{ custom_rating_count | default: 0 }})">
+          <div class="rishu-reel-media" 
+               onclick="openReelModal('{{ block.id }}', '{{ video_url }}', '{{ product.handle }}', {{ custom_rating | default: 0 }}, {{ custom_rating_count | default: 0 }})"
+               onmouseenter="playPreview(this)"
+               onmouseleave="pausePreview(this)">
             {%- if video_url != blank -%}
               <video
                 class="rishu-reel-video"
                 {% if block.settings.image != blank %}poster="{{ block.settings.image | image_url: width: 600 }}"{% endif %}
-                {% if autoplay %}autoplay muted loop playsinline{% endif %}
+                muted loop playsinline preload="none"
                 data-video-url="{{ video_url }}"
               >
                 <source src="{{ video_url }}" type="video/mp4">
@@ -83,7 +86,7 @@
                  {%- endif -%}
 
                  {%- if show_add_to_cart -%}
-                   <form method="post" action="/cart/add" class="rishu-quick-add-form">
+                   <form method="post" action="/cart/add" class="rishu-quick-add-form" onsubmit="event.stopPropagation();">
                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                      <button type="submit" class="rishu-btn-add" style="background: {{ add_to_cart_color }};">Add to Cart</button>
                    </form>
@@ -120,8 +123,28 @@
   let currentModal = null;
   let currentVideo = null;
 
+  // Hover Play Logic
+  function playPreview(element) {
+    if (window.innerWidth <= 990) return; // Disable hover play on mobile
+    const video = element.querySelector('video');
+    if (video) {
+      // Ensure source is loaded if preload was none
+      if (video.readyState === 0) video.load(); 
+      video.play().catch(e => console.log('Hover play prevented:', e));
+    }
+  }
+
+  function pausePreview(element) {
+    if (window.innerWidth <= 990) return;
+    const video = element.querySelector('video');
+    if (video) {
+        video.pause();
+        // Optional: Reset to start? video.currentTime = 0;
+    }
+  }
+
   function openReelModal(blockId, videoUrl, productHandle, rating, ratingCount) {
-    if (!videoUrl) return; // Don't open if no video
+    if (!videoUrl) return; 
 
     const modal = document.getElementById('reel-modal');
     const modalVideo = document.getElementById('modal-video');
@@ -175,15 +198,6 @@
       console.error('Error:', error);
     });
   }
-
-  // Autoplay handler
-  document.addEventListener('DOMContentLoaded', function() {
-      const videos = document.querySelectorAll('.rishu-reel-video');
-      videos.forEach(v => {
-          v.muted = true;
-          v.play().catch(e => {});
-      });
-  });
 </script>
 
 {% schema %}
