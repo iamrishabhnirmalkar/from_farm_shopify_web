@@ -179,7 +179,9 @@
       "settings": {
         "heading": "From Farm To Your Kitchen",
         "text_color": "#000000",
-        "bg_color": "#ffffff"
+        "bg_color": "#ffffff",
+        "bottom_image": "shopify://shop_images/Untitled-4_1.webp",
+        "bottom_image_bg": ""
       }
     },
     "product_list_amdKtT": {
