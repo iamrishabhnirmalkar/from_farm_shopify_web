@@ -411,6 +411,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 28,
         "color_scheme": "scheme-6",
+        "sale_price_color": "#0b6a26",
+        "discount_badge_color": "#0b6a26",
         "padding-block-start": 48,
         "padding-block-end": 48
       }
