@@ -296,10 +296,70 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "rishu_category_pJbyRi": {
+      "type": "rishu-category",
+      "blocks": {
+        "category_6K4bV9": {
+          "type": "category",
+          "settings": {
+            "text": "Category Name",
+            "link": ""
+          }
+        },
+        "category_Q4fmDA": {
+          "type": "category",
+          "settings": {
+            "text": "Category Name",
+            "link": ""
+          }
+        },
+        "category_z7irwG": {
+          "type": "category",
+          "settings": {
+            "text": "Category Name",
+            "link": ""
+          }
+        },
+        "category_7jztGK": {
+          "type": "category",
+          "settings": {
+            "text": "Category Name",
+            "link": ""
+          }
+        },
+        "category_9jcaF3": {
+          "type": "category",
+          "settings": {
+            "text": "Category Name",
+            "link": ""
+          }
+        },
+        "category_qPGX6E": {
+          "type": "category",
+          "settings": {
+            "text": "Category Name",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_6K4bV9",
+        "category_Q4fmDA",
+        "category_z7irwG",
+        "category_7jztGK",
+        "category_9jcaF3",
+        "category_qPGX6E"
+      ],
+      "name": "Rishu Category",
+      "settings": {
+        "heading": "From Farm To Your Kitchen"
+      }
     }
   },
   "order": [
     "rishu_hero_banner_gDGdWX",
-    "product_list_fa6P9H"
+    "product_list_fa6P9H",
+    "rishu_category_pJbyRi"
   ]
 }
