@@ -179,7 +179,7 @@
       "settings": {
         "heading": "From Farm To Your Kitchen",
         "text_color": "#ffffff",
-        "bg_color": "#fecb88",
+        "bg_color": "#c1d4c7",
         "bg_image": "shopify://shop_images/Untitled-4_1.webp",
         "bottom_image_bg": ""
       }
@@ -414,7 +414,7 @@
         "gap": 28,
         "color_scheme": "scheme-6",
         "sale_price_color": "#0b6a26",
-        "discount_badge_color": "#0b6a26",
+        "discount_badge_color": "#ffffff",
         "padding-block-start": 48,
         "padding-block-end": 48
       }
