@@ -276,6 +276,7 @@
           ]
         }
       },
+      "disabled": true,
       "name": "Featured collection",
       "settings": {
         "collection": "gourmet-powders",
@@ -295,6 +296,55 @@
         "color_scheme": "scheme-1",
         "padding-block-start": 48,
         "padding-block-end": 48
+      }
+    },
+    "rishu_feature_scroll_HxGr9w": {
+      "type": "rishu-feature-scroll",
+      "blocks": {
+        "feature_Vt4Nwc": {
+          "type": "feature",
+          "settings": {
+            "heading": "",
+            "text": "",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
+          }
+        },
+        "feature_4UGyBP": {
+          "type": "feature",
+          "settings": {
+            "heading": "",
+            "text": "",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
+          }
+        },
+        "feature_mnGWGE": {
+          "type": "feature",
+          "settings": {
+            "heading": "",
+            "text": "",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
+          }
+        },
+        "feature_qHnBhX": {
+          "type": "feature",
+          "settings": {
+            "heading": "",
+            "text": "",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
+          }
+        }
+      },
+      "block_order": [
+        "feature_Vt4Nwc",
+        "feature_4UGyBP",
+        "feature_mnGWGE",
+        "feature_qHnBhX"
+      ],
+      "name": "Rishu Feature Scroll",
+      "settings": {
+        "heading": "Only Perfect Makes The Cut",
+        "text_color": "#3c7d8a",
+        "bg_image": "shopify://shop_images/9008026.jpg"
       }
     },
     "rishu_category_pJbyRi": {
@@ -364,53 +414,90 @@
         "bg_color": ""
       }
     },
-    "rishu_feature_scroll_HxGr9w": {
-      "type": "rishu-feature-scroll",
+    "rishu_best_seller_pQx7jL": {
+      "type": "rishu-best-seller",
       "blocks": {
-        "feature_Vt4Nwc": {
-          "type": "feature",
+        "product_BdKtrA": {
+          "type": "product",
           "settings": {
-            "heading": "",
-            "text": "",
-            "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
+            "product": "giloy-powder-50gm"
           }
         },
-        "feature_4UGyBP": {
-          "type": "feature",
+        "product_6FVYjM": {
+          "type": "product",
           "settings": {
-            "heading": "",
-            "text": "",
-            "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
+            "product": "cheese-powder-50gm"
           }
         },
-        "feature_mnGWGE": {
-          "type": "feature",
+        "product_F7Nx3i": {
+          "type": "product",
           "settings": {
-            "heading": "",
-            "text": "",
-            "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
+            "product": "orange-powder-100gm"
           }
         },
-        "feature_qHnBhX": {
-          "type": "feature",
+        "product_9cWqH7": {
+          "type": "product",
           "settings": {
-            "heading": "",
-            "text": "",
-            "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
+            "product": "ginger-powder-50gm"
+          }
+        },
+        "product_H4tK8t": {
+          "type": "product",
+          "settings": {
+            "product": "soy-protein-powder-200gm-500gm"
+          }
+        },
+        "product_jmH4t8": {
+          "type": "product",
+          "settings": {
+            "product": "hibiscus-tea-25gm"
+          }
+        },
+        "product_A9PeDQ": {
+          "type": "product",
+          "settings": {
+            "product": "mango-powder-100gm"
+          }
+        },
+        "product_tt73Fx": {
+          "type": "product",
+          "settings": {
+            "product": "green-chilli-50gm"
+          }
+        },
+        "product_fgqE7P": {
+          "type": "product",
+          "settings": {
+            "product": "cheese-powder-50gm"
+          }
+        },
+        "product_xyMHpg": {
+          "type": "product",
+          "settings": {
+            "product": "banana-powder-100gm"
           }
         }
       },
       "block_order": [
-        "feature_Vt4Nwc",
-        "feature_4UGyBP",
-        "feature_mnGWGE",
-        "feature_qHnBhX"
+        "product_BdKtrA",
+        "product_6FVYjM",
+        "product_F7Nx3i",
+        "product_9cWqH7",
+        "product_H4tK8t",
+        "product_jmH4t8",
+        "product_A9PeDQ",
+        "product_tt73Fx",
+        "product_fgqE7P",
+        "product_xyMHpg"
       ],
-      "name": "Rishu Feature Scroll",
+      "name": "Rishu Best Seller",
       "settings": {
-        "heading": "Only Perfect Makes The Cut",
-        "text_color": "#3c7d8a",
-        "bg_image": "shopify://shop_images/9008026.jpg"
+        "heading": "Our Best Sellers",
+        "collection": "fruit-powders",
+        "bg_color": "#ffffff",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "add_to_cart_color": "#000000"
       }
     },
     "rishu_reels_gBhrCk": {
@@ -509,99 +596,14 @@
         "text_color": "#000000",
         "bg_color": ""
       }
-    },
-    "rishu_best_seller_pQx7jL": {
-      "type": "rishu-best-seller",
-      "blocks": {
-        "product_BdKtrA": {
-          "type": "product",
-          "settings": {
-            "product": "giloy-powder-50gm"
-          }
-        },
-        "product_6FVYjM": {
-          "type": "product",
-          "settings": {
-            "product": "cheese-powder-50gm"
-          }
-        },
-        "product_F7Nx3i": {
-          "type": "product",
-          "settings": {
-            "product": "orange-powder-100gm"
-          }
-        },
-        "product_9cWqH7": {
-          "type": "product",
-          "settings": {
-            "product": "ginger-powder-50gm"
-          }
-        },
-        "product_H4tK8t": {
-          "type": "product",
-          "settings": {
-            "product": "soy-protein-powder-200gm-500gm"
-          }
-        },
-        "product_jmH4t8": {
-          "type": "product",
-          "settings": {
-            "product": "hibiscus-tea-25gm"
-          }
-        },
-        "product_A9PeDQ": {
-          "type": "product",
-          "settings": {
-            "product": "mango-powder-100gm"
-          }
-        },
-        "product_tt73Fx": {
-          "type": "product",
-          "settings": {
-            "product": "green-chilli-50gm"
-          }
-        },
-        "product_fgqE7P": {
-          "type": "product",
-          "settings": {
-            "product": "cheese-powder-50gm"
-          }
-        },
-        "product_xyMHpg": {
-          "type": "product",
-          "settings": {
-            "product": "banana-powder-100gm"
-          }
-        }
-      },
-      "block_order": [
-        "product_BdKtrA",
-        "product_6FVYjM",
-        "product_F7Nx3i",
-        "product_9cWqH7",
-        "product_H4tK8t",
-        "product_jmH4t8",
-        "product_A9PeDQ",
-        "product_tt73Fx",
-        "product_fgqE7P",
-        "product_xyMHpg"
-      ],
-      "name": "Rishu Best Seller",
-      "settings": {
-        "heading": "Our Best Sellers",
-        "collection": "fruit-powders",
-        "bg_color": "#ffffff",
-        "heading_color": "#000000",
-        "text_color": "#000000"
-      }
     }
   },
   "order": [
     "rishu_hero_banner_gDGdWX",
     "product_list_fa6P9H",
-    "rishu_category_pJbyRi",
     "rishu_feature_scroll_HxGr9w",
-    "rishu_reels_gBhrCk",
-    "rishu_best_seller_pQx7jL"
+    "rishu_category_pJbyRi",
+    "rishu_best_seller_pQx7jL",
+    "rishu_reels_gBhrCk"
   ]
 }
