@@ -3,7 +3,7 @@
 <div class="rishu-category-section section-{{ section.id }}-padding" style="{% if section.settings.bg_color != blank %}background-color: {{ section.settings.bg_color }};{% endif %}{% if section.settings.bg_image != blank %}background-image: url('{{ section.settings.bg_image | image_url: width: 2000 }}'); background-size: cover; background-position: center;{% endif %}">
   <div class="page-width">
     {%- if section.settings.heading != blank -%}
-      <h2 class="rishu-category-heading">{{ section.settings.heading }}</h2>
+      <h2 class="rishu-category-heading" style="{% if section.settings.text_color != blank %}color: {{ section.settings.text_color }};{% endif %}">{{ section.settings.heading }}</h2>
     {%- endif -%}
 
     <div class="rishu-category-list">
@@ -17,7 +17,7 @@
                 {{ 'image' | placeholder_svg_tag: 'rishu-category-image rishu-category-placeholder' }}
               {%- endif -%}
             </div>
-            <span class="rishu-category-text">{{ block.settings.text }}</span>
+            <span class="rishu-category-text" style="{% if section.settings.text_color != blank %}color: {{ section.settings.text_color }};{% endif %}">{{ block.settings.text }}</span>
           </a>
         </div>
       {%- endfor -%}
@@ -36,6 +36,12 @@
       "id": "heading",
       "label": "Heading",
       "default": "Shop by Category"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
     },
     {
       "type": "color",

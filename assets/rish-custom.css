@@ -793,12 +793,16 @@
    ============================================ */
 
 .rishu-feature-scroll-section {
-  width: 100%;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   padding: 80px 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
   /* Default fallback color similar to blue background in image */
   background-color: #D6EFFA;
 }
@@ -909,4 +913,108 @@
     font-size: 28px;
     margin-bottom: 30px;
   }
+}
+
+/* ============================================
+   Rishu Reels Section
+   ============================================ */
+
+.rishu-reels-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 80px 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f7f7f7;
+}
+
+.rishu-reels-heading {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+.rishu-reels-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding-bottom: 30px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.rishu-reels-container::-webkit-scrollbar {
+  display: none;
+}
+
+.rishu-reel-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 280px;
+  /* Fixed width for reel cards */
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  overflow: hidden;
+  scroll-snap-align: center;
+  background: #000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.rishu-reel-card:hover {
+  transform: translateY(-5px);
+}
+
+.rishu-reel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rishu-reel-placeholder {
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rishu-reel-top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  /* Center logo per request top bar */
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+}
+
+.rishu-reel-logo {
+  max-width: 80px;
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.rishu-reel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 15px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 2;
 }

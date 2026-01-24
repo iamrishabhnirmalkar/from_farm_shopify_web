@@ -1,0 +1,106 @@
+{{ 'rish-custom.css' | asset_url | stylesheet_tag }}
+
+<div class="rishu-reels-section" style="{% if section.settings.bg_color != blank %}background-color: {{ section.settings.bg_color }};{% endif %}{% if section.settings.bg_image != blank %}background-image: url('{{ section.settings.bg_image | image_url: width: 2000 }}'); background-size: cover; background-position: center;{% endif %}">
+  
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="rishu-reels-heading" style="{% if section.settings.text_color != blank %}color: {{ section.settings.text_color }};{% endif %}">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="rishu-reels-container">
+      {%- for block in section.blocks -%}
+        <div class="rishu-reel-card" {{ block.shopify_attributes }}>
+          
+          {%- comment -%} Top Bar with Logo {%- endcomment -%}
+          {%- if section.settings.logo != blank -%}
+            <div class="rishu-reel-top-bar">
+               {{ section.settings.logo | image_url: width: 100 | image_tag: class: 'rishu-reel-logo', loading: 'lazy' }}
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} Reel Content (Image) {%- endcomment -%}
+          <div class="rishu-reel-media">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 600 | image_tag: class: 'rishu-reel-image', loading: 'lazy' }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'rishu-reel-image rishu-reel-placeholder' }}
+            {%- endif -%}
+          </div>
+
+          {%- if block.settings.caption != blank -%}
+            <div class="rishu-reel-caption" style="{% if section.settings.text_color != blank %}color: {{ section.settings.text_color }};{% endif %}">
+              {{ block.settings.caption }}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Rishu Reels",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Watch our Reels"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Card Top Logo",
+      "info": "Displayed at the top of every reel card"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "reel",
+      "name": "Reel Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image (9:16)"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rishu Reels",
+      "blocks": [
+        { "type": "reel" },
+        { "type": "reel" },
+        { "type": "reel" },
+        { "type": "reel" },
+        { "type": "reel" }
+      ]
+    }
+  ]
+}
+{% endschema %}

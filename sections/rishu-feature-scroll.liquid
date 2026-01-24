@@ -4,7 +4,7 @@
 
     <div class="page-width">
       {%- if section.settings.heading != blank -%}
-        <h2 class="rishu-feature-heading">{{ section.settings.heading }}</h2>
+        <h2 class="rishu-feature-heading" style="{% if section.settings.text_color != blank %}color: {{ section.settings.text_color }};{% endif %}">{{ section.settings.heading }}</h2>
       {%- endif -%}
 
       <div class="rishu-feature-container">
@@ -41,6 +41,12 @@
       "id": "heading",
       "label": "Heading",
       "default": "Only Perfect Makes The Cut"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#3C7D8A"
     },
     {
       "type": "image_picker",
