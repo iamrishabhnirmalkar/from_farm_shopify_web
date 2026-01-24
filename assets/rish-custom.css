@@ -1235,12 +1235,39 @@
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
+  background-color: #fff;
+  /* Ensure white background for transparent images */
+}
+
+.rishu-card-img-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .rishu-card-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  /* Show full image, no cropping */
+  transition: opacity 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.primary-img {
+  z-index: 1;
+  opacity: 1;
+}
+
+.hover-img {
+  z-index: 2;
+  opacity: 0;
+}
+
+.rishu-product-card:hover .hover-img {
+  opacity: 1;
 }
 
 /* Badges */

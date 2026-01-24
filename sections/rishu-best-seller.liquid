@@ -24,7 +24,12 @@
              <div class="rishu-product-card">
                <div class="rishu-card-image-wrapper">
                  <a href="{{ product.url }}" class="rishu-card-link">
-                   {{ product.featured_image | image_url: width: 600 | image_tag: class: 'rishu-card-img', loading: 'lazy' }}
+                   <div class="rishu-card-img-container">
+                     {{ product.featured_image | image_url: width: 600 | image_tag: class: 'rishu-card-img primary-img', loading: 'lazy' }}
+                     {%- if product.images[1] != blank -%}
+                       {{ product.images[1] | image_url: width: 600 | image_tag: class: 'rishu-card-img hover-img', loading: 'lazy' }}
+                     {%- endif -%}
+                   </div>
                  </a>
                  
                  {%- comment -%} Badges Container (Top Left) {%- endcomment -%}
@@ -66,7 +71,12 @@
            <div class="rishu-product-card">
                <div class="rishu-card-image-wrapper">
                  <a href="{{ product.url }}" class="rishu-card-link">
-                   {{ product.featured_image | image_url: width: 600 | image_tag: class: 'rishu-card-img', loading: 'lazy' }}
+                   <div class="rishu-card-img-container">
+                     {{ product.featured_image | image_url: width: 600 | image_tag: class: 'rishu-card-img primary-img', loading: 'lazy' }}
+                     {%- if product.images[1] != blank -%}
+                       {{ product.images[1] | image_url: width: 600 | image_tag: class: 'rishu-card-img hover-img', loading: 'lazy' }}
+                     {%- endif -%}
+                   </div>
                  </a>
                  
                  <div class="rishu-card-badges">
