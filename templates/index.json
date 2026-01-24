@@ -303,41 +303,47 @@
         "category_6K4bV9": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
             "text": "Category Name",
             "link": ""
           }
         },
-        "category_Q4fmDA": {
+        "category_NGyhV6": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
             "text": "Category Name",
             "link": ""
           }
         },
-        "category_z7irwG": {
+        "category_kkVtCz": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
             "text": "Category Name",
             "link": ""
           }
         },
-        "category_7jztGK": {
+        "category_9JJdrC": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
             "text": "Category Name",
             "link": ""
           }
         },
-        "category_9jcaF3": {
+        "category_4kFAyC": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
             "text": "Category Name",
             "link": ""
           }
         },
-        "category_qPGX6E": {
+        "category_Ncehpk": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
             "text": "Category Name",
             "link": ""
           }
@@ -345,11 +351,11 @@
       },
       "block_order": [
         "category_6K4bV9",
-        "category_Q4fmDA",
-        "category_z7irwG",
-        "category_7jztGK",
-        "category_9jcaF3",
-        "category_qPGX6E"
+        "category_NGyhV6",
+        "category_kkVtCz",
+        "category_9JJdrC",
+        "category_4kFAyC",
+        "category_Ncehpk"
       ],
       "name": "Rishu Category",
       "settings": {
