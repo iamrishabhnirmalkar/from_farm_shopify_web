@@ -5,6 +5,8 @@
   assign bg_image = section.settings.bg_image
   assign heading_color = section.settings.heading_color
   assign text_color = section.settings.text_color
+  assign sale_color = section.settings.sale_price_color | default: '#ff0000'
+  assign badge_color = section.settings.discount_badge_color | default: '#ff0000'
 -%}
 
 <div class="rishu-best-seller-section" 
@@ -38,7 +40,7 @@
                  <div class="rishu-card-badges">
                    {%- if product.compare_at_price > product.price -%}
                      {%- assign discount = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
-                     <span class="rishu-badge discount-badge">-{{ discount }}%</span>
+                     <span class="rishu-badge discount-badge" style="background-color: {{ badge_color }};">-{{ discount }}%</span>
                    {%- endif -%}
                    
                    {%- if product.tags.size > 0 -%}
@@ -51,7 +53,7 @@
                  <h3 class="rishu-card-title"><a href="{{ product.url }}">{{ product.title | truncate: 50 }}</a></h3>
                  <div class="rishu-card-price">
                    {%- if product.compare_at_price > product.price -%}
-                     <span class="price-sale">{{ product.price | money }}</span>
+                     <span class="price-sale" style="color: {{ sale_color }};">{{ product.price | money }}</span>
                      <span class="price-compare">{{ product.compare_at_price | money }}</span>
                    {%- else -%}
                      <span class="price-regular">{{ product.price | money }}</span>
@@ -104,7 +106,7 @@
                  <div class="rishu-card-badges">
                    {%- if product.compare_at_price > product.price -%}
                      {%- assign discount = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
-                     <span class="rishu-badge discount-badge">-{{ discount }}%</span>
+                     <span class="rishu-badge discount-badge" style="background-color: {{ badge_color }};">-{{ discount }}%</span>
                    {%- endif -%}
                    
                    {%- if product.tags.size > 0 -%}
@@ -117,7 +119,7 @@
                  <h3 class="rishu-card-title"><a href="{{ product.url }}">{{ product.title | truncate: 50 }}</a></h3>
                  <div class="rishu-card-price">
                    {%- if product.compare_at_price > product.price -%}
-                     <span class="price-sale">{{ product.price | money }}</span>
+                     <span class="price-sale" style="color: {{ sale_color }};">{{ product.price | money }}</span>
                      <span class="price-compare">{{ product.compare_at_price | money }}</span>
                    {%- else -%}
                      <span class="price-regular">{{ product.price | money }}</span>
@@ -336,6 +338,18 @@
       "id": "add_to_cart_color",
       "label": "Add to Cart Button Color",
       "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "sale_price_color",
+      "label": "Sale Price Color",
+      "default": "#ff0000"
+    },
+    {
+       "type": "color",
+       "id": "discount_badge_color",
+       "label": "Discount Badge Color",
+       "default": "#ff0000"
     }
   ],
   "blocks": [
