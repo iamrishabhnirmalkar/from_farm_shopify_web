@@ -502,47 +502,6 @@
         "add_to_cart_color": "#000000"
       }
     },
-    "rishu_testimonials_YFbGKK": {
-      "type": "rishu-testimonials",
-      "blocks": {
-        "testimonial_MWLYaY": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "Absolutely love the fresh veggies! They arrived on time and the packaging was eco-friendly. Will order again.",
-            "author_name": "Priya Sharma",
-            "author_role": "Verified Buyer"
-          }
-        },
-        "testimonial_8QTBxh": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "Best organic produce I've found online. The taste reminds me of my grandmother's farm.",
-            "author_name": "Amit Patel",
-            "author_role": "Verified Buyer"
-          }
-        },
-        "testimonial_G6xMbP": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "Great service and amazing quality. My kids actually enjoy eating the fruits now!",
-            "author_name": "Neha Gupta",
-            "author_role": "Verified Buyer"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_MWLYaY",
-        "testimonial_8QTBxh",
-        "testimonial_G6xMbP"
-      ],
-      "name": "Rishu Testimonials",
-      "settings": {
-        "heading": "What Our Customers Say",
-        "bg_color": "#f9f9f9",
-        "heading_color": "#000000",
-        "text_color": "#333333"
-      }
-    },
     "rishu_reels_gBhrCk": {
       "type": "rishu-reels",
       "blocks": {
@@ -673,6 +632,65 @@
         "heading_color": "#000000",
         "text_color": "#000000",
         "add_to_cart_color": "#000000"
+      }
+    },
+    "rishu_testimonials_YFbGKK": {
+      "type": "rishu-testimonials",
+      "blocks": {
+        "testimonial_MWLYaY": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Absolutely love the fresh veggies! They arrived on time and the packaging was eco-friendly. Will order again.",
+            "author_name": "Priya Sharma",
+            "author_role": "Verified Buyer"
+          }
+        },
+        "testimonial_YQ3Ebz": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Absolutely love the fresh veggies! They arrived on time and the packaging was eco-friendly. Will order again.",
+            "author_name": "Priya Sharma",
+            "author_role": "Verified Buyer"
+          }
+        },
+        "testimonial_83yJtr": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Absolutely love the fresh veggies! They arrived on time and the packaging was eco-friendly. Will order again.",
+            "author_name": "Priya Sharma",
+            "author_role": "Verified Buyer"
+          }
+        },
+        "testimonial_8QTBxh": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Best organic produce I've found online. The taste reminds me of my grandmother's farm.",
+            "author_name": "Amit Patel",
+            "author_role": "Verified Buyer"
+          }
+        },
+        "testimonial_G6xMbP": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Great service and amazing quality. My kids actually enjoy eating the fruits now!",
+            "author_name": "Neha Gupta",
+            "author_role": "Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_MWLYaY",
+        "testimonial_YQ3Ebz",
+        "testimonial_83yJtr",
+        "testimonial_8QTBxh",
+        "testimonial_G6xMbP"
+      ],
+      "name": "Rishu Testimonials",
+      "settings": {
+        "heading": "What Our Customers Say",
+        "bg_color": "#f9f9f9",
+        "heading_color": "#000000",
+        "text_color": "#333333"
       }
     }
   },
