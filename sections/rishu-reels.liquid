@@ -27,12 +27,7 @@
 
         <div class="rishu-reel-card" {{ block.shopify_attributes }}>
           
-          {%- comment -%} Top Bar with Logo {%- endcomment -%}
-          {%- if section.settings.logo != blank -%}
-            <div class="rishu-reel-top-bar">
-               {{ section.settings.logo | image_url: width: 100 | image_tag: class: 'rishu-reel-logo', loading: 'lazy' }}
-            </div>
-          {%- endif -%}
+
 
           {%- comment -%} Reel Content (Video/Image) {%- endcomment -%}
           <div class="rishu-reel-media" 
@@ -211,12 +206,7 @@
       "label": "Heading",
       "default": "Watch our Reels"
     },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Card Top Logo",
-      "info": "Displayed at the top of every reel card"
-    },
+
     {
       "type": "checkbox",
       "id": "autoplay",
