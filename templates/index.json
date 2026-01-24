@@ -360,6 +360,7 @@
       "name": "Rishu Category",
       "settings": {
         "heading": "From Farm To Your Kitchen",
+        "text_color": "#000000",
         "bg_color": ""
       }
     },
@@ -408,7 +409,69 @@
       "name": "Rishu Feature Scroll",
       "settings": {
         "heading": "Only Perfect Makes The Cut",
+        "text_color": "#3c7d8a",
         "bg_image": "shopify://shop_images/9008026.jpg"
+      }
+    },
+    "rishu_reels_gBhrCk": {
+      "type": "rishu-reels",
+      "blocks": {
+        "reel_UpFXx6": {
+          "type": "reel",
+          "settings": {
+            "link": "https://cdn.shopify.com/s/files/1/0743/5239/4413/files/Untitled_design_2.svg?v=1766954457",
+            "caption": ""
+          }
+        },
+        "reel_NG9NND": {
+          "type": "reel",
+          "settings": {
+            "link": "https://cdn.shopify.com/s/files/1/0743/5239/4413/files/Untitled_design_2.svg?v=1766954457",
+            "caption": ""
+          }
+        },
+        "reel_e7Qajr": {
+          "type": "reel",
+          "settings": {
+            "link": "",
+            "caption": ""
+          }
+        },
+        "reel_hPm7Wc": {
+          "type": "reel",
+          "settings": {
+            "link": "",
+            "caption": ""
+          }
+        },
+        "reel_Ptjd68": {
+          "type": "reel",
+          "settings": {
+            "link": "",
+            "caption": ""
+          }
+        },
+        "reel_rHkTWY": {
+          "type": "reel",
+          "settings": {
+            "link": "",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "reel_UpFXx6",
+        "reel_NG9NND",
+        "reel_e7Qajr",
+        "reel_hPm7Wc",
+        "reel_Ptjd68",
+        "reel_rHkTWY"
+      ],
+      "name": "Rishu Reels",
+      "settings": {
+        "heading": "Watch our Reels",
+        "text_color": "#000000",
+        "bg_color": ""
       }
     }
   },
@@ -416,6 +479,7 @@
     "rishu_hero_banner_gDGdWX",
     "product_list_fa6P9H",
     "rishu_category_pJbyRi",
-    "rishu_feature_scroll_HxGr9w"
+    "rishu_feature_scroll_HxGr9w",
+    "rishu_reels_gBhrCk"
   ]
 }
