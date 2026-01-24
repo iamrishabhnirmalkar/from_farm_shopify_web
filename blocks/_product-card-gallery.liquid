@@ -27,31 +27,29 @@
         </div>
       {%- endif -%}
 
+
       <style>
-         /* Force Green Style for these badges as requested */
-         .product-badges__badge.green-style-override {
+         /* Force Green Style for the Standard Badge (Sale/Sold Out) */
+         .product-badges--top-left .product-badges__badge {
             background-color: #0B6A26 !important;
             color: #ffffff !important;
             font-weight: bold !important;
-            border: 1px solid #0B6A26; /* Ensure border doesn't clash */
+            border: 1px solid #0B6A26 !important;
          }
       </style>
-      <script>
-         // Simple script to add class to the standard badge if it renders
-         (function(){
-            var scripts = document.scripts;
-            var currentScript = scripts[scripts.length - 1];
-            var container = currentScript.previousElementSibling;
-            if(container && container.classList.contains('product-badges__badge')) {
-                container.classList.add('green-style-override');
-            }
-         })();
-      </script>
 
       {%- if product.compare_at_price > product.price -%}
         {%- assign discount_percent = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
-        <div class="product-badges product-badges--top-right" style="position: absolute; top: 10px; right: 10px; z-index: 2;">
-            <div class="product-badges__badge product-badges__badge--rectangle" style="background-color: #0B6A26; color: #fff; font-weight: bold;">
+        <!-- Custom Discount Badge: Absolute Top Right, Independent of Theme Classes -->
+        <div style="position: absolute; top: 10px; right: 10px; z-index: 5; pointer-events: none;">
+            <div style="
+               background-color: #0B6A26; 
+               color: #ffffff; 
+               font-weight: bold; 
+               padding: 5px 8px; 
+               border-radius: 4px; 
+               font-size: 12px; 
+               line-height: 1;">
                -{{ discount_percent }}%
             </div>
         </div>
