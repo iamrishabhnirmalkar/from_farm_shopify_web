@@ -57,6 +57,7 @@
       ],
       "name": "Rishu Hero Banner",
       "settings": {
+        "bg_color": "#000000",
         "desktop_height": "80vh",
         "animation_type": "fade",
         "autoplay": true,
@@ -110,7 +111,8 @@
       "name": "Rishu Feature Scroll",
       "settings": {
         "heading": "Only Perfect Makes The Cut",
-        "text_color": "#000000"
+        "text_color": "#000000",
+        "bg_color": "#ffffff"
       }
     },
     "rishu_category_pJbyRi": {
@@ -177,7 +179,7 @@
       "settings": {
         "heading": "From Farm To Your Kitchen",
         "text_color": "#000000",
-        "bg_color": ""
+        "bg_color": "#ffffff"
       }
     },
     "product_list_amdKtT": {
@@ -394,7 +396,7 @@
       },
       "name": "t:names.products_carousel",
       "settings": {
-        "collection": "teas-and-leaves",
+        "collection": "best-sellers",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 13,
@@ -489,6 +491,7 @@
         "product_fgqE7P",
         "product_xyMHpg"
       ],
+      "disabled": true,
       "name": "Rishu Best Seller",
       "settings": {
         "heading": "Our Best Sellers",
@@ -513,6 +516,26 @@
           }
         },
         "reel_ywHJff": {
+          "type": "reel",
+          "settings": {
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
+          }
+        },
+        "reel_Qdr4zn": {
+          "type": "reel",
+          "settings": {
+            "product": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
+            "caption": "",
+            "custom_rating": 4.5,
+            "custom_rating_count": 10
+          }
+        },
+        "reel_ffDqRH": {
           "type": "reel",
           "settings": {
             "product": "",
@@ -576,6 +599,8 @@
       "block_order": [
         "reel_UpFXx6",
         "reel_ywHJff",
+        "reel_Qdr4zn",
+        "reel_ffDqRH",
         "reel_V6Xd7x",
         "reel_9yEiH4",
         "reel_LxNHWW",
@@ -593,7 +618,7 @@
         "show_rating": true,
         "add_to_cart_color": "#008000",
         "text_color": "#000000",
-        "bg_color": ""
+        "bg_color": "#ffffff"
       }
     },
     "rishu_best_seller_tNUW83": {
@@ -608,6 +633,65 @@
         "text_color": "#000000",
         "add_to_cart_color": "#000000"
       }
+    },
+    "rishu_testimonials_YFbGKK": {
+      "type": "rishu-testimonials",
+      "blocks": {
+        "testimonial_MWLYaY": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Absolutely love the fresh veggies! They arrived on time and the packaging was eco-friendly. Will order again.",
+            "author_name": "Priya Sharma",
+            "author_role": "Verified Buyer"
+          }
+        },
+        "testimonial_YQ3Ebz": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Absolutely love the fresh veggies! They arrived on time and the packaging was eco-friendly. Will order again.",
+            "author_name": "Priya Sharma",
+            "author_role": "Verified Buyer"
+          }
+        },
+        "testimonial_83yJtr": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Absolutely love the fresh veggies! They arrived on time and the packaging was eco-friendly. Will order again.",
+            "author_name": "Priya Sharma",
+            "author_role": "Verified Buyer"
+          }
+        },
+        "testimonial_8QTBxh": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Best organic produce I've found online. The taste reminds me of my grandmother's farm.",
+            "author_name": "Amit Patel",
+            "author_role": "Verified Buyer"
+          }
+        },
+        "testimonial_G6xMbP": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Great service and amazing quality. My kids actually enjoy eating the fruits now!",
+            "author_name": "Neha Gupta",
+            "author_role": "Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_MWLYaY",
+        "testimonial_YQ3Ebz",
+        "testimonial_83yJtr",
+        "testimonial_8QTBxh",
+        "testimonial_G6xMbP"
+      ],
+      "name": "Rishu Testimonials",
+      "settings": {
+        "heading": "What Our Customers Say",
+        "bg_color": "#f9f9f9",
+        "heading_color": "#000000",
+        "text_color": "#333333"
+      }
     }
   },
   "order": [
@@ -617,6 +701,7 @@
     "product_list_amdKtT",
     "rishu_best_seller_pQx7jL",
     "rishu_reels_gBhrCk",
-    "rishu_best_seller_tNUW83"
+    "rishu_best_seller_tNUW83",
+    "rishu_testimonials_YFbGKK"
   ]
 }
