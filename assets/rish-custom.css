@@ -1000,8 +1000,32 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
   color: white;
   z-index: 2;
-  pointer-events: none;
   /* Let clicks pass to card/video */
+}
+
+/* Floating Corner Logo */
+.rishu-reel-corner-logo {
+  position: absolute;
+  top: 15px;
+  z-index: 5;
+  pointer-events: none;
+  /* Ensure it doesn't block clicks */
+}
+
+.rishu-position-top-left {
+  left: 15px;
+}
+
+.rishu-position-top-right {
+  right: 15px;
+}
+
+.rishu-reel-logo-img {
+  width: 50px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  opacity: 0.9;
 }
 
 .product-info {

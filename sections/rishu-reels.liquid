@@ -25,10 +25,13 @@
           assign custom_rating_count = block.settings.custom_rating_count
         -%}
 
-        <div class="rishu-reel-card" {{ block.shopify_attributes }}>
-          
+          <div class="rishu-reel-card" {{ block.shopify_attributes }}>
 
-
+          {%- if section.settings.logo != blank -%}
+            <div class="rishu-reel-corner-logo rishu-position-{{ section.settings.logo_position }}">
+               {{ section.settings.logo | image_url: width: 80 | image_tag: class: 'rishu-reel-logo-img', loading: 'lazy' }}
+            </div>
+          {%- endif -%}
           {%- comment -%} Reel Content (Video/Image) {%- endcomment -%}
           <div class="rishu-reel-media" 
                onclick="openReelModal('{{ block.id }}', '{{ video_url }}', '{{ product.handle }}', {{ custom_rating | default: 0 }}, {{ custom_rating_count | default: 0 }})"
@@ -205,6 +208,22 @@
       "id": "heading",
       "label": "Heading",
       "default": "Watch our Reels"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Corner Logo",
+      "info": "Small logo displayed in the corner of the reel"
+    },
+    {
+      "type": "select",
+      "id": "logo_position",
+      "label": "Logo Position",
+      "options": [
+        { "value": "top-left", "label": "Top Left" },
+        { "value": "top-right", "label": "Top Right" }
+      ],
+      "default": "top-right"
     },
 
     {
