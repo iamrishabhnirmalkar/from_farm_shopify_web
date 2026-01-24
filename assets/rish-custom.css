@@ -1272,7 +1272,8 @@
 
 .rishu-card-image-wrapper {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 2 / 3;
+  /* Matches user's 3211x4814 portrait images */
   overflow: hidden;
   background-color: #fff;
   /* Ensure white background for transparent images */
@@ -1396,5 +1397,116 @@
     padding-left: 20px;
     /* Peek effect starter padding */
     padding-right: 20px;
+  }
+}
+
+/* ============================================
+   Add to Cart Animation
+   ============================================ */
+.rishu-btn-add {
+  position: relative;
+  overflow: hidden;
+  --text-speed: 0.26;
+  --base-delay: calc(var(--text-speed) * 0.25);
+  --tick-speed: 0.1;
+  --ring-speed: 0.2;
+  --check-speed: 0.2;
+  --burst-speed: 0.32;
+  --step-delay: 3;
+  --speed: 1;
+  transition-property: color, box-shadow, background-color, scale, translate;
+  transition-duration: 0.3s;
+}
+
+.rishu-btn-add .rishu-btn-text {
+  display: block;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.rishu-btn-add .add-to-cart__added {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rishu-btn-add[data-added="true"] .rishu-btn-text {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.rishu-btn-add[data-added="true"] .add-to-cart__added {
+  opacity: 1;
+}
+
+.checkmark-burst {
+  width: 24px;
+  height: 24px;
+  color: white;
+  /* Ensure visible on dark button */
+}
+
+/* Animation internal logic for checkmark */
+.checkmark-burst .check {
+  transform-origin: center;
+  transition: all 0.2s ease-out;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.rishu-btn-add[data-added="true"] .checkmark-burst .check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.checkmark-burst .burst {
+  transform-origin: center;
+  opacity: 0;
+}
+
+.rishu-btn-add[data-added="true"] .checkmark-burst .burst {
+  animation: burst-animation 0.4s ease-out forwards;
+}
+
+@keyframes burst-animation {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.5) rotate(20deg);
+  }
+}
+
+/* Loading State */
+.rishu-btn-add[data-loading="true"] .rishu-btn-text {
+  opacity: 0;
+}
+
+.rishu-btn-add[data-loading="true"]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  margin-left: -8px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: rishu-spin 0.8s linear infinite;
+}
+
+@keyframes rishu-spin {
+  to {
+    transform: rotate(360deg);
   }
 }
