@@ -1510,3 +1510,106 @@
     transform: rotate(360deg);
   }
 }
+
+/* ============================================
+   Rishu Testimonials Section
+   ============================================ */
+.rishu-testimonial-section {
+  padding: 60px 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.rishu-testimonial-wrapper {
+  overflow: hidden;
+}
+
+.rishu-testimonial-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 30px;
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.rishu-testimonial-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.rishu-testimonial-card {
+  flex: 0 0 calc(33.333% - 20px);
+  min-width: 300px;
+  scroll-snap-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.rishu-testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.rishu-testimonial-stars {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 2px;
+}
+
+.rishu-testimonial-quote {
+  font-size: 16px;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.rishu-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.rishu-author-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.rishu-author-placeholder {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #888;
+}
+
+.rishu-author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile Responsive Testimonials */
+@media screen and (max-width: 990px) {
+  .rishu-testimonial-card {
+    flex: 0 0 85%;
+    min-width: 85%;
+  }
+}
