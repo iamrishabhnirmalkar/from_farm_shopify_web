@@ -15,7 +15,9 @@
       <h2 class="rishu-section-heading" style="color: {{ heading_color | default: '#000' }};">{{ section.settings.heading }}</h2>
     {%- endif -%}
 
-    <div class="rishu-best-seller-slider">
+    <div class="rishu-best-seller-wrapper">
+      <button class="rishu-slider-arrow prev-arrow" onclick="scrollRishuSlider(-1)">❮</button>
+      <div class="rishu-best-seller-slider" id="rishu-best-seller-slider-{{ section.id }}">
       {%- comment -%} 1. Manual Blocks Priority {%- endcomment -%}
       {%- if section.blocks.size > 0 -%}
         {%- for block in section.blocks -%}
@@ -123,12 +125,19 @@
              </div>
           </div>
         {%- endfor -%}
-      {%- endif -%}
+      </div>
+      <button class="rishu-slider-arrow next-arrow" onclick="scrollRishuSlider(1)">❯</button>
     </div>
   </div>
 </div>
 
 <script>
+  function scrollRishuSlider(direction) {
+    const slider = document.querySelector('.rishu-best-seller-slider');
+    const scrollAmount = slider.clientWidth / 2; // Scroll half view
+    slider.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+  }
+
   function rishuBestSellerAddToCart(form) {
     const formData = new FormData(form);
     const btn = form.querySelector('button');
@@ -143,20 +152,28 @@
     })
     .then(response => response.json())
     .then(data => {
-      // Update Cart Bubble
+      // 1. Update Cart Bubble Logic
       fetch(window.Shopify.routes.root + 'cart.js')
       .then(res => res.json())
       .then(cart => {
-         // Try to find common cart count elements
          const bubbles = document.querySelectorAll('.cart-count-bubble span, .cart-count, .header__cart-count');
          bubbles.forEach(el => {
             if(el) el.innerText = cart.item_count;
          });
          
-         // Dispatch events for themes that listen
+         // 2. Dispatch events for theme update
          document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true, detail: cart }));
          document.documentElement.dispatchEvent(new CustomEvent('cart:update', { bubbles: true, detail: cart }));
          
+         // 3. FORCE OPEN DRAWER (Try multiple methods)
+         const drawer = document.querySelector('cart-drawer-component');
+         if (drawer && typeof drawer.open === 'function') {
+             drawer.open();
+         } else {
+             // Fallback: Dispatch cart:open if theme supports it
+             document.documentElement.dispatchEvent(new CustomEvent('cart:open', { bubbles: true }));
+         }
+
          // Reset Button
          btn.innerText = 'Added';
          setTimeout(() => {

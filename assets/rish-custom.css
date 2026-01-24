@@ -1183,6 +1183,48 @@
   background-position: center;
 }
 
+.rishu-best-seller-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.rishu-slider-arrow {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  /* Flex to center icon */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  position: absolute;
+  /* Overlay on slider */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev-arrow {
+  left: -20px;
+  /* Pull slightly outside content */
+}
+
+.next-arrow {
+  right: -20px;
+}
+
+@media screen and (max-width: 990px) {
+  .rishu-slider-arrow {
+    display: none;
+    /* Hide arrows on mobile, keep swipe */
+  }
+}
+
 .rishu-section-heading {
   font-size: 32px;
   font-weight: 700;
@@ -1199,17 +1241,14 @@
   gap: 20px;
   padding-bottom: 20px;
   -webkit-overflow-scrolling: touch;
-  /* scrollbar-width: none;  Kept visible for desktop mouse users if needed, or hide if preferred. User complaint suggested "not working", maybe they couldn't scroll? */
+  scrollbar-width: none;
+  /* Hide scrollbar completely as per request */
 }
 
 .rishu-best-seller-slider::-webkit-scrollbar {
-  height: 6px;
+  display: none;
 }
 
-.rishu-best-seller-slider::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 3px;
-}
 
 /* Card Sizing */
 .rishu-product-card {
@@ -1274,12 +1313,16 @@
 .rishu-card-badges {
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 0;
+  width: 100%;
+  padding: 0 10px;
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  flex-direction: row;
+  justify-content: space-between;
+  /* Split Left and Right */
   align-items: flex-start;
   z-index: 2;
+  pointer-events: none;
 }
 
 .rishu-badge {
