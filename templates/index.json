@@ -178,9 +178,9 @@
       "name": "Rishu Category",
       "settings": {
         "heading": "From Farm To Your Kitchen",
-        "text_color": "#000000",
-        "bg_color": "#ffffff",
-        "bottom_image": "shopify://shop_images/Untitled-4_1.webp",
+        "text_color": "#ffffff",
+        "bg_color": "#fecb88",
+        "bg_image": "shopify://shop_images/Untitled-4_1.webp",
         "bottom_image_bg": ""
       }
     },
