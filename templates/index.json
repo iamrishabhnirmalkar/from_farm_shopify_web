@@ -499,6 +499,7 @@
       "name": "Rishu Reels",
       "settings": {
         "heading": "How To Use",
+        "logo": "shopify://shop_images/Circle_logo_4cm_x_4cm_page-0001-removebg-preview.png",
         "logo_position": "top-left",
         "autoplay": true,
         "show_price": true,
