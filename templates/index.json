@@ -436,16 +436,6 @@
             "custom_rating_count": 10
           }
         },
-        "reel_xfCmjW": {
-          "type": "reel",
-          "settings": {
-            "product": "banana-powder-100gm",
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/dc5c2cc944674bf0b34859522a4658f7.mp4",
-            "caption": "",
-            "custom_rating": 0,
-            "custom_rating_count": 10
-          }
-        },
         "reel_V6Xd7x": {
           "type": "reel",
           "settings": {
@@ -500,7 +490,6 @@
       "block_order": [
         "reel_UpFXx6",
         "reel_ywHJff",
-        "reel_xfCmjW",
         "reel_V6Xd7x",
         "reel_9yEiH4",
         "reel_LxNHWW",
@@ -510,6 +499,7 @@
       "name": "Rishu Reels",
       "settings": {
         "heading": "How To Use",
+        "logo_position": "top-left",
         "autoplay": true,
         "show_price": true,
         "show_add_to_cart": true,
@@ -518,6 +508,91 @@
         "text_color": "#000000",
         "bg_color": ""
       }
+    },
+    "rishu_best_seller_pQx7jL": {
+      "type": "rishu-best-seller",
+      "blocks": {
+        "product_BdKtrA": {
+          "type": "product",
+          "settings": {
+            "product": "giloy-powder-50gm"
+          }
+        },
+        "product_6FVYjM": {
+          "type": "product",
+          "settings": {
+            "product": "cheese-powder-50gm"
+          }
+        },
+        "product_F7Nx3i": {
+          "type": "product",
+          "settings": {
+            "product": "orange-powder-100gm"
+          }
+        },
+        "product_9cWqH7": {
+          "type": "product",
+          "settings": {
+            "product": "ginger-powder-50gm"
+          }
+        },
+        "product_H4tK8t": {
+          "type": "product",
+          "settings": {
+            "product": "soy-protein-powder-200gm-500gm"
+          }
+        },
+        "product_jmH4t8": {
+          "type": "product",
+          "settings": {
+            "product": "hibiscus-tea-25gm"
+          }
+        },
+        "product_A9PeDQ": {
+          "type": "product",
+          "settings": {
+            "product": "mango-powder-100gm"
+          }
+        },
+        "product_tt73Fx": {
+          "type": "product",
+          "settings": {
+            "product": "green-chilli-50gm"
+          }
+        },
+        "product_fgqE7P": {
+          "type": "product",
+          "settings": {
+            "product": "cheese-powder-50gm"
+          }
+        },
+        "product_xyMHpg": {
+          "type": "product",
+          "settings": {
+            "product": "banana-powder-100gm"
+          }
+        }
+      },
+      "block_order": [
+        "product_BdKtrA",
+        "product_6FVYjM",
+        "product_F7Nx3i",
+        "product_9cWqH7",
+        "product_H4tK8t",
+        "product_jmH4t8",
+        "product_A9PeDQ",
+        "product_tt73Fx",
+        "product_fgqE7P",
+        "product_xyMHpg"
+      ],
+      "name": "Rishu Best Seller",
+      "settings": {
+        "heading": "Our Best Sellers",
+        "collection": "fruit-powders",
+        "bg_color": "#ffffff",
+        "heading_color": "#000000",
+        "text_color": "#000000"
+      }
     }
   },
   "order": [
@@ -525,6 +600,7 @@
     "product_list_fa6P9H",
     "rishu_category_pJbyRi",
     "rishu_feature_scroll_HxGr9w",
-    "rishu_reels_gBhrCk"
+    "rishu_reels_gBhrCk",
+    "rishu_best_seller_pQx7jL"
   ]
 }
