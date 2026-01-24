@@ -359,13 +359,63 @@
       ],
       "name": "Rishu Category",
       "settings": {
-        "heading": "From Farm To Your Kitchen"
+        "heading": "From Farm To Your Kitchen",
+        "bg_color": ""
+      }
+    },
+    "rishu_feature_scroll_HxGr9w": {
+      "type": "rishu-feature-scroll",
+      "blocks": {
+        "feature_Vt4Nwc": {
+          "type": "feature",
+          "settings": {
+            "heading": "",
+            "text": "",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
+          }
+        },
+        "feature_4UGyBP": {
+          "type": "feature",
+          "settings": {
+            "heading": "",
+            "text": "",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
+          }
+        },
+        "feature_mnGWGE": {
+          "type": "feature",
+          "settings": {
+            "heading": "",
+            "text": "",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
+          }
+        },
+        "feature_qHnBhX": {
+          "type": "feature",
+          "settings": {
+            "heading": "",
+            "text": "",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
+          }
+        }
+      },
+      "block_order": [
+        "feature_Vt4Nwc",
+        "feature_4UGyBP",
+        "feature_mnGWGE",
+        "feature_qHnBhX"
+      ],
+      "name": "Rishu Feature Scroll",
+      "settings": {
+        "heading": "Only Perfect Makes The Cut",
+        "bg_image": "shopify://shop_images/9008026.jpg"
       }
     }
   },
   "order": [
     "rishu_hero_banner_gDGdWX",
     "product_list_fa6P9H",
-    "rishu_category_pJbyRi"
+    "rishu_category_pJbyRi",
+    "rishu_feature_scroll_HxGr9w"
   ]
 }
