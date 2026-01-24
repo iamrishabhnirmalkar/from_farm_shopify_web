@@ -11,6 +11,87 @@
   "type": "footer",
   "name": "Footer",
   "sections": {
+    "rishu_footer_TEMxdG": {
+      "type": "rishu-footer",
+      "blocks": {
+        "link_list_NV97XQ": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "link_label_1": "All Products",
+            "link_url_1": "/collections/all",
+            "link_label_2": "New Arrivals",
+            "link_url_2": "/collections/new",
+            "link_label_3": "Best Sellers",
+            "link_url_3": "/collections/best-sellers",
+            "link_label_4": "",
+            "link_url_4": "",
+            "link_label_5": "",
+            "link_url_5": ""
+          }
+        },
+        "link_list_iUGicc": {
+          "type": "link_list",
+          "settings": {
+            "heading": "About",
+            "link_label_1": "Our Story",
+            "link_url_1": "/pages/about",
+            "link_label_2": "Contact Us",
+            "link_url_2": "/pages/contact",
+            "link_label_3": "FAQs",
+            "link_url_3": "/pages/faq",
+            "link_label_4": "",
+            "link_url_4": "",
+            "link_label_5": "",
+            "link_url_5": ""
+          }
+        },
+        "link_list_K4BhbF": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Support",
+            "link_label_1": "Shipping Info",
+            "link_url_1": "/pages/shipping",
+            "link_label_2": "Returns",
+            "link_url_2": "/pages/returns",
+            "link_label_3": "Privacy Policy",
+            "link_url_3": "/policies/privacy-policy",
+            "link_label_4": "",
+            "link_url_4": "",
+            "link_label_5": "",
+            "link_url_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "link_list_NV97XQ",
+        "link_list_iUGicc",
+        "link_list_K4BhbF"
+      ],
+      "name": "Rishu Footer",
+      "settings": {
+        "logo": "shopify://shop_images/Circle_logo_4cm_x_4cm_page-0001-removebg-preview.png",
+        "show_subscription": true,
+        "subscription_heading": "Subscribe to our newsletter",
+        "subscription_text": "Get the latest updates on new products and upcoming sales",
+        "email_placeholder": "Enter your email",
+        "button_text": "Subscribe",
+        "button_color": "#377753",
+        "show_social": true,
+        "social_heading": "Follow Us",
+        "facebook_url": "https://www.youtube.com/watch?v=D76XBkNoeac&list=RDyE3Ymg8DcyM&index=3",
+        "instagram_url": "https://www.youtube.com/watch?v=D76XBkNoeac&list=RDyE3Ymg8DcyM&index=3",
+        "twitter_url": "https://www.youtube.com/watch?v=D76XBkNoeac&list=RDyE3Ymg8DcyM&index=3",
+        "youtube_url": "https://www.youtube.com/watch?v=D76XBkNoeac&list=RDyE3Ymg8DcyM&index=3",
+        "show_contact": true,
+        "address": "",
+        "email": "",
+        "phone": "",
+        "image_overlay_color": "#ffffff",
+        "bg_color": "#ffffff",
+        "text_color": "#333333"
+      }
+    },
     "footer_m9NzUG": {
       "type": "footer",
       "blocks": {
@@ -115,9 +196,9 @@
             "width": "fill",
             "custom_width": 100,
             "inherit_color_scheme": true,
+            "color_scheme": "",
             "heading": "",
             "heading_preset": "h3",
-            "color_scheme": "",
             "border_style": "all",
             "border_width": 1,
             "border_radius": 100,
@@ -139,6 +220,7 @@
         "group_H6VpwJ",
         "email_signup_crihX7"
       ],
+      "disabled": true,
       "name": "t:names.footer",
       "settings": {
         "section_width": "page-width",
@@ -193,6 +275,7 @@
         "footer_policy_list_VCdnpa",
         "social_links_Ew63Kq"
       ],
+      "disabled": true,
       "name": "t:names.utilities",
       "settings": {
         "section_width": "page-width",
@@ -205,6 +288,7 @@
     }
   },
   "order": [
+    "rishu_footer_TEMxdG",
     "footer_m9NzUG",
     "footer_utilities_jLGE8U"
   ]

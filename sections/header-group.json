@@ -11,34 +11,42 @@
   "type": "header",
   "name": "Header",
   "sections": {
-    "header_announcements_9jGBFp": {
-      "type": "header-announcements",
+    "rish_annouuncemenetbar_h6JCtC": {
+      "type": "Rish_annouuncemenetbar",
       "blocks": {
-        "announcement_BxgCk9": {
-          "type": "_announcement",
+        "announcement_wtdJbQ": {
+          "type": "announcement",
           "settings": {
             "text": "Welcome to our store",
             "link": "",
-            "font": "var(--font-subheading--family)",
-            "font_size": "0.75rem",
-            "weight": "",
-            "letter_spacing": "normal",
-            "case": "none"
-          },
-          "blocks": {}
+            "text_color": "#FFFFFF"
+          }
+        },
+        "announcement_pXeawY": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free shipping on orders over $100",
+            "link": "",
+            "text_color": "#FFFFFF"
+          }
+        },
+        "announcement_PNbYLT": {
+          "type": "announcement",
+          "settings": {
+            "text": "New collection available now",
+            "link": "",
+            "text_color": "#FFFFFF"
+          }
         }
       },
       "block_order": [
-        "announcement_BxgCk9"
+        "announcement_wtdJbQ",
+        "announcement_pXeawY",
+        "announcement_PNbYLT"
       ],
-      "name": "t:names.announcement_bar",
+      "name": "Rishu Announcement Bar",
       "settings": {
-        "speed": 5,
-        "section_width": "page-width",
-        "color_scheme": "scheme-1",
-        "divider_width": 1,
-        "padding-block-start": 15,
-        "padding-block-end": 15
+        "bg_color": "#1d7737"
       }
     },
     "header_section": {
@@ -112,7 +120,7 @@
     }
   },
   "order": [
-    "header_announcements_9jGBFp",
+    "rish_annouuncemenetbar_h6JCtC",
     "header_section"
   ]
 }
