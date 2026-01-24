@@ -181,57 +181,112 @@
   function rishuBestSellerAddToCart(form) {
     const formData = new FormData(form);
     const btn = form.querySelector('button');
-    // const originalText = btn.innerText; // No longer needed with structure
     
-    // btn.innerText = 'Adding...'; // Replaced by CSS state
+    // Set loading state
     btn.setAttribute('data-loading', 'true');
     btn.disabled = true;
 
-    fetch(window.Shopify.routes.root + 'cart/add.js', {
+    // Optimistic Cart Count Update (Instant Feedback)
+    const bubbles = document.querySelectorAll('.cart-count-bubble span, .cart-count, .header__cart-count');
+    bubbles.forEach(el => {
+        const currentCount = parseInt(el.innerText.replace(/\D/g, '')) || 0;
+        el.innerText = currentCount + 1;
+        el.classList.remove('hidden'); // Ensure visible if it was hidden
+        el.closest('.cart-count-bubble')?.classList.remove('hidden');
+    });
+
+    // 1. Gather Section IDs for single-request update (Faster!)
+    const cartItemsComponents = document.querySelectorAll('cart-items-component');
+    let sectionIds = [];
+    cartItemsComponents.forEach((item) => {
+      if (item.dataset.sectionId) sectionIds.push(item.dataset.sectionId);
+    });
+    // Also include 'cart-icon-bubble' or similar common section if possible, 
+    // but typically themes use the specific section ID of the drawer/header.
+    // Try to find the header section ID specifically if needed, but often 'cart-drawer'
+    // is sufficient if it's a section. 
+    // Let's grab all cart-related sections we can find to be safe.
+    const cartrelated = document.querySelectorAll('[id^="shopify-section-"]');
+    cartrelated.forEach(sec => {
+        if(sec.innerHTML.includes('cart-count') || sec.innerHTML.includes('cart-drawer')) {
+            const sid = sec.id.replace('shopify-section-', '');
+            if(!sectionIds.includes(sid)) sectionIds.push(sid);
+        }
+    });
+
+    if(sectionIds.length > 0) {
+        formData.append('sections', sectionIds.join(','));
+        formData.append('sections_url', window.location.pathname); 
+    }
+
+    const config = {
       method: 'POST',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        'Accept': 'application/javascript' 
+      },
       body: formData
-    })
+    };
+
+    fetch(window.Shopify.routes.root + 'cart/add.js', config)
     .then(response => response.json())
     .then(data => {
-      // 1. Update Cart Bubble Logic
-      fetch(window.Shopify.routes.root + 'cart.js')
+      if (data.status) {
+         // Error handling
+         console.error('Error adding to cart:', data.description);
+         btn.removeAttribute('data-loading');
+         return;
+      }
+
+      // 2. Direct DOM Update from 'sections' response (No second fetch!)
+      if (data.sections) {
+          for (const [sectionId, html] of Object.entries(data.sections)) {
+              const selector = `#shopify-section-${sectionId}`;
+              const element = document.querySelector(selector);
+              if (element) {
+                  element.innerHTML = html; // Direct Replace
+              }
+          }
+      }
+
+      // 3. Update Cart Bubble (Fallback if not in sections)
+       fetch(window.Shopify.routes.root + 'cart.js')
       .then(res => res.json())
       .then(cart => {
-         const bubbles = document.querySelectorAll('.cart-count-bubble span, .cart-count, .header__cart-count');
-         bubbles.forEach(el => {
-            if(el) el.innerText = cart.item_count;
-         });
-         
-         // 2. Dispatch events for theme update
-         document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true, detail: cart }));
-         document.documentElement.dispatchEvent(new CustomEvent('cart:update', { bubbles: true, detail: cart }));
-         
-         // 3. FORCE OPEN DRAWER
-         const drawer = document.querySelector('cart-drawer-component');
-         if (drawer && typeof drawer.open === 'function') {
-             drawer.open();
-         } else {
-             document.documentElement.dispatchEvent(new CustomEvent('cart:open', { bubbles: true }));
-         }
+          // Update generic count elements immediately
+          const bubbles = document.querySelectorAll('.cart-count-bubble span, .cart-count, .header__cart-count');
+          bubbles.forEach(el => {
+             if(el) el.innerText = cart.item_count;
+          });
 
-         // Success State
-         btn.removeAttribute('data-loading');
-         btn.setAttribute('data-added', 'true');
-         
-         setTimeout(() => {
-             btn.removeAttribute('data-added');
-             btn.disabled = false;
-         }, 2000);
+           // 4. Dispatch standard theme events
+          document.documentElement.dispatchEvent(new CustomEvent('cart:update', { 
+            bubbles: true, 
+            detail: { cart: cart, resource: cart } 
+          }));
+          
+           // 5. Open Drawer
+            const drawer = document.querySelector('cart-drawer-component');
+            if (drawer && typeof drawer.open === 'function') {
+                drawer.open();
+            } else {
+                document.documentElement.dispatchEvent(new CustomEvent('cart:open', { bubbles: true }));
+            }
       });
+
+      // Success State
+      btn.removeAttribute('data-loading');
+      btn.setAttribute('data-added', 'true');
+      
+      setTimeout(() => {
+          btn.removeAttribute('data-added');
+          btn.disabled = false;
+      }, 2000);
     })
     .catch((error) => {
       console.error('Error:', error);
       btn.removeAttribute('data-loading');
-      btn.innerText = 'Error'; // Fallback
-      setTimeout(() => {
-           btn.innerHTML = '<span class="rishu-btn-text">Add to Cart</span>...'; // Reset content roughly
-           btn.disabled = false;
-       }, 2000);
+      btn.disabled = false;
     });
   }
 </script>
