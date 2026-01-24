@@ -429,6 +429,7 @@
             "product_list_button_wg9Ukz": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
+              "disabled": true,
               "settings": {
                 "label": "View all",
                 "open_in_new_tab": false,
@@ -585,8 +586,8 @@
         "mobile_card_size": "60cqw",
         "columns_gap": 8,
         "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "circle",
+        "icons_style": "none",
+        "icons_shape": "none",
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
         "gap": 28,
