@@ -110,14 +110,6 @@
 
     .media-coverage__title {
       margin-bottom: 40px;
-       /* Optional: You can allow the user setting to persist or scale it down here if requested, 
-          but usually explicit settings override unless we use clamp() or percentage. 
-          For now obeying the "all same font size" user request strictly for the base style 
-          but adding a small scale down for very small screens if absolutely needed, 
-          though user asked for "same font size". 
-          I will remove fixed overrides to respect the user setting, 
-          or perhaps apply a calc if it gets too huge. 
-          Let's respect the user setting primary. */
     }
 
     .media-coverage__logos {
@@ -153,7 +145,6 @@
     }
 
     .media-coverage__title {
-        /* font-size: 24px !important;  <- Removed to respect user setting */
       margin-bottom: 30px;
     }
 
@@ -186,7 +177,6 @@
     }
 
     .media-coverage__title {
-       /* font-size: 20px !important; <- Removed to respect user setting */
       letter-spacing: 1px;
     }
 
@@ -241,7 +231,7 @@
 
 {%- schema -%}
 {
-  "name": "Orgalife Media",
+  "name": "Rish Media Coverage",
   "tag": "section",
   "class": "media-coverage",
   "settings": [
@@ -331,8 +321,8 @@
   ],
   "presets": [
     {
-      "name": "Orgalife-Media",
-      "category": "Orgalife",
+      "name": "Rish Media Coverage",
+      "category": "Rish",
       "blocks": [
         {
           "type": "logo",
