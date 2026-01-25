@@ -116,75 +116,6 @@
         "bg_image": "shopify://shop_images/background_images_copy-01.svg"
       }
     },
-    "rishu_category_pJbyRi": {
-      "type": "rishu-category",
-      "blocks": {
-        "category_6K4bV9": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Untitled_design_1.png",
-            "text": "Category Name",
-            "link": ""
-          }
-        },
-        "category_NGyhV6": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Untitled_design_1.png",
-            "text": "Category Name",
-            "link": ""
-          }
-        },
-        "category_kkVtCz": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Untitled_design_1.png",
-            "text": "Category Name",
-            "link": ""
-          }
-        },
-        "category_9JJdrC": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Untitled_design_1.png",
-            "text": "Category Name",
-            "link": ""
-          }
-        },
-        "category_4kFAyC": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Untitled_design_1.png",
-            "text": "Category Name",
-            "link": ""
-          }
-        },
-        "category_Ncehpk": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/Untitled_design_1.png",
-            "text": "Category Name",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "category_6K4bV9",
-        "category_NGyhV6",
-        "category_kkVtCz",
-        "category_9JJdrC",
-        "category_4kFAyC",
-        "category_Ncehpk"
-      ],
-      "name": "Rishu Category",
-      "settings": {
-        "heading": "From Farm To Your Kitchen",
-        "text_color": "#ffffff",
-        "bg_color": "#f5edd0",
-        "bg_image": "shopify://shop_images/Untitled-4_1.webp",
-        "bottom_image_bg": ""
-      }
-    },
     "product_list_amdKtT": {
       "type": "product-list",
       "blocks": {
@@ -416,8 +347,78 @@
         "color_scheme": "scheme-6",
         "sale_price_color": "#0b6a26",
         "discount_badge_color": "#ffffff",
+        "badge_mode": "both",
         "padding-block-start": 48,
         "padding-block-end": 48
+      }
+    },
+    "rishu_category_pJbyRi": {
+      "type": "rishu-category",
+      "blocks": {
+        "category_6K4bV9": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
+            "text": "Category Name",
+            "link": ""
+          }
+        },
+        "category_NGyhV6": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
+            "text": "Category Name",
+            "link": ""
+          }
+        },
+        "category_kkVtCz": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
+            "text": "Category Name",
+            "link": ""
+          }
+        },
+        "category_9JJdrC": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
+            "text": "Category Name",
+            "link": ""
+          }
+        },
+        "category_4kFAyC": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
+            "text": "Category Name",
+            "link": ""
+          }
+        },
+        "category_Ncehpk": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
+            "text": "Category Name",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_6K4bV9",
+        "category_NGyhV6",
+        "category_kkVtCz",
+        "category_9JJdrC",
+        "category_4kFAyC",
+        "category_Ncehpk"
+      ],
+      "name": "Rishu Category",
+      "settings": {
+        "heading": "From Farm To Your Kitchen",
+        "text_color": "#ffffff",
+        "bg_color": "#f5edd0",
+        "bg_image": "shopify://shop_images/Untitled-4_1.webp",
+        "bottom_image_bg": ""
       }
     },
     "product_list_iLCitF": {
@@ -510,16 +511,16 @@
           "static": true,
           "settings": {
             "product_card_gap": 4,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-2",
+            "border": "solid",
             "border_width": 1,
             "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "border_radius": 8,
+            "padding-block-start": 8,
+            "padding-block-end": 8,
+            "padding-inline-start": 8,
+            "padding-inline-end": 8
           },
           "blocks": {
             "product_card_gallery_d3Hx6f": {
@@ -651,6 +652,7 @@
         "color_scheme": "scheme-6",
         "sale_price_color": "#0b6a26",
         "discount_badge_color": "#ffffff",
+        "badge_mode": "both",
         "padding-block-start": 48,
         "padding-block-end": 48
       }
