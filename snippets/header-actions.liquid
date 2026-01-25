@@ -16,7 +16,13 @@
       class="svg-wrapper"
       aria-hidden="true"
     >
-      {{ 'icon-cart.svg' | inline_asset_content }}
+      <img 
+        src="{{ 'cart.png' | asset_url }}" 
+        alt="{{ 'accessibility.cart' | t }}" 
+        width="24" 
+        height="24" 
+        style="width: var(--icon-size-md); height: var(--icon-size-md); object-fit: contain;"
+      >
     </span>
 
     {% render 'cart-bubble', limit: 100, live_region: true, test_id: test_id %}
@@ -624,7 +630,7 @@
     font-weight: var(--font-paragraph--weight);
   }
 
-  .header-actions__cart-icon.header-actions__cart-icon--has-cart svg {
+  .header-actions__cart-icon.header-actions__cart-icon--has-cart img {
     /* Create donut mask where the cart bubble sits */
     mask: radial-gradient(
       calc(var(--cart-bubble-size) + 2px) at calc(100% - var(--cart-bubble-right)) var(--cart-bubble-top),
