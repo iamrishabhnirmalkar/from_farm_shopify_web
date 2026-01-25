@@ -206,12 +206,12 @@
           "static": true,
           "settings": {
             "product_card_gap": 4,
-            "inherit_color_scheme": false,
-            "color_scheme": "scheme-6",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
             "border": "solid",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
+            "border_width": 2,
+            "border_opacity": 45,
+            "border_radius": 8,
             "padding-block-start": 8,
             "padding-block-end": 8,
             "padding-inline-start": 8,
@@ -421,7 +421,7 @@
         "bottom_image_bg": ""
       }
     },
-    "product_list_UF88mA": {
+    "product_list_iLCitF": {
       "type": "product-list",
       "blocks": {
         "static-header": {
@@ -458,7 +458,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_list_text_8Mq3LP": {
+            "product_list_text_rX8e6r": {
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
@@ -484,7 +484,7 @@
               },
               "blocks": {}
             },
-            "product_list_button_QVgFdA": {
+            "product_list_button_zEiaza": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
               "disabled": true,
@@ -501,8 +501,8 @@
             }
           },
           "block_order": [
-            "product_list_text_8Mq3LP",
-            "product_list_button_QVgFdA"
+            "product_list_text_rX8e6r",
+            "product_list_button_zEiaza"
           ]
         },
         "static-product-card": {
@@ -512,18 +512,18 @@
           "settings": {
             "product_card_gap": 4,
             "inherit_color_scheme": false,
-            "color_scheme": "scheme-6",
+            "color_scheme": "scheme-2",
             "border": "solid",
             "border_width": 1,
             "border_opacity": 100,
-            "border_radius": 0,
+            "border_radius": 8,
             "padding-block-start": 8,
             "padding-block-end": 8,
             "padding-inline-start": 8,
             "padding-inline-end": 8
           },
           "blocks": {
-            "product_card_gallery_QVCtir": {
+            "product_card_gallery_d3Hx6f": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
@@ -539,7 +539,7 @@
               },
               "blocks": {}
             },
-            "product_title_7wgw7K": {
+            "product_title_g8VxPy": {
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
@@ -564,7 +564,7 @@
               },
               "blocks": {}
             },
-            "price_pNJxYU": {
+            "price_Ej9HK7": {
               "type": "price",
               "name": "t:names.product_price",
               "settings": {
@@ -587,7 +587,7 @@
               },
               "blocks": {}
             },
-            "buy_buttons_zBQhJz": {
+            "buy_buttons_FVUyA4": {
               "type": "buy-buttons",
               "name": "t:names.product_buy_buttons",
               "settings": {
@@ -626,16 +626,16 @@
             }
           },
           "block_order": [
-            "product_card_gallery_QVCtir",
-            "product_title_7wgw7K",
-            "price_pNJxYU",
-            "buy_buttons_zBQhJz"
+            "product_card_gallery_d3Hx6f",
+            "product_title_g8VxPy",
+            "price_Ej9HK7",
+            "buy_buttons_FVUyA4"
           ]
         }
       },
       "name": "t:names.products_carousel",
       "settings": {
-        "collection": "teas-and-leaves",
+        "collection": "best-sellers",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 13,
@@ -942,7 +942,7 @@
     "rishu_feature_scroll_HxGr9w",
     "product_list_amdKtT",
     "rishu_category_pJbyRi",
-    "product_list_UF88mA",
+    "product_list_iLCitF",
     "rishu_best_seller_pQx7jL",
     "rishu_reels_gBhrCk",
     "rishu_best_seller_tNUW83",
