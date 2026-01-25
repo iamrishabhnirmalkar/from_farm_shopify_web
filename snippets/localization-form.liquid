@@ -57,7 +57,13 @@
           <div class="field">
             <div class="country-filter__search-icon field__button motion-reduce">
               <span class="svg-wrapper">
-                {{ 'icon-search.svg' | inline_asset_content }}
+                <img 
+                  src="{{ 'search.png' | asset_url }}" 
+                  alt="{{ 'placeholders.search' | t }}" 
+                  width="24" 
+                  height="24" 
+                  style="width: var(--icon-size-sm); height: var(--icon-size-sm); object-fit: contain;"
+                >
               </span>
             </div>
             <input

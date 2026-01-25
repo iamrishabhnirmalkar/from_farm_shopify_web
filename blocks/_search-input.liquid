@@ -29,7 +29,13 @@
       {{ 'content.search_input_label' | t }}
     </label>
     <span class="svg-wrapper search__icon{{ color_scheme }}">
-      {{ 'icon-search.svg' | inline_asset_content }}
+      <img 
+        src="{{ 'search.png' | asset_url }}" 
+        alt="{{ 'content.search_input_label' | t }}" 
+        width="24" 
+        height="24" 
+        style="width: var(--icon-size-md); height: var(--icon-size-md); object-fit: contain;"
+      >
     </span>
     <input
       name="type"

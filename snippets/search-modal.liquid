@@ -77,7 +77,13 @@
               value="last"
             >
             <span class="svg-wrapper predictive-search__icon">
-              {{ 'icon-search.svg' | inline_asset_content }}
+              <img 
+                src="{{ 'search.png' | asset_url }}" 
+                alt="{{ 'content.search_input_label' | t }}" 
+                width="24" 
+                height="24" 
+                style="width: var(--icon-size-md); height: var(--icon-size-md); object-fit: contain;"
+              >
             </span>
             <button
               type="button"
