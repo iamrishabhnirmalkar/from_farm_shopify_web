@@ -1,0 +1,376 @@
+<!-- Media Coverage Section -->
+<section
+  class="media-coverage"
+  style="padding: {{ section.settings.section_padding_top }}px 0 {{ section.settings.section_padding_bottom }}px 0; background-color: {{ section.settings.background_color }};"
+>
+  <div class="media-coverage__container">
+    <h2 class="media-coverage__title" style="color: {{ section.settings.title_color }}; font-size: {{ section.settings.heading_font_size }}px;">
+      {{ section.settings.title }}
+    </h2>
+    <div class="media-coverage__wrapper">
+      <div class="media-coverage__logos" id="logoContainer-{{ section.id }}">
+        {% for block in section.blocks %}
+          <div class="media-coverage__logo" {{ block.shopify_attributes }}>
+            <div class="logo-container">
+              <div class="logo-text">
+                {% if block.settings.logo_image %}
+                  {{
+                    block.settings.logo_image
+                    | image_url: width: 200
+                    | image_tag: alt: block.settings.logo_alt, class: 'logo-image'
+                  }}
+                {% else %}
+                   <p class="logo-brand" style="color: {{ section.settings.text_color }}">{{ block.settings.logo_text }}</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .media-coverage {
+    width: 100%;
+  }
+
+  .media-coverage__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 70px;
+  }
+
+  .media-coverage__title {
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 60px 0;
+    letter-spacing: 2px;
+  }
+
+  .media-coverage__wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .media-coverage__logos {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    transition: transform 0.8s ease;
+  }
+
+  .media-coverage__logos.sliding {
+    animation: autoSlide 20s linear infinite;
+  }
+
+  .media-coverage__logo {
+    flex: 0 0 auto;
+    min-width: 200px;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 82px;
+    padding: 20px;
+  }
+
+  .logo-image {
+    max-width: 100%;
+    max-height: 50px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .logo-brand {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    margin: 0;
+  }
+
+  @keyframes autoSlide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% - 30px));
+    }
+  }
+
+  /* Tablet Styles */
+  @media (max-width: 1024px) {
+    .media-coverage__container {
+      padding: 0 40px;
+    }
+
+    .media-coverage__title {
+      margin-bottom: 40px;
+       /* Optional: You can allow the user setting to persist or scale it down here if requested, 
+          but usually explicit settings override unless we use clamp() or percentage. 
+          For now obeying the "all same font size" user request strictly for the base style 
+          but adding a small scale down for very small screens if absolutely needed, 
+          though user asked for "same font size". 
+          I will remove fixed overrides to respect the user setting, 
+          or perhaps apply a calc if it gets too huge. 
+          Let's respect the user setting primary. */
+    }
+
+    .media-coverage__logos {
+      gap: 20px;
+    }
+
+    .media-coverage__logo {
+      min-width: 180px;
+    }
+
+    .logo-container {
+      height: 70px;
+      padding: 15px;
+    }
+
+    .logo-image {
+      max-height: 40px;
+    }
+
+    .logo-brand {
+      font-size: 16px;
+    }
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .media-coverage {
+      padding: 30px 0 !important;
+    }
+
+    .media-coverage__container {
+      padding: 0 20px;
+    }
+
+    .media-coverage__title {
+        /* font-size: 24px !important;  <- Removed to respect user setting */
+      margin-bottom: 30px;
+    }
+
+    .media-coverage__logos {
+      gap: 15px;
+    }
+
+    .media-coverage__logo {
+      min-width: 150px;
+    }
+
+    .logo-container {
+      height: 60px;
+      padding: 12px;
+    }
+
+    .logo-image {
+      max-height: 30px;
+    }
+
+    .logo-brand {
+      font-size: 14px;
+    }
+  }
+
+  /* Small Mobile Styles */
+  @media (max-width: 480px) {
+    .media-coverage__container {
+      padding: 0 15px;
+    }
+
+    .media-coverage__title {
+       /* font-size: 20px !important; <- Removed to respect user setting */
+      letter-spacing: 1px;
+    }
+
+    .logo-container {
+      height: 55px;
+      padding: 10px;
+    }
+
+    .logo-image {
+      max-height: 25px;
+    }
+
+    .media-coverage__logo {
+      min-width: 130px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const logoContainer = document.getElementById('logoContainer-{{ section.id }}');
+    const logos = logoContainer.querySelectorAll('.media-coverage__logo');
+
+    // Check if there are more than 5 logos
+    if (logos.length > 5) {
+      // Duplicate the logos for seamless looping
+      const originalLogos = Array.from(logos);
+      originalLogos.forEach((logo) => {
+        const clone = logo.cloneNode(true);
+        logoContainer.appendChild(clone);
+      });
+
+      // Add sliding class to start animation
+      logoContainer.classList.add('sliding');
+
+      // Pause animation on hover
+      logoContainer.addEventListener('mouseenter', function () {
+        this.style.animationPlayState = 'paused';
+      });
+
+      // Resume animation when not hovering
+      logoContainer.addEventListener('mouseleave', function () {
+        this.style.animationPlayState = 'running';
+      });
+    } else {
+      // If 5 or fewer logos, center them and don't slide
+      logoContainer.style.justifyContent = 'center';
+      logoContainer.style.flexWrap = 'wrap';
+    }
+  });
+</script>
+
+{%- schema -%}
+{
+  "name": "Orgalife Media",
+  "tag": "section",
+  "class": "media-coverage",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "MEDIA COVERAGE"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading Font Size",
+      "min": 16,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 35
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f8f9fa"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Heading Color",
+      "default": "#0E7541"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#333333"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Media Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo Image"
+        },
+        {
+          "type": "text",
+          "id": "logo_text",
+          "label": "Logo Text (fallback if no image)",
+          "default": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "logo_alt",
+          "label": "Logo Alt Text",
+          "default": "Media Logo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Orgalife-Media",
+      "category": "Orgalife",
+      "blocks": [
+        {
+          "type": "logo",
+          "settings": {
+            "logo_text": "Natural",
+            "logo_alt": "Natural Logo"
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "logo_text": "Aroma",
+            "logo_alt": "Aroma Logo"
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "logo_text": "Leaves",
+            "logo_alt": "Leaves Logo"
+          }
+        },
+        {
+          "type": "logo",
+          "settings": {
+            "logo_text": "Nature Leave",
+            "logo_alt": "Nature Leave Logo"
+          }
+        },
+        {
+            "type": "logo",
+            "settings": {
+              "logo_text": "Nature",
+              "logo_alt": "Nature Logo"
+            }
+        }
+      ]
+    }
+  ]
+}
+{%- endschema -%}
