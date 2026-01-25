@@ -421,7 +421,7 @@
         "bottom_image_bg": ""
       }
     },
-    "product_list_iLCitF": {
+    "product_list_wTmUXN": {
       "type": "product-list",
       "blocks": {
         "static-header": {
@@ -458,7 +458,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_list_text_rX8e6r": {
+            "product_list_text_z8rwTF": {
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
@@ -484,7 +484,7 @@
               },
               "blocks": {}
             },
-            "product_list_button_zEiaza": {
+            "product_list_button_hDe3qh": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
               "disabled": true,
@@ -501,8 +501,8 @@
             }
           },
           "block_order": [
-            "product_list_text_rX8e6r",
-            "product_list_button_zEiaza"
+            "product_list_text_z8rwTF",
+            "product_list_button_hDe3qh"
           ]
         },
         "static-product-card": {
@@ -511,11 +511,11 @@
           "static": true,
           "settings": {
             "product_card_gap": 4,
-            "inherit_color_scheme": false,
-            "color_scheme": "scheme-2",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
             "border": "solid",
-            "border_width": 1,
-            "border_opacity": 100,
+            "border_width": 2,
+            "border_opacity": 45,
             "border_radius": 8,
             "padding-block-start": 8,
             "padding-block-end": 8,
@@ -523,7 +523,7 @@
             "padding-inline-end": 8
           },
           "blocks": {
-            "product_card_gallery_d3Hx6f": {
+            "product_card_gallery_haPpPw": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
@@ -539,7 +539,7 @@
               },
               "blocks": {}
             },
-            "product_title_g8VxPy": {
+            "product_title_hT4eBk": {
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
@@ -564,7 +564,7 @@
               },
               "blocks": {}
             },
-            "price_Ej9HK7": {
+            "price_M8A4Rp": {
               "type": "price",
               "name": "t:names.product_price",
               "settings": {
@@ -587,7 +587,7 @@
               },
               "blocks": {}
             },
-            "buy_buttons_FVUyA4": {
+            "buy_buttons_dAzz9g": {
               "type": "buy-buttons",
               "name": "t:names.product_buy_buttons",
               "settings": {
@@ -626,16 +626,16 @@
             }
           },
           "block_order": [
-            "product_card_gallery_d3Hx6f",
-            "product_title_g8VxPy",
-            "price_Ej9HK7",
-            "buy_buttons_FVUyA4"
+            "product_card_gallery_haPpPw",
+            "product_title_hT4eBk",
+            "price_M8A4Rp",
+            "buy_buttons_dAzz9g"
           ]
         }
       },
       "name": "t:names.products_carousel",
       "settings": {
-        "collection": "best-sellers",
+        "collection": "teas-and-leaves",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 13,
@@ -942,7 +942,7 @@
     "rishu_feature_scroll_HxGr9w",
     "product_list_amdKtT",
     "rishu_category_pJbyRi",
-    "product_list_iLCitF",
+    "product_list_wTmUXN",
     "rishu_best_seller_pQx7jL",
     "rishu_reels_gBhrCk",
     "rishu_best_seller_tNUW83",
