@@ -1719,23 +1719,29 @@
    ============================================ */
 
 .rishu-blog-section {
-  padding: 100px 20px;
+  padding: 100px 0;
   overflow: hidden;
   background-size: cover;
   background-position: center;
   position: relative;
+  /* Full bleed breakout */
   width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   min-height: 600px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 
-/* .page-width handles its own width/max-width */
+.rishu-blog-section .page-width {
+  width: 100%;
+  margin: 0 auto;
+  max-width: var(--page-width, 1200px);
+  /* Fallback to standard if var not defined */
+  padding: 0 5rem;
+  /* Standard theme padding */
+}
 
 .rishu-section-header {
   display: flex;
@@ -1957,21 +1963,24 @@
   padding: 80px 0;
   overflow: hidden;
   position: relative;
+  /* Full bleed breakout */
   width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   min-height: 500px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
   background-size: cover;
-  /* Support bg images if used as section bg */
   background-position: center;
 }
 
-/* .page-width handles its own width/max-width */
+.rishu-about-section .page-width {
+  width: 100%;
+  margin: 0 auto;
+  max-width: var(--page-width, 1200px);
+  padding: 0 5rem;
+}
 
 .rishu-about-grid {
   display: flex;
