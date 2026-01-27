@@ -1757,15 +1757,17 @@
 
 .rishu-blog-slider {
   display: flex;
-  gap: 32px;
+  gap: 30px;
   overflow-x: auto;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   scrollbar-width: none;
   /* Firefox */
   padding-bottom: 20px;
   /* Spacer for shadow */
   padding-left: 4px;
   /* Spacer for shadow */
+  -webkit-overflow-scrolling: touch;
 }
 
 .rishu-blog-slider::-webkit-scrollbar {
@@ -1773,12 +1775,16 @@
 }
 
 .rishu-blog-card {
-  flex: 0 0 320px;
+  flex: 0 0 calc(33.333% - 20px);
+  min-width: 300px;
+  scroll-snap-align: center;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  background-color: white;
+  /* Ensure bg color if not set inline */
 }
 
 .rishu-blog-card:hover {
@@ -1921,9 +1927,10 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 990px) {
   .rishu-blog-card {
-    flex: 0 0 280px;
+    flex: 0 0 85%;
+    min-width: 85%;
   }
 
   .rishu-section-heading {
