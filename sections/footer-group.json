@@ -49,15 +49,15 @@
         "link_list_K4BhbF": {
           "type": "link_list",
           "settings": {
-            "heading": "Support",
-            "link_label_1": "Shipping Info",
-            "link_url_1": "/pages/shipping",
-            "link_label_2": "Returns",
-            "link_url_2": "/pages/returns",
-            "link_label_3": "Privacy Policy",
-            "link_url_3": "/policies/privacy-policy",
-            "link_label_4": "",
-            "link_url_4": "",
+            "heading": "Policy",
+            "link_label_1": "Shipping Delivery Policy",
+            "link_url_1": "shopify://pages/shipping-delivery-policy",
+            "link_label_2": "Privacy",
+            "link_url_2": "shopify://pages/privacy-policy",
+            "link_label_3": "Return",
+            "link_url_3": "shopify://pages/refund-cancellation-policy",
+            "link_label_4": "Terms and Conditions",
+            "link_url_4": "shopify://pages/terms-and-conditions",
             "link_label_5": "",
             "link_url_5": ""
           }
