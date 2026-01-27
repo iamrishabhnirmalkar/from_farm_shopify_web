@@ -1757,7 +1757,7 @@
 
 .rishu-blog-slider {
   display: flex;
-  gap: 30px;
+  gap: 32px;
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
@@ -1775,12 +1775,13 @@
 }
 
 .rishu-blog-card {
-  flex: 0 0 calc(33.333% - 20px);
-  min-width: 300px;
+  flex: 0 0 calc(25% - 24px);
+  min-width: 250px;
   scroll-snap-align: center;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  /* Match testimonial shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   background-color: white;
