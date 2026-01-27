@@ -1732,11 +1732,10 @@
   min-height: 600px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.rishu-blog-section .page-width {
-  width: 100%;
-}
+/* .page-width handles its own width/max-width */
 
 .rishu-section-header {
   display: flex;
@@ -1966,14 +1965,13 @@
   min-height: 500px;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-size: cover;
   /* Support bg images if used as section bg */
   background-position: center;
 }
 
-.rishu-about-section .page-width {
-  width: 100%;
-}
+/* .page-width handles its own width/max-width */
 
 .rishu-about-grid {
   display: flex;
