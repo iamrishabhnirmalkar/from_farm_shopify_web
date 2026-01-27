@@ -24,10 +24,10 @@
             "link_url_2": "/collections/new",
             "link_label_3": "Best Sellers",
             "link_url_3": "/collections/best-sellers",
-            "link_label_4": "",
-            "link_url_4": "",
-            "link_label_5": "",
-            "link_url_5": ""
+            "link_label_4": "Teas and Leaves",
+            "link_url_4": "shopify://collections/teas-and-leaves",
+            "link_label_5": "Sweeteners",
+            "link_url_5": "shopify://collections/sweeteners"
           }
         },
         "link_list_iUGicc": {
@@ -35,9 +35,9 @@
           "settings": {
             "heading": "About",
             "link_label_1": "Our Story",
-            "link_url_1": "/pages/about",
+            "link_url_1": "shopify://pages/about",
             "link_label_2": "Contact Us",
-            "link_url_2": "/pages/contact",
+            "link_url_2": "shopify://pages/contact",
             "link_label_3": "FAQs",
             "link_url_3": "/pages/faq",
             "link_label_4": "",
