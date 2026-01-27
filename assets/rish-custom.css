@@ -1705,7 +1705,7 @@
    ============================================ */
 
 .rishu-blog-section {
-  padding: 60px 0;
+  padding: 80px 0;
   overflow: hidden;
   background-size: cover;
   background-position: center;
@@ -1715,6 +1715,13 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.rishu-blog-section .page-width {
+  width: 100%;
 }
 
 .rishu-section-header {
@@ -1942,6 +1949,16 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  /* Support bg images if used as section bg */
+  background-position: center;
+}
+
+.rishu-about-section .page-width {
+  width: 100%;
 }
 
 .rishu-about-grid {
