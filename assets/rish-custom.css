@@ -1276,10 +1276,6 @@
 
 .rishu-slider-arrow {
   background-color: white;
-  background-image: url('arrow.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px;
   border: 1px solid #ddd;
   border-radius: 50%;
   width: 40px;
@@ -1297,16 +1293,34 @@
   /* Overlay on slider */
   top: 50%;
   transform: translateY(-50%);
+  color: #333;
+}
+
+.rishu-slider-arrow svg {
+  width: 20px;
+  height: 20px;
 }
 
 .prev-arrow {
   left: -20px;
   /* Pull slightly outside content */
-  transform: translateY(-50%) scaleX(-1);
 }
 
 .next-arrow {
   right: -20px;
+}
+
+@media screen and (max-width: 990px) {
+  /* Keep arrows visible on mobile as requested */
+  /* .rishu-slider-arrow { display: none; } */
+
+  .prev-arrow {
+    left: 10px;
+  }
+
+  .next-arrow {
+    right: 10px;
+  }
 }
 
 @media screen and (max-width: 990px) {
@@ -1892,11 +1906,6 @@
 /* Slider Arrows */
 .blog-arrow {
   background-color: rgba(255, 255, 255, 0.8);
-  /* Inherit background-image from rishu-slider-arrow or re-declare */
-  background-image: url('arrow.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px;
   width: 40px;
   height: 40px;
   color: #111;
@@ -1938,10 +1947,7 @@
     font-size: 24px;
   }
 
-  .blog-arrow {
-    display: none;
-    /* Optional: hide arrows on mobile if touch scroll is enough */
-  }
+  /* Arrows are now visible on mobile */
 }
 
 /* ============================================
