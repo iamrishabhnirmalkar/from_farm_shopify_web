@@ -39,7 +39,7 @@
             "link_label_2": "Contact Us",
             "link_url_2": "shopify://pages/contact",
             "link_label_3": "FAQs",
-            "link_url_3": "/pages/faq",
+            "link_url_3": "shopify://pages/faq",
             "link_label_4": "",
             "link_url_4": "",
             "link_label_5": "",
