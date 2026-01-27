@@ -115,15 +115,25 @@
     </div>
 
     {%- comment -%} Bottom Farm Illustration {%- endcomment -%}
+    {%- comment -%} Bottom Farm Illustration {%- endcomment -%}
     {%- if section.settings.bottom_image != blank -%}
-      <div class="rishu-footer-bottom-image" style="{% if section.settings.image_overlay_color != blank %}background-color: {{ section.settings.image_overlay_color }};{% endif %}">
-        {{ section.settings.bottom_image | image_url: width: 3840 | image_tag: 
-          widths: '375, 550, 750, 1100, 1500, 1780, 1920, 2500, 3000, 3840',
-          sizes: '100vw',
-          class: 'rishu-footer-bottom-img',
-          loading: 'lazy',
-          alt: 'Footer decoration'
-        }}
+      <div class="rishu-footer-bottom-image rishu-footer-bottom-image--{{ section.settings.bottom_image_style }}" style="{% if section.settings.image_overlay_color != blank %}background-color: {{ section.settings.image_overlay_color }};{% endif %}">
+        
+        <picture>
+          {%- if section.settings.bottom_image_mobile != blank -%}
+            <source media="(max-width: 767px)" srcset="{{ section.settings.bottom_image_mobile | image_url: width: 800 }}">
+          {%- endif -%}
+          
+          <img 
+            src="{{ section.settings.bottom_image | image_url: width: 1920 }}"
+            alt="{{ section.settings.bottom_image.alt | default: 'Footer decoration' }}"
+            class="rishu-footer-bottom-img"
+            loading="lazy"
+            width="{{ section.settings.bottom_image.width }}"
+            height="{{ section.settings.bottom_image.height }}"
+          >
+        </picture>
+
       </div>
     {%- endif -%}
   </div>
@@ -255,8 +265,30 @@
     {
       "type": "image_picker",
       "id": "bottom_image",
-      "label": "Bottom image",
-      "info": "Farm illustration or decorative image"
+      "label": "Bottom image (Desktop)",
+      "info": "Recommended: 1920x450px"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_image_mobile",
+      "label": "Bottom image (Mobile)",
+      "info": "Recommended: 800x450px"
+    },
+    {
+      "type": "select",
+      "id": "bottom_image_style",
+      "label": "Image Style",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Overlap (Auto Height)"
+        },
+        {
+          "value": "fixed",
+          "label": "Fixed Height"
+        }
+      ],
+      "default": "auto"
     },
     {
       "type": "color",
