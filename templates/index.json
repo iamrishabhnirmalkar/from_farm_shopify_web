@@ -1003,8 +1003,26 @@
         "section_padding_top": 50,
         "section_padding_bottom": 50,
         "background_color": "#ffffff",
-        "title_color": "#0E7541",
+        "title_color": "#0e7541",
         "text_color": "#333333"
+      }
+    },
+    "rishu_about_EPPzYa": {
+      "type": "rishu-about",
+      "name": "Rishu About Section",
+      "settings": {
+        "layout": "image_first",
+        "image": "shopify://shop_images/From_Farm_Orange_fruit_powder_shopnow_....._fromfarm_orangefruitpowder_fruitpowder_mocktai.jpg",
+        "subheading": "Our Story",
+        "heading": "About Our Brand",
+        "text": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+        "button_label": "Learn More",
+        "button_link": "",
+        "bg_color": "#ffffff",
+        "heading_color": "#1a1a1a",
+        "text_color": "#333333",
+        "button_color": "#377753",
+        "button_text_color": "#ffffff"
       }
     }
   },
@@ -1018,6 +1036,7 @@
     "rishu_reels_gBhrCk",
     "rishu_best_seller_tNUW83",
     "rishu_testimonials_YFbGKK",
-    "rish_media_coverage_wpzLbC"
+    "rish_media_coverage_wpzLbC",
+    "rishu_about_EPPzYa"
   ]
 }
