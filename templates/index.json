@@ -942,47 +942,47 @@
         "logo_PqwziT": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify://shop_images/4.svg",
+            "logo_image": "shopify://shop_images/download.png",
             "logo_text": "Natural",
             "logo_alt": "Natural Logo"
           }
         },
-        "logo_HTDzAN": {
+        "logo_Cqiypd": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify://shop_images/4.svg",
+            "logo_image": "shopify://shop_images/download.png",
             "logo_text": "Natural",
             "logo_alt": "Natural Logo"
           }
         },
-        "logo_htea8Y": {
+        "logo_cdgPzb": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify://shop_images/4.svg",
+            "logo_image": "shopify://shop_images/download.png",
             "logo_text": "Natural",
             "logo_alt": "Natural Logo"
           }
         },
-        "logo_9BjA8L": {
+        "logo_PrUhxT": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify://shop_images/4.svg",
+            "logo_image": "shopify://shop_images/download.png",
             "logo_text": "Natural",
             "logo_alt": "Natural Logo"
           }
         },
-        "logo_PacrmY": {
+        "logo_jQMFFY": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify://shop_images/4.svg",
+            "logo_image": "shopify://shop_images/download.png",
             "logo_text": "Natural",
             "logo_alt": "Natural Logo"
           }
         },
-        "logo_aGAHhf": {
+        "logo_DfWFca": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify://shop_images/4.svg",
+            "logo_image": "shopify://shop_images/download.png",
             "logo_text": "Natural",
             "logo_alt": "Natural Logo"
           }
@@ -990,11 +990,11 @@
       },
       "block_order": [
         "logo_PqwziT",
-        "logo_HTDzAN",
-        "logo_htea8Y",
-        "logo_9BjA8L",
-        "logo_PacrmY",
-        "logo_aGAHhf"
+        "logo_Cqiypd",
+        "logo_cdgPzb",
+        "logo_PrUhxT",
+        "logo_jQMFFY",
+        "logo_DfWFca"
       ],
       "name": "Rish Media Coverage",
       "settings": {
