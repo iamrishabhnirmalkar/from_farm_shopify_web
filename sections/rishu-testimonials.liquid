@@ -7,7 +7,7 @@
     {%- endif -%}
 
     <div class="rishu-testimonial-wrapper">
-      <button class="rishu-slider-arrow prev-arrow" onclick="scrollRishuTestimonials(-1)">❮</button>
+      <button class="rishu-slider-arrow prev-arrow" onclick="scrollRishuTestimonials(-1)" aria-label="Previous"></button>
       <div class="rishu-testimonial-slider" id="rishu-testimonial-slider-{{ section.id }}">
          {%- for block in section.blocks -%}
             <div class="rishu-testimonial-card" {{ block.shopify_attributes }}>
@@ -39,7 +39,7 @@
             </div>
          {%- endfor -%}
       </div>
-      <button class="rishu-slider-arrow next-arrow" onclick="scrollRishuTestimonials(1)">❯</button>
+      <button class="rishu-slider-arrow next-arrow" onclick="scrollRishuTestimonials(1)" aria-label="Next"></button>
     </div>
   </div>
   </div>

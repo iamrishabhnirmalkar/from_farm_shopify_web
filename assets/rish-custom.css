@@ -1275,7 +1275,11 @@
 }
 
 .rishu-slider-arrow {
-  background: white;
+  background-color: white;
+  background-image: url('arrow.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
   border: 1px solid #ddd;
   border-radius: 50%;
   width: 40px;
@@ -1287,7 +1291,8 @@
   cursor: pointer;
   z-index: 10;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  font-size: 18px;
+  font-size: 0;
+  /* Hide any fallback text */
   position: absolute;
   /* Overlay on slider */
   top: 50%;
@@ -1297,6 +1302,7 @@
 .prev-arrow {
   left: -20px;
   /* Pull slightly outside content */
+  transform: translateY(-50%) scaleX(-1);
 }
 
 .next-arrow {
@@ -1871,7 +1877,12 @@
 
 /* Slider Arrows */
 .blog-arrow {
-  background: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Inherit background-image from rishu-slider-arrow or re-declare */
+  background-image: url('arrow.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
   width: 40px;
   height: 40px;
   color: #111;

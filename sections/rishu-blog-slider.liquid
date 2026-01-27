@@ -25,7 +25,7 @@
     {%- endif -%}
 
     <div class="rishu-blog-wrapper">
-      <button class="rishu-slider-arrow prev-arrow blog-arrow" onclick="scrollRishuBlogSlider(-1)" aria-label="Previous posts">❮</button>
+      <button class="rishu-slider-arrow prev-arrow blog-arrow" onclick="scrollRishuBlogSlider(-1)" aria-label="Previous posts"></button>
       
       <div class="rishu-blog-slider" id="rishu-blog-slider-{{ section.id }}">
         {%- if selected_blog != blank and selected_blog.articles_count > 0 -%}
@@ -83,7 +83,7 @@
         {%- endif -%}
       </div>
 
-      <button class="rishu-slider-arrow next-arrow blog-arrow" onclick="scrollRishuBlogSlider(1)" aria-label="Next posts">❯</button>
+      <button class="rishu-slider-arrow next-arrow blog-arrow" onclick="scrollRishuBlogSlider(1)" aria-label="Next posts"></button>
     </div>
   </div>
 </div>
