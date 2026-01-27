@@ -1912,3 +1912,133 @@
     /* Optional: hide arrows on mobile if touch scroll is enough */
   }
 }
+
+/* ============================================
+   Rishu About Section
+   ============================================ */
+
+.rishu-about-section {
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.rishu-about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.rishu-about-col {
+  width: 100%;
+}
+
+.rishu-about-image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  /* Optional decorative offset background or border could go here */
+  transform: perspective(1000px) rotateY(0deg);
+  transition: transform 0.5s ease;
+}
+
+.rishu-about-image-wrapper:hover {
+  transform: perspective(1000px) rotateY(2deg) translateY(-5px);
+}
+
+.rishu-about-img,
+.rishu-about-placeholder {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  background-color: #f0f0f0;
+}
+
+.rishu-about-text-container {
+  padding: 20px 0;
+}
+
+.rishu-about-subheading {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.rishu-about-heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.rishu-about-body {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.rishu-about-body p {
+  margin-bottom: 16px;
+}
+
+/* Button (reusing common if possible, or defining specific) */
+.rishu-btn-primary {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.rishu-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 16px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+}
+
+/* Desktop Layout */
+@media (min-width: 990px) {
+  .rishu-about-grid {
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .rishu-about-col {
+    width: 50%;
+  }
+
+  .rishu-about-grid.text-first {
+    flex-direction: row-reverse;
+  }
+
+  .rishu-about-heading {
+    font-size: 42px;
+  }
+}
+
+/* Animation Entry FadeInUp */
+@keyframes rishuFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rishu-about-text-container {
+  animation: rishuFadeInUp 1s ease-out forwards;
+}

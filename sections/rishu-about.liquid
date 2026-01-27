@@ -1,0 +1,169 @@
+{{ 'rish-custom.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign bg_color = section.settings.bg_color
+  assign text_color = section.settings.text_color
+  assign heading_color = section.settings.heading_color
+  assign layout_class = 'image-first'
+  if section.settings.layout == 'text_first'
+    assign layout_class = 'text-first'
+  endif
+-%}
+
+<div class="rishu-about-section" style="background-color: {{ bg_color }};">
+  <div class="page-width">
+    <div class="rishu-about-grid {{ layout_class }}">
+      
+      {%- comment -%} Image Column {%- endcomment -%}
+      <div class="rishu-about-col rishu-about-media">
+        <div class="rishu-about-image-wrapper">
+          {%- if section.settings.image != blank -%}
+            {{ section.settings.image | image_url: width: 1200 | image_tag: 
+              class: 'rishu-about-img',
+              loading: 'lazy',
+              widths: '375, 550, 750, 1100, 1500',
+              alt: section.settings.heading
+            }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'rishu-about-placeholder' }}
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- comment -%} Text Column {%- endcomment -%}
+      <div class="rishu-about-col rishu-about-content">
+        <div class="rishu-about-text-container">
+          {%- if section.settings.subheading != blank -%}
+             <span class="rishu-about-subheading" style="color: {{ text_color }}; opacity: 0.7;">{{ section.settings.subheading }}</span>
+          {%- endif -%}
+          
+          {%- if section.settings.heading != blank -%}
+            <h2 class="rishu-about-heading" style="color: {{ heading_color }};">{{ section.settings.heading }}</h2>
+          {%- endif -%}
+          
+          <div class="rishu-about-body" style="color: {{ text_color }};">
+            {{ section.settings.text }}
+          </div>
+
+          {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+            <a href="{{ section.settings.button_link }}" class="rishu-btn-primary" style="background-color: {{ section.settings.button_color }}; color: {{ section.settings.button_text_color }};">
+              {{ section.settings.button_label }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Rishu About Section",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+       "type": "header",
+       "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Desktop Layout",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "Image Left, Text Right"
+        },
+        {
+          "value": "text_first",
+          "label": "Text Left, Image Right"
+        }
+      ],
+      "default": "image_first"
+    },
+    {
+       "type": "header",
+       "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Our Story"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "About Our Brand"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+    },
+    {
+       "type": "header",
+       "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+       "type": "header",
+       "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Background",
+      "default": "#377753"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rishu About Section"
+    }
+  ]
+}
+{% endschema %}
