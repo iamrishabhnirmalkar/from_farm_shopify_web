@@ -935,6 +935,77 @@
         "heading_color": "#000000",
         "text_color": "#333333"
       }
+    },
+    "rish_media_coverage_wpzLbC": {
+      "type": "rish-media-coverage",
+      "blocks": {
+        "logo_PqwziT": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/4.svg",
+            "logo_text": "Natural",
+            "logo_alt": "Natural Logo"
+          }
+        },
+        "logo_HTDzAN": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/4.svg",
+            "logo_text": "Natural",
+            "logo_alt": "Natural Logo"
+          }
+        },
+        "logo_htea8Y": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/4.svg",
+            "logo_text": "Natural",
+            "logo_alt": "Natural Logo"
+          }
+        },
+        "logo_9BjA8L": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/4.svg",
+            "logo_text": "Natural",
+            "logo_alt": "Natural Logo"
+          }
+        },
+        "logo_PacrmY": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/4.svg",
+            "logo_text": "Natural",
+            "logo_alt": "Natural Logo"
+          }
+        },
+        "logo_aGAHhf": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/4.svg",
+            "logo_text": "Natural",
+            "logo_alt": "Natural Logo"
+          }
+        }
+      },
+      "block_order": [
+        "logo_PqwziT",
+        "logo_HTDzAN",
+        "logo_htea8Y",
+        "logo_9BjA8L",
+        "logo_PacrmY",
+        "logo_aGAHhf"
+      ],
+      "name": "Rish Media Coverage",
+      "settings": {
+        "title": "Certification",
+        "heading_font_size": 35,
+        "section_padding_top": 50,
+        "section_padding_bottom": 50,
+        "background_color": "#ffffff",
+        "title_color": "#0E7541",
+        "text_color": "#333333"
+      }
     }
   },
   "order": [
@@ -946,6 +1017,7 @@
     "rishu_best_seller_pQx7jL",
     "rishu_reels_gBhrCk",
     "rishu_best_seller_tNUW83",
-    "rishu_testimonials_YFbGKK"
+    "rishu_testimonials_YFbGKK",
+    "rish_media_coverage_wpzLbC"
   ]
 }
