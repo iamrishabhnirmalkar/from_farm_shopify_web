@@ -696,16 +696,20 @@
         endif
 
         if eager_loading and block_settings.menu_style == 'featured_products'
-          for link in linklist.links
-            if link.type == 'collection_link'
-              assign collection_linklist = link
-              assign top_level_featured_products_collection = collection_linklist.object
-              break
-            elsif link.type == 'catalog_link' or link.type == 'collections_link'
-              assign top_level_featured_products_collection = collections.all
-              break
-            endif
-          endfor
+          if block_settings.custom_product_collection != blank
+            assign top_level_featured_products_collection = block_settings.custom_product_collection
+          else
+            for link in linklist.links
+              if link.type == 'collection_link'
+                assign collection_linklist = link
+                assign top_level_featured_products_collection = collection_linklist.object
+                break
+              elsif link.type == 'catalog_link' or link.type == 'collections_link'
+                assign top_level_featured_products_collection = collections.all
+                break
+              endif
+            endfor
+          endif
         endif
       -%}
       {% if top_level_featured_collections.size > 0 or top_level_featured_products_collection.products_count > 0 %}

@@ -2102,3 +2102,134 @@
 .rishu-about-text-container {
   animation: rishuFadeInUp 1s ease-out forwards;
 }
+/* ============================================ 
+   Toggle Section Styles 
+   ============================================ */
+
+.rishu-toggle-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.rishu-toggle-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.rishu-toggle-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rishu-toggle-container {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  /* Limit width for readability */
+  margin: 0 auto;
+}
+
+.rishu-toggle-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Accordion Item */
+.rishu-toggle-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 0;
+}
+
+.rishu-toggle-item:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.rishu-toggle-summary {
+  list-style: none; /* Hide default marker */
+  padding: 24px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+/* Hide default marker in Webkit */
+.rishu-toggle-summary::-webkit-details-marker {
+  display: none;
+}
+
+.rishu-toggle-title {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.rishu-toggle-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.rishu-toggle-icon svg {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.icon-minus {
+  display: none;
+}
+
+details[open] .icon-plus {
+  display: none;
+}
+
+details[open] .icon-minus {
+  display: block;
+}
+
+.rishu-toggle-content {
+  padding-bottom: 24px;
+  animation: rish-fade-in 0.3s ease-in-out;
+  color: rgba(0, 0, 0, 0.75);
+  line-height: 1.6;
+}
+
+@keyframes rish-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .rishu-toggle-heading {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .rishu-toggle-summary {
+    font-size: 16px;
+    padding: 20px 0;
+  }
+}

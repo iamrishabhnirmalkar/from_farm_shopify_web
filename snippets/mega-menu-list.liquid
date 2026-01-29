@@ -9,6 +9,7 @@
   @param {string} [menu_content_type] - Type of content: 'featured_products', 'featured_collections', 'collection_images', or 'text'.
   @param {number} [content_aspect_ratio] - Aspect ratio for content images.
   @param {number} [image_border_radius] - Border radius for content images.
+  @param {object} [custom_product_collection] - Optional custom collection object to override default behavior.
   @param {object} [section] - The section object.
 
   @example
@@ -62,7 +63,9 @@
   endif
 
   if menu_content_type == 'featured_products'
-    if parent_link.type == 'collection_link'
+    if custom_product_collection != blank
+      assign collection_object = custom_product_collection
+    elsif parent_link.type == 'collection_link'
       assign collection_object = parent_link.object
     elsif parent_link.type == 'catalog_link' or parent_link.type == 'collections_link'
       assign collection_object = collections.all

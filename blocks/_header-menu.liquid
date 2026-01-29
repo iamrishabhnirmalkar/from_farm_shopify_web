@@ -125,7 +125,8 @@
                       grid_columns_count_collection_images: 8,
                       menu_content_type: menu_content_type,
                       content_aspect_ratio: ratio,
-                      image_border_radius: image_border_radius
+                      image_border_radius: image_border_radius,
+                      custom_product_collection: block_settings.custom_product_collection
                     %}
                   </div>
                 </div>
@@ -835,6 +836,12 @@
         }
       ],
       "default": "collection_images"
+    },
+    {
+      "type": "collection",
+      "id": "custom_product_collection",
+      "label": "Custom Product Collection",
+      "info": "Select a specific collection to display products from when 'Featured products' is selected."
     },
     {
       "type": "select",
