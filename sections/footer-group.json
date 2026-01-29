@@ -90,9 +90,9 @@
         "bottom_image": "shopify://shop_images/footerMobilvg02.svg",
         "bottom_image_mobile": "shopify://shop_images/footerMobilvg02.svg",
         "bottom_image_style": "auto",
-        "image_overlay_color": "#94d3ed",
-        "bg_color": "#94d3ed",
-        "text_color": "#ffffff"
+        "image_overlay_color": "#e1edf5",
+        "bg_color": "#e1edf5",
+        "text_color": "#262827"
       }
     },
     "footer_m9NzUG": {
