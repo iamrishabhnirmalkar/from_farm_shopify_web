@@ -37,7 +37,7 @@
   # At the moment, we check if the Section Rendering API is being used by
   # checking if section.index is blank.
   assign eager_loading = false
-  if section.index == blank
+  if section.index == blank or custom_product_collection != blank
     assign eager_loading = true
   endif
 
