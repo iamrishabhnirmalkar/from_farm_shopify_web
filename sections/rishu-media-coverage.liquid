@@ -1,7 +1,7 @@
 <!-- Media Coverage Section -->
 <section
   class="media-coverage"
-  style="padding: {{ section.settings.section_padding_top }}px 0 {{ section.settings.section_padding_bottom }}px 0; background-color: {{ section.settings.background_color }};"
+  style="padding: {{ section.settings.section_padding_top }}px 0 {{ section.settings.section_padding_bottom }}px 0; background-color: {{ section.settings.background_color }};{% if section.settings.bg_image != blank %}background-image: url('{{ section.settings.bg_image | image_url: width: 2000 }}'); background-size: cover; background-position: center;{% endif %}"
 >
   <div class="media-coverage__container">
     <h2 class="media-coverage__title" style="color: {{ section.settings.title_color }};">
@@ -232,6 +232,11 @@
       "id": "background_color",
       "label": "Background Color",
       "default": "#f8f9fa"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
     },
     {
       "type": "color",
