@@ -316,6 +316,43 @@
         "padding-block-end": 0
       }
     },
+    "rishu_toggle_section_zCDife": {
+      "type": "rishu-toggle-section",
+      "blocks": {
+        "toggle_item_dXDydd": {
+          "type": "toggle_item",
+          "settings": {
+            "heading": "What is your return policy?",
+            "content": "<p>We offer a 30-day return policy for all unused items.</p>"
+          }
+        },
+        "toggle_item_mkKJMj": {
+          "type": "toggle_item",
+          "settings": {
+            "heading": "What is your return policy?",
+            "content": "<p>We offer a 30-day return policy for all unused items.</p>"
+          }
+        },
+        "toggle_item_xdt3BL": {
+          "type": "toggle_item",
+          "settings": {
+            "heading": "What is your return policy?",
+            "content": "<p>We offer a 30-day return policy for all unused items.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "toggle_item_dXDydd",
+        "toggle_item_mkKJMj",
+        "toggle_item_xdt3BL"
+      ],
+      "name": "Rishu Toggle Section",
+      "settings": {
+        "title": "Frequently Asked Questions",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "176979538519ae78f7": {
       "type": "_blocks",
       "blocks": {
@@ -348,7 +385,7 @@
             "corner_styling": "soft",
             "header_text_color": "#000000",
             "text_color": "#000000",
-            "card_color": "#F9F9F9",
+            "card_color": "#f9f9f9",
             "stars_color": "",
             "arrows_color": "#000000",
             "transition_speed": 5,
@@ -572,6 +609,7 @@
   },
   "order": [
     "main",
+    "rishu_toggle_section_zCDife",
     "176979538519ae78f7",
     "product_recommendations_qggXJq"
   ]
