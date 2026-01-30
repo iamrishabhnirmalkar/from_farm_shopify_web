@@ -1749,7 +1749,7 @@
   margin: 0 auto;
   max-width: var(--page-width, 1200px);
   /* Fallback to standard if var not defined */
-  padding: 0 5rem;
+  padding: 0 1rem;
   /* Standard theme padding */
 }
 
