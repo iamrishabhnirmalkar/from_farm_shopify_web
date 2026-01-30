@@ -923,6 +923,7 @@
       "settings": {
         "heading": "What Our Customers Say",
         "bg_color": "#ffffff",
+        "bg_image": "shopify://shop_images/background_images_copy-01_8e984dff-5525-47dc-85b3-e9612215950f.svg",
         "heading_color": "#000000",
         "text_color": "#333333"
       }
@@ -998,24 +999,6 @@
         "text_color": "#333333"
       }
     },
-    "rishu_about_EPPzYa": {
-      "type": "rishu-about",
-      "name": "Rishu About Section",
-      "settings": {
-        "layout": "image_first",
-        "image": "shopify://shop_images/From_Farm_Orange_fruit_powder_shopnow_....._fromfarm_orangefruitpowder_fruitpowder_mocktai.jpg",
-        "subheading": "Our Story",
-        "heading": "About Our Brand",
-        "text": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-        "button_label": "Learn More",
-        "button_link": "",
-        "bg_color": "#e1edf5",
-        "heading_color": "#1a1a1a",
-        "text_color": "#333333",
-        "button_color": "#377753",
-        "button_text_color": "#ffffff"
-      }
-    },
     "rishu_blog_slider_YQADPx": {
       "type": "rishu-blog-slider",
       "name": "Rishu Blog Slider",
@@ -1029,6 +1012,25 @@
         "heading_color": "#1a1a1a",
         "card_bg_color": "#ffffff",
         "text_color": "#333333"
+      }
+    },
+    "rishu_about_EPPzYa": {
+      "type": "rishu-about",
+      "name": "Rishu About Section",
+      "settings": {
+        "layout": "image_first",
+        "image": "shopify://shop_images/From_Farm_Orange_fruit_powder_shopnow_....._fromfarm_orangefruitpowder_fruitpowder_mocktai.jpg",
+        "subheading": "Our Story",
+        "heading": "About Our Brand",
+        "text": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+        "button_label": "Learn More",
+        "button_link": "",
+        "bg_color": "rgba(0,0,0,0)",
+        "bg_image": "shopify://shop_images/background_images_copy-01_8e984dff-5525-47dc-85b3-e9612215950f.svg",
+        "heading_color": "#1a1a1a",
+        "text_color": "#333333",
+        "button_color": "#377753",
+        "button_text_color": "#ffffff"
       }
     }
   },
