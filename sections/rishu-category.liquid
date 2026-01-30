@@ -12,7 +12,7 @@
           <a href="{{ block.settings.link }}" class="rishu-category-link">
             <div class="rishu-category-image-wrapper">
               {%- if block.settings.image != blank -%}
-                {{ block.settings.image | image_url: width: 200 | image_tag: class: 'rishu-category-image', loading: 'lazy' }}
+                {{ block.settings.image | image_url: width: 600 | image_tag: class: 'rishu-category-image', loading: 'lazy' }}
               {%- else -%}
                 {{ 'image' | placeholder_svg_tag: 'rishu-category-image rishu-category-placeholder' }}
               {%- endif -%}
