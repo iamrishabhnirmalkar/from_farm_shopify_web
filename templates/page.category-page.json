@@ -1,0 +1,134 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "name": "Title",
+          "settings": {
+            "text": "<h1>{{ closest.page.title }}</h1>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "page-content": {
+          "type": "page-content",
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "page-content"
+      ],
+      "disabled": true,
+      "settings": {
+        "content_direction": "column",
+        "gap": 32,
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 80
+      }
+    },
+    "rishu_category_ciAzfe": {
+      "type": "rishu-category",
+      "blocks": {
+        "category_QjxMAk": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
+            "text": "Fruit Powders",
+            "link": "shopify://collections/fruit-powders"
+          }
+        },
+        "category_fxBdi6": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
+            "text": "Gourmet Powders",
+            "link": "shopify://collections/gourmet-powders"
+          }
+        },
+        "category_B8nqeg": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
+            "text": "Herbal Powders",
+            "link": "shopify://collections/herbal-powders"
+          }
+        },
+        "category_V39iFj": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
+            "text": "Protein Powders",
+            "link": "shopify://collections/protein-powders"
+          }
+        },
+        "category_DUajXB": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
+            "text": "Sweeteners",
+            "link": "shopify://collections/sweeteners"
+          }
+        },
+        "category_GiGnhE": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_1.png",
+            "text": "Teas & Leaves",
+            "link": "shopify://collections/teas-and-leaves"
+          }
+        }
+      },
+      "block_order": [
+        "category_QjxMAk",
+        "category_fxBdi6",
+        "category_B8nqeg",
+        "category_V39iFj",
+        "category_DUajXB",
+        "category_GiGnhE"
+      ],
+      "name": "Rishu Category",
+      "settings": {
+        "heading": "From Farm To Your Kitchen",
+        "text_color": "#000000",
+        "bg_color": "#f5edd0",
+        "bg_image": "shopify://shop_images/background_images_copy-01.svg",
+        "bottom_image_bg": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rishu_category_ciAzfe"
+  ]
+}

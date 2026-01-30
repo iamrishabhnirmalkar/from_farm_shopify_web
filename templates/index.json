@@ -92,21 +92,12 @@
             "text": "",
             "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
           }
-        },
-        "feature_qHnBhX": {
-          "type": "feature",
-          "settings": {
-            "heading": "",
-            "text": "",
-            "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
-          }
         }
       },
       "block_order": [
         "feature_Vt4Nwc",
         "feature_4UGyBP",
-        "feature_mnGWGE",
-        "feature_qHnBhX"
+        "feature_mnGWGE"
       ],
       "name": "Rishu Feature Scroll",
       "settings": {
@@ -359,48 +350,48 @@
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Untitled_design_1.png",
-            "text": "Category Name",
-            "link": ""
+            "text": "Fruit Powders",
+            "link": "shopify://collections/fruit-powders"
           }
         },
         "category_NGyhV6": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Untitled_design_1.png",
-            "text": "Category Name",
-            "link": ""
+            "text": "Gourmet Powders",
+            "link": "shopify://collections/gourmet-powders"
           }
         },
         "category_kkVtCz": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Untitled_design_1.png",
-            "text": "Category Name",
-            "link": ""
+            "text": "Herbal Powders",
+            "link": "shopify://collections/herbal-powders"
           }
         },
         "category_9JJdrC": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Untitled_design_1.png",
-            "text": "Category Name",
-            "link": ""
+            "text": "Protein Powders",
+            "link": "shopify://collections/protein-powders"
           }
         },
         "category_4kFAyC": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Untitled_design_1.png",
-            "text": "Category Name",
-            "link": ""
+            "text": "Sweeteners",
+            "link": "shopify://collections/sweeteners"
           }
         },
         "category_Ncehpk": {
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/Untitled_design_1.png",
-            "text": "Category Name",
-            "link": ""
+            "text": "Teas & Leaves",
+            "link": "shopify://collections/teas-and-leaves"
           }
         }
       },
@@ -1018,7 +1009,7 @@
         "text": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
         "button_label": "Learn More",
         "button_link": "",
-        "bg_color": "#ffffff",
+        "bg_color": "#e1edf5",
         "heading_color": "#1a1a1a",
         "text_color": "#333333",
         "button_color": "#377753",
@@ -1052,7 +1043,7 @@
     "rishu_best_seller_tNUW83",
     "rishu_testimonials_YFbGKK",
     "rish_media_coverage_wpzLbC",
-    "rishu_about_EPPzYa",
-    "rishu_blog_slider_YQADPx"
+    "rishu_blog_slider_YQADPx",
+    "rishu_about_EPPzYa"
   ]
 }
