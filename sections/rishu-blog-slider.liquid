@@ -25,11 +25,7 @@
     {%- endif -%}
 
     <div class="rishu-blog-wrapper">
-      <button class="rishu-slider-arrow prev-arrow blog-arrow" onclick="scrollRishuBlogSlider(-1)" aria-label="Previous posts">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
+   
       
       <div class="rishu-blog-slider" id="rishu-blog-slider-{{ section.id }}">
         {%- if selected_blog != blank and selected_blog.articles_count > 0 -%}
@@ -87,11 +83,7 @@
         {%- endif -%}
       </div>
 
-      <button class="rishu-slider-arrow next-arrow blog-arrow" onclick="scrollRishuBlogSlider(1)" aria-label="Next posts">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
+   
     </div>
   </div>
 </div>
