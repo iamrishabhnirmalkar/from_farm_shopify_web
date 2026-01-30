@@ -1622,8 +1622,14 @@
    Rishu Testimonials Section
    ============================================ */
 .rishu-testimonial-section {
-  padding: 60px 0;
+  padding: 100px 0;
+  /* Increased top/bottom padding for section */
   position: relative;
+}
+
+.rishu-testimonial-section .rishu-section-heading {
+  margin-bottom: 60px;
+  /* More space between heading and cards */
 }
 
 .rishu-testimonial-wrapper {
@@ -1635,7 +1641,8 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 30px;
-  padding-bottom: 20px;
+  padding: 40px 20px 60px;
+  /* Increased padding around cards for shadow/spacing */
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -1648,18 +1655,26 @@
   flex: 0 0 calc(33.333% - 20px);
   min-width: 300px;
   scroll-snap-align: center;
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.25);
+  /* More visible glass tint */
+  padding: 40px 30px;
+  /* Increased padding inside card */
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  /* Glass shadow */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  /* Glass border */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .rishu-testimonial-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
 }
 
 .rishu-testimonial-stars {
