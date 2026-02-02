@@ -10,7 +10,7 @@
 -%}
 
 <div class="rishu-blog-section" 
-     style="{% if bg_color != blank %}background-color: {{ bg_color }};{% endif %}{% if bg_image != blank %}background-image: url('{{ bg_image | image_url: width: 2000 }}');{% endif %}">
+     style="{% if bg_color != blank %}background-color: {{ bg_color }};{% endif %}{% if bg_image != blank %}background-image: url('{{ bg_image | image_url: width: 2000 }}'); background-size: cover; background-position: center; background-repeat: no-repeat;{% endif %}">
   
   <div class="page-width">
     {%- if section.settings.heading != blank -%}
