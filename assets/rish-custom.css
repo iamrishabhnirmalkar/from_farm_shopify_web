@@ -909,7 +909,7 @@
 }
 
 .rishu-feature-heading {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 700;
   color: #3C7D8A;
   /* Teal/Blue color from image */
@@ -1014,6 +1014,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .rishu-feature-heading {
+    font-size: 24px;
+  }
+}
+
 /* ============================================
    Rishu Reels Section
    ============================================ */
@@ -1033,7 +1039,7 @@
 }
 
 .rishu-reels-heading {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 700;
   text-align: center;
   margin-bottom: 40px;
@@ -1740,8 +1746,9 @@
   overflow: hidden;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
-  /* Full bleed breakout */
+  /* Full bleed breakout - bg image spans full width */
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
@@ -1768,7 +1775,7 @@
 }
 
 .rishu-section-heading {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
   margin: 0;
 }
@@ -2099,7 +2106,7 @@
   }
 
   .rishu-about-heading {
-    font-size: 42px;
+    font-size: 32px;
   }
 }
 
@@ -2156,6 +2163,8 @@
 }
 
 .rishu-toggle-heading {
+  font-size: 32px;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 40px;
 }
