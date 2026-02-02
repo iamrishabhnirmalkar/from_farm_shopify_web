@@ -3,6 +3,7 @@
 ## 📋 Table of Contents
 - [Why Theme Changes Don't Show](#why-theme-changes-dont-show)
 - [Hero Banner Section](#hero-banner-section)
+- [Hero Split (3 Sliders)](#hero-split-3-sliders--two-brothers-style)
 - [Promo / Ad Slider](#promo--ad-slider)
 - [Announcement Bar Section](#announcement-bar-section)
 - [Image Specifications](#image-specifications)
@@ -44,6 +45,20 @@ Use the **Auto (Full Image)** height setting with these sizes:
 - **Why**: Better composition for mobile screens
 
 > **💡 Pro Tip**: Create ONE banner at 1920x1080px for desktop. The auto height mode will show the complete image without any cropping. Optionally add a square (1080x1080) version for mobile if you want different composition.
+
+---
+
+## 🖼️ Hero Split (3 Sliders) – Two Brothers style
+
+One section with **three independent sliders** on the same page (like twobrothersindiashop.com):
+
+- **Left (main):** One large hero slider with multiple slides (e.g. Salary Day, banners).
+- **Right top:** Second slider (e.g. product / CTA slides).
+- **Right bottom:** Third slider (e.g. membership, promos).
+
+Uses **Swiper.js** (CDN). Each slider has its own pagination dots and autoplay. On desktop: left ~2/3 width, right ~1/3 with two stacked sliders. On mobile: all three areas stack vertically.
+
+**How to add:** Add section **"Hero Split (3 Sliders)"**, then add **Slide** blocks and set **Slider position** to **Main (left, big)**, **Right top**, or **Right bottom**. Add image and link per slide.
 
 ---
 

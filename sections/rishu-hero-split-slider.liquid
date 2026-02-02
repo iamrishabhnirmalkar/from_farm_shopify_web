@@ -1,0 +1,302 @@
+{%- liquid
+  assign sid = section.id
+  assign autoplay_delay = section.settings.autoplay_delay | default: 5
+-%}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+<style>
+  .rishu-hero-split .hero-swiper-{{ sid }},
+  .rishu-hero-split .htb-swiper-{{ sid }},
+  .rishu-hero-split .hbb-swiper-{{ sid }} {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .rishu-hero-split .hero-swiper-{{ sid }} .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+  }
+  .rishu-hero-split .htb-swiper-{{ sid }} .swiper-slide img,
+  .rishu-hero-split .hbb-swiper-{{ sid }} .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .rishu-hero-split .swiper-pagination-{{ sid }}-main,
+  .rishu-hero-split .swiper-pagination-{{ sid }}-htb,
+  .rishu-hero-split .swiper-pagination-{{ sid }}-hbb {
+    left: 50% !important;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 16px !important;
+  }
+</style>
+
+<div id="shopify-section-{{ sid }}" class="shopify-section rishu-hero-split">
+  <div class="rishu-hero-split-inner page-width">
+    <div class="rishu-hero-split-grid">
+      {%- comment -%} Left: main hero slider {%- endcomment -%}
+      <div class="rishu-hero-split-left">
+        <div class="swiper hero-swiper-{{ sid }} rishu-hero-main-swiper">
+          <div class="swiper-wrapper">
+            {%- assign main_count = 0 -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'slide' and block.settings.slider == 'main' -%}
+                {%- assign main_count = main_count | plus: 1 -%}
+                <div class="swiper-slide" {{ block.shopify_attributes }}>
+                  {%- if block.settings.link != blank -%}
+                    <a href="{{ block.settings.link }}">
+                      {%- if block.settings.image != blank -%}
+                        {{
+                          block.settings.image
+                          | image_url: width: 2000
+                          | image_tag: loading: 'lazy', alt: block.settings.image.alt | default: 'Hero slide', sizes: '100vw', widths: '600, 900, 1200, 1500, 2000'
+                        }}
+                      {%- else -%}
+                        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder' }}
+                      {%- endif -%}
+                    </a>
+                  {%- else -%}
+                    {%- if block.settings.image != blank -%}
+                      {{
+                        block.settings.image
+                        | image_url: width: 2000
+                        | image_tag: loading: 'lazy', alt: block.settings.image.alt | default: 'Hero slide', sizes: '100vw', widths: '600, 900, 1200, 1500, 2000'
+                      }}
+                    {%- else -%}
+                      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder' }}
+                    {%- endif -%}
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          {%- if main_count > 1 -%}
+            <div class="swiper-pagination swiper-pagination-{{ sid }}-main"></div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- comment -%} Right: two stacked sliders {%- endcomment -%}
+      <div class="rishu-hero-split-right">
+        <div class="rishu-hero-split-right-inner">
+          {%- comment -%} Top right slider {%- endcomment -%}
+          <div class="swiper htb-swiper-{{ sid }} rishu-hero-htb-swiper">
+            <div class="swiper-wrapper">
+              {%- assign htb_count = 0 -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'slide' and block.settings.slider == 'right_top' -%}
+                  {%- assign htb_count = htb_count | plus: 1 -%}
+                  <div class="swiper-slide" {{ block.shopify_attributes }}>
+                    {%- if block.settings.link != blank -%}
+                      <a href="{{ block.settings.link }}">
+                        {%- if block.settings.image != blank -%}
+                          {{
+                            block.settings.image
+                            | image_url: width: 1200
+                            | image_tag: loading: 'lazy', alt: block.settings.image.alt | default: 'Slide', sizes: '(min-width: 990px) 33vw, 100vw', widths: '500, 750, 1000'
+                          }}
+                        {%- else -%}
+                          {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder' }}
+                        {%- endif -%}
+                      </a>
+                    {%- else -%}
+                      {%- if block.settings.image != blank -%}
+                        {{
+                          block.settings.image
+                          | image_url: width: 1200
+                          | image_tag: loading: 'lazy', alt: block.settings.image.alt | default: 'Slide', sizes: '(min-width: 990px) 33vw, 100vw', widths: '500, 750, 1000'
+                        }}
+                      {%- else -%}
+                        {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder' }}
+                      {%- endif -%}
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+            {%- if htb_count > 1 -%}
+              <div class="swiper-pagination swiper-pagination-{{ sid }}-htb"></div>
+            {%- endif -%}
+          </div>
+
+          {%- comment -%} Bottom right slider {%- endcomment -%}
+          <div class="swiper hbb-swiper-{{ sid }} rishu-hero-hbb-swiper">
+            <div class="swiper-wrapper">
+              {%- assign hbb_count = 0 -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'slide' and block.settings.slider == 'right_bottom' -%}
+                  {%- assign hbb_count = hbb_count | plus: 1 -%}
+                  <div class="swiper-slide" {{ block.shopify_attributes }}>
+                    {%- if block.settings.link != blank -%}
+                      <a href="{{ block.settings.link }}">
+                        {%- if block.settings.image != blank -%}
+                          {{
+                            block.settings.image
+                            | image_url: width: 1200
+                            | image_tag: loading: 'lazy', alt: block.settings.image.alt | default: 'Slide', sizes: '(min-width: 990px) 33vw, 100vw', widths: '500, 750, 1000'
+                          }}
+                        {%- else -%}
+                          {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder' }}
+                        {%- endif -%}
+                      </a>
+                    {%- else -%}
+                      {%- if block.settings.image != blank -%}
+                        {{
+                          block.settings.image
+                          | image_url: width: 1200
+                          | image_tag: loading: 'lazy', alt: block.settings.image.alt | default: 'Slide', sizes: '(min-width: 990px) 33vw, 100vw', widths: '500, 750, 1000'
+                        }}
+                      {%- else -%}
+                        {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder' }}
+                      {%- endif -%}
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+            {%- if hbb_count > 1 -%}
+              <div class="swiper-pagination swiper-pagination-{{ sid }}-hbb"></div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    function init() {
+      if (typeof Swiper === 'undefined') {
+        setTimeout(init, 100);
+        return;
+      }
+      var section = document.getElementById('shopify-section-{{ sid }}');
+      if (!section) return;
+
+      var mainEl = section.querySelector('.hero-swiper-{{ sid }}');
+      var htbEl = section.querySelector('.htb-swiper-{{ sid }}');
+      var hbbEl = section.querySelector('.hbb-swiper-{{ sid }}');
+
+      var opts = {
+        slidesPerView: 1,
+        spaceBetween: 12,
+        loop: true,
+        autoplay: {
+          delay: {{ autoplay_delay | times: 1000 }},
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        },
+        breakpoints: {
+          0: { slidesPerView: 1 },
+          768: { slidesPerView: 1 }
+        }
+      };
+
+      if (mainEl && mainEl.querySelectorAll('.swiper-slide').length > 0) {
+        new Swiper(mainEl, {
+          ...opts,
+          pagination: mainEl.querySelector('.swiper-pagination-{{ sid }}-main') ? {
+            el: '.swiper-pagination-{{ sid }}-main',
+            clickable: true
+          } : false
+        });
+      }
+      if (htbEl && htbEl.querySelectorAll('.swiper-slide').length > 0) {
+        new Swiper(htbEl, {
+          ...opts,
+          pagination: htbEl.querySelector('.swiper-pagination-{{ sid }}-htb') ? {
+            el: '.swiper-pagination-{{ sid }}-htb',
+            clickable: true
+          } : false
+        });
+      }
+      if (hbbEl && hbbEl.querySelectorAll('.swiper-slide').length > 0) {
+        new Swiper(hbbEl, {
+          ...opts,
+          pagination: hbbEl.querySelector('.swiper-pagination-{{ sid }}-hbb') ? {
+            el: '.swiper-pagination-{{ sid }}-hbb',
+            clickable: true
+          } : false
+        });
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Hero Split (3 Sliders)",
+  "tag": "section",
+  "class": "rishu-hero-split-wrapper",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    {
+      "type": "range",
+      "id": "autoplay_delay",
+      "label": "Autoplay delay (seconds)",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "select",
+          "id": "slider",
+          "label": "Slider position",
+          "options": [
+            { "value": "main", "label": "Main (left, big)" },
+            { "value": "right_top", "label": "Right top" },
+            { "value": "right_bottom", "label": "Right bottom" }
+          ],
+          "default": "main",
+          "info": "Main = left hero. Right top / Right bottom = two sliders on the right."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Split (3 Sliders)",
+      "blocks": [
+        { "type": "slide", "settings": { "slider": "main" } },
+        { "type": "slide", "settings": { "slider": "main" } },
+        { "type": "slide", "settings": { "slider": "right_top" } },
+        { "type": "slide", "settings": { "slider": "right_top" } },
+        { "type": "slide", "settings": { "slider": "right_bottom" } },
+        { "type": "slide", "settings": { "slider": "right_bottom" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

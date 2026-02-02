@@ -342,6 +342,104 @@
 }
 
 /* ============================================
+   Hero Split (3 sliders: main left + 2 right, Two Brothers style)
+   ============================================ */
+
+.rishu-hero-split {
+  padding: 16px 0;
+}
+
+.rishu-hero-split-inner.page-width {
+  max-width: var(--page-width, 1200px);
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.rishu-hero-split-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rishu-hero-split-left,
+.rishu-hero-split-right {
+  width: 100%;
+}
+
+.rishu-hero-split-left .swiper,
+.rishu-hero-split-right .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.rishu-hero-split-left .rishu-hero-main-swiper {
+  aspect-ratio: 1184 / 654;
+  min-height: 280px;
+}
+
+.rishu-hero-split-right-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+.rishu-hero-split-right .rishu-hero-htb-swiper,
+.rishu-hero-split-right .rishu-hero-hbb-swiper {
+  aspect-ratio: 1184 / 654;
+  min-height: 200px;
+  position: relative;
+}
+
+.rishu-hero-split .swiper-slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.rishu-hero-split .swiper-slide img {
+  display: block;
+}
+
+@media (min-width: 990px) {
+  .rishu-hero-split-grid {
+    flex-direction: row;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .rishu-hero-split-left {
+    flex: 1 1 66.666%;
+    min-width: 0;
+  }
+
+  .rishu-hero-split-right {
+    flex: 1 1 33.333%;
+    min-width: 0;
+  }
+
+  .rishu-hero-split-left .rishu-hero-main-swiper {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 400px;
+  }
+
+  .rishu-hero-split-right-inner {
+    flex: 1;
+    min-height: 0;
+    gap: 16px;
+  }
+
+  .rishu-hero-split-right .rishu-hero-htb-swiper,
+  .rishu-hero-split-right .rishu-hero-hbb-swiper {
+    flex: 1 1 50%;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+}
+
+/* ============================================
    Promo / Ad Slider (main full height + two half-height secondary)
    ============================================ */
 
