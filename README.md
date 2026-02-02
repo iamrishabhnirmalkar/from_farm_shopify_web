@@ -1,10 +1,24 @@
 # Rishu Custom Sections - Documentation
 
 ## 📋 Table of Contents
+- [Why Theme Changes Don't Show](#why-theme-changes-dont-show)
 - [Hero Banner Section](#hero-banner-section)
+- [Promo / Ad Slider](#promo--ad-slider)
 - [Announcement Bar Section](#announcement-bar-section)
 - [Image Specifications](#image-specifications)
 - [Optimization Guidelines](#optimization-guidelines)
+
+---
+
+## Why Theme Changes Don't Show
+
+**Your edits are in this local folder.** The live store uses the theme that’s **uploaded to Shopify**. To see your changes:
+
+1. **Push the theme** (Shopify CLI): `shopify theme push` (after `shopify auth login --store YOUR-STORE.myshopify.com`)
+2. **Or** zip this folder and upload in **Online Store → Themes → Add theme → Upload zip**
+3. **Or** use **Customize** in the admin to edit the theme that’s already on Shopify (those changes won’t be in this folder unless you pull the theme)
+
+See **[THEME_UPDATE.md](THEME_UPDATE.md)** for full deployment steps and performance notes.
 
 ---
 
@@ -30,6 +44,16 @@ Use the **Auto (Full Image)** height setting with these sizes:
 - **Why**: Better composition for mobile screens
 
 > **💡 Pro Tip**: Create ONE banner at 1920x1080px for desktop. The auto height mode will show the complete image without any cropping. Optionally add a square (1080x1080) version for mobile if you want different composition.
+
+---
+
+## 🖼️ Promo / Ad Slider
+
+A **sliding ad / promo section** for multiple promotional images (e.g. Salary Day Sale, Shop Pure, product promos). Works as a **slider** on both **mobile and desktop**: one slide visible at a time, with arrows, dots, touch swipe, and optional autoplay.
+
+**How to add:** In the theme editor, add section **"Promo / Ad Slider"**, then add **Slide** blocks and upload an image (and optional link) for each. Each image works as a slide; users can swipe or use arrows to move between them.
+
+**Recommended image size:** 1920×1080 or 1200×600 for desktop; optional separate mobile image for a different crop on small screens.
 
 ---
 
