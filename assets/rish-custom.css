@@ -342,7 +342,7 @@
 }
 
 /* ============================================
-   Promo / Ad Slider (sliding ads – mobile & desktop)
+   Promo / Ad Slider (main full height + two half-height secondary)
    ============================================ */
 
 .rishu-promo-slider-section {
@@ -368,15 +368,10 @@
   max-width: 100%;
 }
 
-.rishu-promo-slider-section[data-slide-height="auto"] .rishu-promo-slider {
-  height: auto;
-  min-height: 200px;
-}
-
-.rishu-promo-slider-section[data-slide-height="50vh"] .rishu-promo-slider { height: 50vh; }
 .rishu-promo-slider-section[data-slide-height="60vh"] .rishu-promo-slider { height: 60vh; }
 .rishu-promo-slider-section[data-slide-height="70vh"] .rishu-promo-slider { height: 70vh; }
 .rishu-promo-slider-section[data-slide-height="80vh"] .rishu-promo-slider { height: 80vh; }
+.rishu-promo-slider-section[data-slide-height="90vh"] .rishu-promo-slider { height: 90vh; }
 
 .rishu-promo-slides {
   position: relative;
@@ -401,23 +396,54 @@
   z-index: 1;
 }
 
-.rishu-promo-slide-link {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Frame: main (2/3) + secondary row (1/3) */
+.rishu-promo-frame {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
+}
+
+.rishu-promo-main {
+  flex: 0 0 66.666%;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.rishu-promo-main-link {
+  position: absolute;
+  inset: 0;
   z-index: 2;
   cursor: pointer;
 }
 
-.rishu-promo-picture {
-  display: block;
+.rishu-promo-secondary-row {
+  flex: 0 0 33.333%;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  min-height: 0;
   width: 100%;
-  height: 100%;
 }
 
-.rishu-promo-image {
+.rishu-promo-secondary {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.rishu-promo-secondary-link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.rishu-promo-main .rishu-promo-image,
+.rishu-promo-secondary .rishu-promo-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -425,40 +451,18 @@
   display: block;
 }
 
-.rishu-promo-slider-section[data-slide-height="auto"] .rishu-promo-slides {
-  height: auto;
-}
-
-.rishu-promo-slider-section[data-slide-height="auto"] .rishu-promo-slide {
-  height: auto;
-}
-
-.rishu-promo-slider-section[data-slide-height="auto"] .rishu-promo-slide.active {
-  position: relative;
-}
-
-.rishu-promo-slider-section[data-slide-height="auto"] .rishu-promo-slide:not(.active) {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.rishu-promo-slider-section[data-slide-height="auto"] .rishu-promo-image {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
-
 .rishu-promo-placeholder {
   width: 100%;
   height: 100%;
-  min-height: 280px;
+  min-height: 120px;
   background: #eee;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.rishu-promo-placeholder-half {
+  min-height: 80px;
 }
 
 .rishu-promo-placeholder-svg {
@@ -539,6 +543,18 @@
   background: #fff;
   width: 28px;
   border-radius: 5px;
+}
+
+@media (max-width: 480px) {
+  .rishu-promo-secondary-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .rishu-promo-secondary {
+    flex: 0 0 50%;
+    min-height: 0;
+  }
 }
 
 @media (min-width: 750px) {
