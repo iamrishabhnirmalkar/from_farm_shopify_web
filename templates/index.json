@@ -173,7 +173,6 @@
         "feature_4UGyBP",
         "feature_mnGWGE"
       ],
-      "disabled": true,
       "name": "Rishu Feature Scroll",
       "settings": {
         "heading": "Only Perfect Makes The Cut",
@@ -182,7 +181,7 @@
         "bg_image": "shopify://shop_images/background_images_copy-01.svg"
       }
     },
-    "product_list_amdKtT": {
+    "product_list_ETaxgF": {
       "type": "product-list",
       "blocks": {
         "static-header": {
@@ -219,7 +218,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_list_text_67HRdU": {
+            "product_list_text_tRE4rM": {
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
@@ -245,7 +244,7 @@
               },
               "blocks": {}
             },
-            "product_list_button_wg9Ukz": {
+            "product_list_button_Ve6zQw": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
               "disabled": true,
@@ -262,8 +261,8 @@
             }
           },
           "block_order": [
-            "product_list_text_67HRdU",
-            "product_list_button_wg9Ukz"
+            "product_list_text_tRE4rM",
+            "product_list_button_Ve6zQw"
           ]
         },
         "static-product-card": {
@@ -284,7 +283,7 @@
             "padding-inline-end": 8
           },
           "blocks": {
-            "product_card_gallery_VfkgCT": {
+            "product_card_gallery_RMezN8": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
@@ -300,7 +299,7 @@
               },
               "blocks": {}
             },
-            "product_title_Ex9NLi": {
+            "product_title_RP7KKE": {
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
@@ -325,7 +324,7 @@
               },
               "blocks": {}
             },
-            "price_F8Ehhn": {
+            "price_6VUcCF": {
               "type": "price",
               "name": "t:names.product_price",
               "settings": {
@@ -348,7 +347,7 @@
               },
               "blocks": {}
             },
-            "buy_buttons_pMbXam": {
+            "buy_buttons_a6Nt3H": {
               "type": "buy-buttons",
               "name": "t:names.product_buy_buttons",
               "settings": {
@@ -387,10 +386,10 @@
             }
           },
           "block_order": [
-            "product_card_gallery_VfkgCT",
-            "product_title_Ex9NLi",
-            "price_F8Ehhn",
-            "buy_buttons_pMbXam"
+            "product_card_gallery_RMezN8",
+            "product_title_RP7KKE",
+            "price_6VUcCF",
+            "buy_buttons_a6Nt3H"
           ]
         }
       },
@@ -414,8 +413,8 @@
         "sale_price_color": "#0b6a26",
         "discount_badge_color": "#ffffff",
         "badge_mode": "both",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 10,
+        "padding-block-end": 9
       }
     },
     "rishu_category_pJbyRi": {
@@ -701,7 +700,7 @@
       },
       "name": "t:names.products_carousel",
       "settings": {
-        "collection": "teas-and-leaves",
+        "collection": "new-arrivals",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 13,
@@ -1113,7 +1112,7 @@
     "rishu_hero_banner_gDGdWX",
     "rishu_hero_split_slider_TCzbAL",
     "rishu_feature_scroll_HxGr9w",
-    "product_list_amdKtT",
+    "product_list_ETaxgF",
     "rishu_category_pJbyRi",
     "product_list_wTmUXN",
     "rishu_best_seller_pQx7jL",
