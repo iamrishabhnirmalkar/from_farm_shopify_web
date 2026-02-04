@@ -66,10 +66,83 @@
         "show_dots": true
       }
     },
+    "rishu_hero_split_slider_TCzbAL": {
+      "type": "rishu-hero-split-slider",
+      "blocks": {
+        "slide_jT7DCc": {
+          "type": "slide",
+          "settings": {
+            "slider": "main",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand.webp",
+            "link": ""
+          }
+        },
+        "slide_jhAtnk": {
+          "type": "slide",
+          "settings": {
+            "slider": "main",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand.webp",
+            "link": ""
+          }
+        },
+        "slide_EYP7i3": {
+          "type": "slide",
+          "settings": {
+            "slider": "right_top",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand.webp",
+            "link": ""
+          }
+        },
+        "slide_PreqqJ": {
+          "type": "slide",
+          "settings": {
+            "slider": "right_top",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand.webp",
+            "link": ""
+          }
+        },
+        "slide_RNVid4": {
+          "type": "slide",
+          "settings": {
+            "slider": "right_bottom",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand.webp",
+            "link": ""
+          }
+        },
+        "slide_TrkT8k": {
+          "type": "slide",
+          "settings": {
+            "slider": "right_bottom",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand.webp",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_jT7DCc",
+        "slide_jhAtnk",
+        "slide_EYP7i3",
+        "slide_PreqqJ",
+        "slide_RNVid4",
+        "slide_TrkT8k"
+      ],
+      "name": "Hero Split (3 Sliders)",
+      "settings": {
+        "autoplay_delay": 5
+      }
+    },
     "rishu_feature_scroll_HxGr9w": {
       "type": "rishu-feature-scroll",
       "blocks": {
         "feature_Vt4Nwc": {
+          "type": "feature",
+          "settings": {
+            "heading": "",
+            "text": "",
+            "image": "shopify://shop_images/India_S_First_Organic_Brand_800_x_1200_px.webp"
+          }
+        },
+        "feature_PGycbc": {
           "type": "feature",
           "settings": {
             "heading": "",
@@ -96,9 +169,11 @@
       },
       "block_order": [
         "feature_Vt4Nwc",
+        "feature_PGycbc",
         "feature_4UGyBP",
         "feature_mnGWGE"
       ],
+      "disabled": true,
       "name": "Rishu Feature Scroll",
       "settings": {
         "heading": "Only Perfect Makes The Cut",
@@ -1036,6 +1111,7 @@
   },
   "order": [
     "rishu_hero_banner_gDGdWX",
+    "rishu_hero_split_slider_TCzbAL",
     "rishu_feature_scroll_HxGr9w",
     "product_list_amdKtT",
     "rishu_category_pJbyRi",
