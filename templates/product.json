@@ -261,6 +261,33 @@
               },
               "blocks": {}
             },
+            "ai_gen_block_59e72ad_tEPMGd": {
+              "type": "ai_gen_block_59e72ad",
+              "settings": {
+                "icon_1": "shopify://shop_images/2_055350a6-daaf-44e2-885d-4ab869103709.png",
+                "text_1": "100% Organic",
+                "icon_2": "shopify://shop_images/1_faa8fd19-81b5-4822-a552-1dbe34520f9f.png",
+                "text_2": "Good for health",
+                "icon_3": "shopify://shop_images/3_c7feab9f-361e-4745-ab60-831b434928a5.png",
+                "text_3": "No pesticides",
+                "desktop_width_percent": 100,
+                "gap": 30,
+                "gap_mobile": 20,
+                "columns_mobile": "3",
+                "padding": 20,
+                "icon_size": 80,
+                "icon_size_mobile": 60,
+                "icon_padding": 0,
+                "icon_border_radius": 50,
+                "icon_background_color": "#f7f5ee",
+                "icon_text_gap": 12,
+                "text_size": 14,
+                "text_size_mobile": 12,
+                "text_weight": "500",
+                "text_color": "#0b6a26"
+              },
+              "blocks": {}
+            },
             "judge_me_reviews_all_reviews_text_fqR4pc": {
               "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_text/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
               "settings": {}
@@ -299,6 +326,7 @@
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "text_YV9CTR",
+            "ai_gen_block_59e72ad_tEPMGd",
             "judge_me_reviews_all_reviews_text_fqR4pc",
             "product_description_CiRxag"
           ]
