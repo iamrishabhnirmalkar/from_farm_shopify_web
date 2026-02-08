@@ -89,6 +89,14 @@
         "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/widget-block/06fa8282-42ff-403e-b67c-1936776aed11",
         "disabled": false,
         "settings": {}
+      },
+      "9356323809658795675": {
+        "type": "shopify://apps/reelup-shoppable-videos-reels/blocks/reelup/a8ec9e4d-d192-44f7-9c23-595f9ee7dd5b",
+        "disabled": false,
+        "settings": {
+          "debugging_global_script": "",
+          "enable_reelPops": true
+        }
       }
     },
     "color_schemes": {
@@ -333,7 +341,7 @@
           "foreground": "#000000",
           "primary": "#000000",
           "primary_hover": "#00000087",
-          "border": "#db1a1a",
+          "border": "#ffffff",
           "shadow": "#000000",
           "primary_button_background": "#1d7737",
           "primary_button_text": "#ffffff",
@@ -359,7 +367,7 @@
           "variant_hover_border_color": "#e6e6e6",
           "selected_variant_background_color": "#000000",
           "selected_variant_text_color": "#ffffff",
-          "selected_variant_border_color": "#f71818",
+          "selected_variant_border_color": "#ffffff",
           "selected_variant_hover_background_color": "#1a1a1a",
           "selected_variant_hover_text_color": "#ffffff",
           "selected_variant_hover_border_color": "#1a1a1a"
